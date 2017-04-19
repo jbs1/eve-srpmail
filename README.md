@@ -17,6 +17,16 @@ To install composer follow this https://getcomposer.org/download/
 Then symlink or copy the executable to path (e.g. /usr/local/bin/)
 
 
+### Swagger api
+To use the api, every PHP document must include the api [manually](https://github.com/jbs1/eve-srpmail/tree/master/SwaggerClient-php#manual-installation).  
+Run the [test](https://github.com/jbs1/eve-srpmail/tree/master/SwaggerClient-php#tests) inside the SwaggerClient-php folder.
+
+
+### OAuth client
+To install the oauth2 client run `composer require league/oauth2-client` inside the repo's root folder.
+
+
+
 from https://github.com/jbs1/jlecture
 
 ## website changes
