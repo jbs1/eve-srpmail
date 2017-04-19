@@ -10,6 +10,9 @@ sudo service apache2 restart
 sudo ln -sf /home/ubuntu/gh-evesrp/eve-srpmail/ /var/www/html/eve
 ```
 
+### Install composer globally
+To install composer follow this https://getcomposer.org/download/  
+Then symlink or copy the executable to path (e.g. /usr/local/bin/)
 
 
 from https://github.com/jbs1/jlecture
