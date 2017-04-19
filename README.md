@@ -2,6 +2,8 @@
 
 ```
 sudo apt-get install php-curl
+sudo apt-get install php-mbstring
+sudo apt-get install php-xml
 sudo service apache2 restart
 ```
 
