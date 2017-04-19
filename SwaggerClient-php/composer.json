@@ -32,14 +32,5 @@
     },
     "autoload-dev": {
         "psr-4": { "Swagger\\Client\\" : "test/" }
-    },
-    "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com//.git"
-    }
-    ],
-    "require": {
-    "/": "*@dev"
     }
 }
