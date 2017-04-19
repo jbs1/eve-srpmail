@@ -32,13 +32,11 @@ if ( $_POST['payload'] ) {
   if( file_exists($LOCAL_REPO) ) {
     // If there is already a repo, just run a git pull to grab the latest changes
     shell_exec("cd {$LOCAL_REPO} && {$GIT_PREFIX} pull");
-    shell_exec("{$LOCAL_REPO}/sync {$LOCAL_REPO}");
     file_put_contents("{$LOCAL_ROOT}/push-log","Pushed: ".date("H:i:s d.m.Y")."\n", FILE_APPEND);
     die("Updated: ".date("H:i:s d.m.Y"));
   } else {
     // If the repo does not exist, then clone it into the parent directory
     shell_exec("cd {$LOCAL_ROOT} && {$GIT_PREFIX} clone {$REMOTE_REPO}");
-    shell_exec("{$LOCAL_REPO}/sync {$LOCAL_REPO}");
     file_put_contents("{$LOCAL_ROOT}/push-log","Pushed: ".date("H:i:s d.m.Y")."\n", FILE_APPEND);
     die("Updated: ".date("H:i:s d.m.Y"));
   }
