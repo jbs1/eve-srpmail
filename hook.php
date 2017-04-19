@@ -16,7 +16,7 @@
   *
 **/
 // Set Variables
-$LOCAL_ROOT         = "/home/ubuntu";
+$LOCAL_ROOT         = "/home/ubuntu/gh-evesrp";
 $LOCAL_REPO_NAME    = "eve-srpmail";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "git@github.com:jbs1/eve-srpmail.git";
