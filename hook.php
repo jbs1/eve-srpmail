@@ -16,10 +16,10 @@
   *
 **/
 // Set Variables
-$LOCAL_ROOT         = "/home/ubuntu/github-data";
-$LOCAL_REPO_NAME    = "jlecture";
+$LOCAL_ROOT         = "/home/ubuntu";
+$LOCAL_REPO_NAME    = "eve-srpmail";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
-$REMOTE_REPO        = "git@github.com:jbs1/jlecture.git";
+$REMOTE_REPO        = "git@github.com:jbs1/eve-srpmail.git";
 $BRANCH             = "master";
 $GIT_PREFIX         = "sudo GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa' git";
 
