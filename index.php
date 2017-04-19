@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/SwaggerClient-php/autoload.php');
+require_once('SwaggerClient-php/autoload.php');
 
 $api_instance = new Swagger\Client\Api\AllianceApi();
 $datasource = "tranquility"; // string | The server name you would like data from
