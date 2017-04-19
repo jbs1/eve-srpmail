@@ -33,10 +33,10 @@ usermod -a -G web_pub www-data
 * symlink the githup repo to the apache web dir (see above)
 * change dir-group to newly created group with
 ```
-chgrp web_pub ~/github-data;
-chmod g+s ~/github-data;
+chgrp web_pub ~/gh-evesrp;
+chmod g+s ~/gh-evesrp;
 ```
-* clone jlecture repo via `cd github-data && git clone git@github.com:jbs1/jlecture.git`
+* clone jlecture repo via `cd gh-evesrp && git clone git@github.com:jbs1/eve-srpmail.git`
 * create a webhook for push-event's pointing to the `hook.php` under "Settings=>Webhooks" in the github-repository
 now every website change should work automatically  
 
