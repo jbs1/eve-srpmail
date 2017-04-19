@@ -7,7 +7,7 @@ sudo service apache2 restart
 
 ### Apache Symlink
 ```
-sud ln -sf /home/ubuntu/gh-evesrp/eve-srpmail/ /var/www/html/eve
+sudo ln -sf /home/ubuntu/gh-evesrp/eve-srpmail/ /var/www/html/eve
 ```
 
 
@@ -30,7 +30,7 @@ usermod -a -G web_pub root
 usermod -a -G web_pub www-data
 ```
 * create dir `gh-evesrp` in home dir via `mkdir ~/gh-evesrp`
-* symlink the githup repo to the apache web dir
+* symlink the githup repo to the apache web dir (see above)
 * change dir-group to newly created group with
 ```
 chgrp web_pub ~/github-data;
