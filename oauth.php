@@ -32,9 +32,6 @@ if (!isset($_GET['code'])) {
 
 // Check given state against previously stored one to mitigate CSRF attack
 } elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
-	print_r($_GET);
-	echo "<br/>";
-	print_r($_SESSION);
 
     unset($_SESSION['oauth2state']);
     exit('Invalid state');
