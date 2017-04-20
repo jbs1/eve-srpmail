@@ -21,7 +21,7 @@ if (!isset($_GET['code'])) {
     // Fetch the authorization URL from the provider; this returns the
     // urlAuthorize option and generates and applies any necessary parameters
     // (e.g. state).
-    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['characterContractsRead','esi-mail.organize_mail.v1','esi-mail.read_mail.v1','esi-mail.send_mail.v1'],'scopeSeparator'=>'+']);
+    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['characterContractsRead','esi-mail.organize_mail.v1','esi-mail.read_mail.v1','esi-mail.send_mail.v1'],'scopeSeparator'=>'sad']);
 
     // Get the state generated for you and store it to the session.
     $_SESSION['oauth2state'] = $provider->getState();
