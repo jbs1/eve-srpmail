@@ -38,7 +38,9 @@ if (!isset($_GET['code'])) {
         // resource owner.
         $resourceOwner = $provider->getResourceOwner($accessToken);
 
-        echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")";
+        header("refresh:5;url=index.php");
+
+        echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")<br>You will be automatically redirected.....";
 
         //save accessToken in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
