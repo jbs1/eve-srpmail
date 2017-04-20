@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('SwaggerClient-php/autoload.php');
+//require_once('vendor/autoload.php');
+
 
 $api_instance = new Swagger\Client\Api\AllianceApi();
 $datasource = "tranquility"; // string | The server name you would like data from
@@ -14,6 +16,6 @@ $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes pre
 //     echo 'Exception when calling AllianceApi->getAlliances: ', $e->getMessage(), PHP_EOL;
 // }
 
-print_r($_SESSION['accesstoken-obj'])
+print_r($_SESSION['accesstoken-obj']->getToken());
 
 ?>
