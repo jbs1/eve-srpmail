@@ -12,11 +12,11 @@ if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 token_refresh();
 
 
-echo "bla";
+// echo "bla";
 
 // print_r($_SESSION);
-echo unserialize($_SESSION['accesstoken-obj'])->getToken()."<br>";
-echo $_SESSION['charinfo']['CharacterID'];
+echo token()."<br>";
+print_r($_SESSION['charinfo']);
 
 $api_instance = new Swagger\Client\Api\MailApi();
 $datasource = "tranquility"; // string | The server name you would like data from
