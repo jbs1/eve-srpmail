@@ -1,8 +1,6 @@
 <?php
-require_once('vendor/autoload.php');
 session_start();
-
-
+require_once('vendor/autoload.php');
 
 
 
@@ -62,11 +60,13 @@ if (!isset($_GET['code'])) {
         // The provider provides a way to get an authenticated API request for
         // the service, using the access token; it returns an object conforming
         // to Psr\Http\Message\RequestInterface.
-        $request = $provider->getAuthenticatedRequest(
-            'GET',
-            'http://brentertainment.com/oauth2/lockdin/resource',
-            $accessToken
-        );
+        // $request = $provider->getAuthenticatedRequest(
+        //     'GET',
+        //     'http://brentertainment.com/oauth2/lockdin/resource',
+        //     $accessToken
+        // );
+
+        $_SESSION['accesstoken-obj']=$accessToken;
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 
