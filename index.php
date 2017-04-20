@@ -14,19 +14,18 @@ token_refresh();
 
 echo "bla";
 
+print_r($_SESSION)
 
 
-
-$api_instance = new Swagger\Client\Api\AllianceApi();
+$api_instance = new Swagger\Client\Api\MailApi();
 $datasource = "tranquility"; // string | The server name you would like data from
-$user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
-$x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
+
 
 // try {
-//     $result = $api_instance->getAlliances($datasource, $user_agent, $x_user_agent);
+//     $result = $api_instance->getCharactersCharacterIdMailLabels( $user_agent, $x_user_agent);
 //     print_r($result);
 // } catch (Exception $e) {
-//     echo 'Exception when calling AllianceApi->getAlliances: ', $e->getMessage(), PHP_EOL;
+//     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 // }
 
 
