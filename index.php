@@ -33,5 +33,5 @@ header("refresh: 6");
 $expires_in = unserialize($_SESSION['accesstoken-obj'])->getExpires()-time();
 echo "expires in: " . $expires_in . "<br>";
 echo "access token: " . unserialize($_SESSION['accesstoken-obj'])->getToken() . "<br>";
-echo "access token: " . unserialize($_SESSION['accesstoken-obj'])->getRefreshToken() . "<br>";
+echo "refresh token: " . unserialize($_SESSION['accesstoken-obj'])->getRefreshToken() . "<br>";
 ?>
