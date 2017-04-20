@@ -24,7 +24,13 @@ function token_refresh()//refresh access token if expired
 	echo "refresh token: " . unserialize($_SESSION['accesstoken-obj'])->getRefreshToken() . "<br>";*/
 }
 
+function token(){
+	return unserialize($_SESSION['accesstoken-obj'])->getToken();
+}
 
+function charid(){
+	return $_SESSION['charinfo']['CharacterID'];
+}
 
 
 

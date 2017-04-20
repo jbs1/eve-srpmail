@@ -44,7 +44,7 @@ if (!isset($_GET['code'])) {
 
         //save accessToken and char info in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
-        $_SESSION['charinfo-arr']=$resourceOwner->toArray();
+        $_SESSION['charinfo']=$resourceOwner->toArray();
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 

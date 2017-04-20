@@ -21,12 +21,12 @@ $api_instance = new Swagger\Client\Api\MailApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
 
-// try {
-//     $result = $api_instance->getCharactersCharacterIdMailLabels( $user_agent, $x_user_agent);
-//     print_r($result);
-// } catch (Exception $e) {
-//     echo 'Exception: ', $e->getMessage(), PHP_EOL;
-// }
+try {
+    $result = $api_instance->getCharactersCharacterIdMailLabels($character_id=charid(), $token=token());
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception: ', $e->getMessage(), PHP_EOL;
+}
 
 
 
