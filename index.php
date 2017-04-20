@@ -29,8 +29,7 @@ if(unserialize($_SESSION['accesstoken-obj'])->hasExpired()){//get new access tok
     echo "access token refreshed";
 }
 
-
-
-
+$expires_in = unserialize($_SESSION['accesstoken-obj'])->getExpires()-time();
+echo $expires_in;
 
 ?>
