@@ -15,8 +15,8 @@ token_refresh();
 echo "bla";
 
 // print_r($_SESSION);
-echo chardid()."<br>";
-echo token();
+echo unserialize($_SESSION['accesstoken-obj'])->getToken()."<br>";
+echo $_SESSION['charinfo']['CharacterID'];
 
 $api_instance = new Swagger\Client\Api\MailApi();
 $datasource = "tranquility"; // string | The server name you would like data from
