@@ -18,7 +18,7 @@ $datasource = "tranquility"; // string | The server name you would like data fro
 
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailLabels($character_id=charid(), $token=token());
+    $result = $api_instance->getCharactersCharacterIdMailLabels(character_id=charid(), token=token());
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
