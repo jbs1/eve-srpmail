@@ -35,7 +35,7 @@ function charid(){
 function getcontract($charid,$token){
 	$url="https://api.eveonline.com/char/Contracts.xml.aspx?characterID=".$charid."&accessToken=".$token;
 	$answer=file_get_contents($url);
-	return $answer
+	return $answer;
 }
 
 
