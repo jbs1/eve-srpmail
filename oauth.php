@@ -13,7 +13,7 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'urlAuthorize'            => 'https://login.eveonline.com/oauth/authorize',
     'urlAccessToken'          => 'https://login.eveonline.com/oauth/token',
     'urlResourceOwnerDetails' => 'https://login.eveonline.com/oauth/verify',
-    'scopeSeparator'=>'+'
+    'scopeSeparator'=>' '
 ]);
 
 // If we don't have an authorization code then get one
