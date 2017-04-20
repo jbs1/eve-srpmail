@@ -66,7 +66,7 @@ if (!isset($_GET['code'])) {
         //     $accessToken
         // );
 
-        $_SESSION['accesstoken-obj']=serialize($accessToken);
+        $_SESSION['accesstoken-obj']=$accessToken;
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 
