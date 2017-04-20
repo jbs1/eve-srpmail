@@ -17,11 +17,6 @@ $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes pre
 //     echo 'Exception when calling AllianceApi->getAlliances: ', $e->getMessage(), PHP_EOL;
 // }
 
-// print_r(unserialize($_SESSION['accesstoken-obj'])->getToken());
-// print_r($_SESSION);
-
-
-
 if(empty($_SESSION['accesstoken-obj'])){
 	header('Location: oauth.php');
 }
