@@ -26,19 +26,12 @@ if(empty($_SESSION['accesstoken-obj'])){
 	header('Location: oauth.php');
 }
 
-
-
-function refresh()
-{
-$existingAccessToken = getAccessTokenFromYourDataStore();
-
-if ($existingAccessToken->hasExpired()) {
-    $newAccessToken = $provider->getAccessToken('refresh_token', [
-        'refresh_token' => $existingAccessToken->getRefreshToken()
+if(unserialize($_SESSION['accesstoken-obj'])->hasExpired()){//get new access token if expired
+	$newAccessToken=$provider->getAccessToken('refresh_token', [
+        'refresh_token' => unserialize($_SESSION['accesstoken-obj'])->getRefreshToken()
     ]);
-
-    // Purge old access token and store new access token to your data store.
-}
+    $_SESSION['accesstoken-obj']=serialize($newAccessToken);
+    echo "access token refreshed";
 }
 
 

@@ -38,7 +38,7 @@ if (!isset($_GET['code'])) {
         // resource owner.
         $resourceOwner = $provider->getResourceOwner($accessToken);
 
-        header("refresh:5;url=index.php");
+        header("refresh:5;url=index.php");//redirect to main page after login
 
         echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")<br>You will be automatically redirected.....";
 
