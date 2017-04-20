@@ -22,7 +22,7 @@ if (!isset($_GET['code'])) {
     // urlAuthorize option and generates and applies any necessary parameters
     // (e.g. state).
     $authorizationUrl = $provider->getAuthorizationUrl();
-    echo $authorizationUrl;
+
     // Get the state generated for you and store it to the session.
     $_SESSION['oauth2state'] = $provider->getState();
 
@@ -31,12 +31,12 @@ if (!isset($_GET['code'])) {
     exit;
 
 // Check given state against previously stored one to mitigate CSRF attack
-/*} elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
+} elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
 
     unset($_SESSION['oauth2state']);
     exit('Invalid state');
-*/
-} /*else {
+
+} else {
 
     try {
 
@@ -98,7 +98,7 @@ if ($existingAccessToken->hasExpired()) {
     // Purge old access token and store new access token to your data store.
 }
 }
-*/
+
 
 
 
