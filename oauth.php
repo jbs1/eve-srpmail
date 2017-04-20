@@ -42,8 +42,9 @@ if (!isset($_GET['code'])) {
 
         echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")<br>You will be automatically redirected.....";
 
-        //save accessToken in session.
+        //save accessToken and char info in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
+        $_SESSION['charinfo-arr']=$resourceOwner->toArray();
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 
