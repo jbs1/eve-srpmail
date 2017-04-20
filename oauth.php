@@ -12,7 +12,8 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'redirectUri'             => 'http://ec2-54-224-182-102.compute-1.amazonaws.com/eve/oauth.php',
     'urlAuthorize'            => 'https://login.eveonline.com/oauth/authorize',
     'urlAccessToken'          => 'https://login.eveonline.com/oauth/token',
-    'urlResourceOwnerDetails' => 'https://login.eveonline.com/oauth/verify'
+    'urlResourceOwnerDetails' => 'https://login.eveonline.com/oauth/verify',
+    'scopeSeparator'=>'sad'
 ]);
 
 // If we don't have an authorization code then get one
@@ -21,7 +22,7 @@ if (!isset($_GET['code'])) {
     // Fetch the authorization URL from the provider; this returns the
     // urlAuthorize option and generates and applies any necessary parameters
     // (e.g. state).
-    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['characterContractsRead','esi-mail.organize_mail.v1','esi-mail.read_mail.v1','esi-mail.send_mail.v1'],'scopeSeparator'=>'sad']);
+    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['characterContractsRead','esi-mail.organize_mail.v1','esi-mail.read_mail.v1','esi-mail.send_mail.v1']]);
 
     // Get the state generated for you and store it to the session.
     $_SESSION['oauth2state'] = $provider->getState();
