@@ -77,7 +77,7 @@ if (!isset($_GET['code'])) {
 }
 
 
-public function refresh()
+function refresh()
 {
 	$provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'clientId'                => 'demoapp',    // The client ID assigned to you by the provider
