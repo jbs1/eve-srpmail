@@ -14,8 +14,9 @@ token_refresh();
 
 echo "bla";
 
-print_r($_SESSION);
-
+// print_r($_SESSION);
+echo chardid()."<br>";
+echo token();
 
 $api_instance = new Swagger\Client\Api\MailApi();
 $datasource = "tranquility"; // string | The server name you would like data from
