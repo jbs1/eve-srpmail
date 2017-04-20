@@ -34,18 +34,11 @@ if (!isset($_GET['code'])) {
             'code' => $_GET['code']
         ]);
 
-        // We have an access token, which we may use in authenticated
-        // requests against the service provider's API.
-        echo "accesstoken: ".$accessToken->getToken() . "<br>\n";
-        echo "refreshtoken: ".$accessToken->getRefreshToken() . "<br>\n";
-        echo "expirey: ".$accessToken->getExpires() . "<br>\n";
-        echo "accesstoken: ".($accessToken->hasExpired() ? 'expired' : 'not expired') . "<br>\n";
-
         // Using the access token, we may look up details about the
         // resource owner.
         $resourceOwner = $provider->getResourceOwner($accessToken);
 
-        var_export($resourceOwner->toArray());
+        echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")";
 
         //save accessToken in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
