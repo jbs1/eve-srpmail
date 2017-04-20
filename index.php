@@ -7,6 +7,8 @@ require_once('inc.php');
 
 if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 	header('Location: oauth.php');
+} else {
+	Swagger\Client\Configuration::getDefaultConfiguration->setAccessToken(token());
 }
 
 token_refresh();
@@ -18,7 +20,7 @@ $datasource = "tranquility"; // string | The server name you would like data fro
 
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMail(character_id=charid(), token=token());
+    $result = $api_instance->getCharactersCharacterIdMail(charid());
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
