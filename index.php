@@ -12,18 +12,21 @@ if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 	Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
 }
 
-echo "id: ".charid()."<br>token: ".token()."<br>";
-
-$api_instance = new Swagger\Client\Api\MailApi();
-$datasource = "tranquility"; // string | The server name you would like data from
 
 
-try {
-    $result = $api_instance->getCharactersCharacterIdMail(charid());
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception: ', $e->getMessage(), PHP_EOL;
-}
+print_r(getcontract(charid(),token()));
+
+
+// $api_instance = new Swagger\Client\Api\MailApi();
+// $datasource = "tranquility"; // string | The server name you would like data from
+
+
+// try {
+//     $result = $api_instance->getCharactersCharacterIdMail(charid());
+//     print_r($result);
+// } catch (Exception $e) {
+//     echo 'Exception: ', $e->getMessage(), PHP_EOL;
+// }
 
 
 
