@@ -16,6 +16,6 @@ $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes pre
 //     echo 'Exception when calling AllianceApi->getAlliances: ', $e->getMessage(), PHP_EOL;
 // }
 
-print_r(unserialize($_SESSION['accesstoken-obj']));
+print_r(unserialize($_SESSION['accesstoken-obj'])->getToken());
 
 ?>
