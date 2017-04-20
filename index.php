@@ -14,7 +14,7 @@ token_refresh();
 
 echo "bla";
 
-print_r($_SESSION)
+print_r($_SESSION);
 
 
 $api_instance = new Swagger\Client\Api\MailApi();
