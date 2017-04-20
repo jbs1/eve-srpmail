@@ -47,16 +47,6 @@ if (!isset($_GET['code'])) {
 
         var_export($resourceOwner->toArray());
 
-        // The provider provides a way to get an authenticated API request for
-        // the service, using the access token; it returns an object conforming
-        // to Psr\Http\Message\RequestInterface.
-        // $request = $provider->getAuthenticatedRequest(
-        //     'GET',
-        //     'http://brentertainment.com/oauth2/lockdin/resource',
-        //     $accessToken
-        // );
-
-
         //save accessToken in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
 
@@ -68,31 +58,5 @@ if (!isset($_GET['code'])) {
     }
 
 }
-
-
-function refresh()
-{
-	$provider = new \League\OAuth2\Client\Provider\GenericProvider([
-    'clientId'                => 'demoapp',    // The client ID assigned to you by the provider
-    'clientSecret'            => 'demopass',   // The client password assigned to you by the provider
-    'redirectUri'             => 'http://example.com/your-redirect-url/',
-    'urlAuthorize'            => 'http://brentertainment.com/oauth2/lockdin/authorize',
-    'urlAccessToken'          => 'http://brentertainment.com/oauth2/lockdin/token',
-    'urlResourceOwnerDetails' => 'http://brentertainment.com/oauth2/lockdin/resource'
-]);
-
-$existingAccessToken = getAccessTokenFromYourDataStore();
-
-if ($existingAccessToken->hasExpired()) {
-    $newAccessToken = $provider->getAccessToken('refresh_token', [
-        'refresh_token' => $existingAccessToken->getRefreshToken()
-    ]);
-
-    // Purge old access token and store new access token to your data store.
-}
-}
-
-
-
 
 ?>

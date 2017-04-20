@@ -18,6 +18,29 @@ $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes pre
 // }
 
 // print_r(unserialize($_SESSION['accesstoken-obj'])->getToken());
-print_r($_SESSION);
+// print_r($_SESSION);
+
+if(empty($_SESSION['accesstoken-obj'])){
+	header('Location: oauth.php');
+}
+
+
+
+function refresh()
+{
+$existingAccessToken = getAccessTokenFromYourDataStore();
+
+if ($existingAccessToken->hasExpired()) {
+    $newAccessToken = $provider->getAccessToken('refresh_token', [
+        'refresh_token' => $existingAccessToken->getRefreshToken()
+    ]);
+
+    // Purge old access token and store new access token to your data store.
+}
+}
+
+
+
+
 
 ?>
