@@ -14,6 +14,11 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'scopeSeparator'=>' '
 ]);
 
+
+//save provider in Session
+$_SESSION['provider-obj']=serialize($provider);
+
+
 // If we don't have an authorization code then get one
 if (!isset($_GET['code'])) {
 
@@ -66,7 +71,9 @@ if (!isset($_GET['code'])) {
         //     $accessToken
         // );
 
-        $_SESSION['accesstoken-obj']=$accessToken;
+
+        //save accessToken in session.
+        $_SESSION['accesstoken-obj']=serialize($accessToken);
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 
