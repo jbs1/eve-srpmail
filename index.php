@@ -8,7 +8,7 @@ require_once('inc.php');
 if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 	header('Location: oauth.php');
 } else {
-	Swagger\Client\Configuration::getDefaultConfiguration->setAccessToken(token());
+	Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
 }
 
 token_refresh();
