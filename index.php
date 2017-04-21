@@ -13,9 +13,9 @@ if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 }
 
 
-
+echo "<pre>";
 print_r(getcontract(charid(),token()));
-//echo '<pre>'.getcontract(charid(),token()).'</pre>';
+echo "</pre>"
 
 
 // $api_instance = new Swagger\Client\Api\MailApi();
