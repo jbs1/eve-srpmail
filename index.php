@@ -49,16 +49,18 @@ echo '
 
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-				<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+				<li role="presentation" class="active"><a href="#intro" aria-controls="intro" role="tab" data-toggle="tab">Introduction</a></li>
+				<li role="presentation"><a href="#accept" aria-controls="accept" role="tab" data-toggle="tab">Accepting-Message</a></li>
+				<li role="presentation"><a href="#resubmit" aria-controls="resubmit" role="tab" data-toggle="tab">Resubmiting-Messages</a></li>
+				<li role="presentation"><a href="#reject" aria-controls="reject" role="tab" data-toggle="tab">Rejecting-Messages</a></li>
 			</ul>
 
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="home">bla</div>
-				<div role="tabpanel" class="tab-pane" id="profile">tab2</div>
-				<div role="tabpanel" class="tab-pane" id="messages">tab3</div>
+				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool</div>
+				<div role="tabpanel" class="tab-pane" id="accept">accept</div>
+				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
+				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
 			</div>
 		</div>
 		<div class="col-md-2"></div>
