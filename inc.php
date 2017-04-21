@@ -34,19 +34,20 @@ function charid(){
 
 function getcontract($charid,$token){
 	$url="https://api.eveonline.com/char/Contracts.xml.aspx?characterID=".$charid."&accessToken=".$token;
-	$url="https://raw.githubusercontent.com/jbs1/eve-srpmail/master/Contracts.xml.xml";
+	// $url="https://raw.githubusercontent.com/jbs1/eve-srpmail/master/Contracts.xml.xml";
 	print $url;
 	// $answer=file_get_contents($url);
 	$ch=curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
     	curl_setopt($ch, CURLOPT_FAILONERROR,1);
-    	curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
     	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-    	curl_setopt($ch, CURLOPT_TIMEOUT, 15);
-	$answer=curl_exec($ch);
+    	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+	$raw=curl_exec($ch);
 	curl_close($ch);
 
-	return $answer;
+	$xml = simplexml_load_string($raw);
+
+	return $xml;
 }
 
 
