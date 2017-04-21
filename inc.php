@@ -41,7 +41,7 @@ function getcontract($charid,$token){
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 	$raw=curl_exec($ch);
 	curl_close($ch);
-	return $raw;
+	return simplexml_load_string($raw);
 }
 
 
