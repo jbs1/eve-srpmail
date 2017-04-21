@@ -13,7 +13,7 @@ if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 }
 
 
-echo "<html>\n<head>\n";
+echo "<!DOCTYPE html>\n<html>\n<head>\n";
 
 echo'
 <!-- Latest compiled and minified CSS -->
@@ -24,10 +24,10 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
-echo "<\head>\n<body>\n";
+echo "<title>srp mail</title>\n</head>\n<body>\n";
 
 
-echo "<\body>\n<\html>\n";
+echo "</body>\n</html>\n";
 
 
 
