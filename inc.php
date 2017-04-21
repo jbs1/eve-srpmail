@@ -33,14 +33,15 @@ function charid(){
 }
 
 function getcontract($charid,$token){
-	$url='https://api.eveonline.com/char/Contracts.xml.aspx?characterID='.$charid.'&accessToken='.$token;
+	$url='https://api.eveonline.com/char/Contracts.xml.aspx?characterID='.$charid.'&'.'accessToken='.$token;
 	print "<p>".$url."</p>";
 	$ch=curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_FAILONERROR,1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	curl_setopt($ch, CURLOPT_HEADER, 0);
 	$raw=curl_exec($ch);
 	curl_close($ch);
 
