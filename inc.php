@@ -14,7 +14,7 @@ function token_refresh()//refresh access token if expired
 			'refresh_token' => unserialize($_SESSION['accesstoken-obj'])->getRefreshToken()
 		]);
 		$_SESSION['accesstoken-obj']=serialize($newAccessToken);
-		echo "access token refreshed";
+		// echo "access token refreshed";
 	}
 
 	//DEBUG
@@ -34,8 +34,6 @@ function charid(){
 
 function getcontract($charid,$token){
 	$url="https://api.eveonline.com/char/Contracts.xml.aspx?characterID=".$charid."&accessToken=".$token;
-	print $url;
-	$answer=file_get_contents($url);
 	$ch=curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_FAILONERROR,1);
