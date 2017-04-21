@@ -40,8 +40,9 @@ function getcontract($charid,$token){
 	curl_setopt($ch, CURLOPT_FAILONERROR,1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/x-www-from-urlencoded'));
+	// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/x-www-from-urlencoded'));
 	// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)');
 	$raw=curl_exec($ch);
 	curl_close($ch);
 
