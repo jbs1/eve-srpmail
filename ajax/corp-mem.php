@@ -11,7 +11,7 @@ $api_instance_char = new Swagger\Client\Api\CharacterApi();
 
 try {
     $char = $api_instance_char->getCharactersCharacterId(charid());
-    print_r($char);
+    print_r($char['corporation_id']);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 }
