@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once('/vendor/autoload.php');
-require_once('/provider.php');
+require_once('vendor/autoload.php');
+require_once('provider.php');
 
 
 // If we don't have an authorization code then get one
