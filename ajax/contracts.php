@@ -14,7 +14,7 @@ $json['attributes']=$raw->result->rowset->attributes();
 $json['row']=array();
 // print_r($raw->result->rowset);
 foreach ($raw->result->rowset->row as $value) {
-	$json['row'].append($value->attributes());
+	array_push($json['row'],$value->attributes());
 }
 
 print_r($json);
