@@ -5,6 +5,8 @@ require_once('../vendor/autoload.php');
 require_once('../provider.php');
 require_once('../inc.php');
 
+token_refresh();
+
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
 print_r(getcontract(charid(),token()));
