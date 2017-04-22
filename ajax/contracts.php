@@ -12,6 +12,7 @@ $json['@attributes']=$raw['result']['@attributes'];
 foreach ($raw['result']['row'] as $key => $value) {
 	$json['row'][$key]=$value['@attributes'];
 }
+print_r($json);
 print_r(getcontract(charid(),token()));
 echo json_encode(getcontract(charid(),token()));
 
