@@ -9,6 +9,7 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
+$json=new stdClass;
 $json=$raw->result->rowset->attributes();
 // print_r($json);
 
@@ -21,7 +22,7 @@ $json=$raw->result->rowset->attributes();
 // // $json['row']=array();
 // // print_r($raw->result->rowset);
 $json->row="wsadsa";
-print_r($raw->result->rowset->row);
+// print_r($raw->result->rowset->row);
 // foreach ($raw->result->rowset->row as $value) {
 // 	array_push($json->row,$value->attributes());
 // 	// foreach ($value->attributes() as $key => $value) {
