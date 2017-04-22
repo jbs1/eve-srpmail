@@ -15,8 +15,8 @@ $json['attributes']=$raw->result->rowset->{'@attributes'};
 // 	$json['row'][$key]=$value['@attributes'];
 // }
 $bla='@attributes';
-print_r($raw->result->rowset->$bla);
-print_r($json);
+print_r($raw->result->rowset->attributes());
+// print_r($json);
 print_r($raw);
 // echo json_encode(getcontract(charid(),token()));
 
