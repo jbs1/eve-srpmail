@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once('SwaggerClient-php/autoload.php');
-require_once('vendor/autoload.php');
-require_once('provider.php');
-require_once('inc.php');
+require_once('/SwaggerClient-php/autoload.php');
+require_once('/vendor/autoload.php');
+require_once('/provider.php');
+require_once('/inc.php');
 
 if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 	header('Location: oauth.php');
@@ -44,8 +44,7 @@ echo '<!-- JQuery -->
 echo '
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
+		<div class="col-md-8 col-md-offset-2">
 
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
@@ -63,7 +62,6 @@ echo '
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
 			</div>
 		</div>
-		<div class="col-md-2"></div>
 	</div>
 </div>
 ';
