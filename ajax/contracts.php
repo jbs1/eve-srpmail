@@ -10,7 +10,7 @@ token_refresh();
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
 $json=array();
-print_r($raw->result->rowset->attributes());
+print_r($raw->result->rowset->attributes()[0]);
 $json['attributes']=$raw->result->rowset->attributes();
 $json['row']=array();
 // print_r($raw->result->rowset);
