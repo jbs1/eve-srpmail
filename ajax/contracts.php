@@ -9,7 +9,13 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
-print_r(getcontract(charid(),token()));
-echo json_encode(getcontract(charid(),token()));
+$json=array();
+$json['@attributes']=$raw->result->rowset->{'@attributes'};
+// foreach ($raw['result']['row'] as $key => $value) {
+// 	$json['row'][$key]=$value['@attributes'];
+// }
+print_r($json)
+print_r($raw);
+// echo json_encode(getcontract(charid(),token()));
 
 ?>
