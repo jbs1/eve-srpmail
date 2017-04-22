@@ -7,11 +7,13 @@ require_once('../inc.php');
 
 header('Content-Type: application/json;charset=utf-8');
 
-$api_instance_char = new Swagger\Client\Api\CharacterApi();
+$api_instance = new Swagger\Client\Api\CorpporationApi();
+$datasource = "tranquility"; // string | The server name you would like data from
+
 
 try {
-    $char = $api_instance_char->getCharactersCharacterId(charid());
-    print_r($char['corporation_id']);
+    $corpmem = $api_instance->getCorporationsCorporationIdMembers(cropid($charid));
+    echo json_encode($corpmem);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 }

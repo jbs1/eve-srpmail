@@ -32,6 +32,16 @@ function charid(){
 	return $_SESSION['charinfo']['CharacterID'];
 }
 
+function corpid($charid){
+	$api_instance = new Swagger\Client\Api\CharacterApi();
+	try {
+	    $char = $api_instance->getCharactersCharacterId($charid);
+	    return $char['corporation_id'];
+	} catch (Exception $e) {
+	    echo 'Exception: ', $e->getMessage(), PHP_EOL;
+	}
+}
+
 function getcontract($charid,$token){
 	$url="https://api.eveonline.com/char/Contracts.xml.aspx?characterID=".$charid."&accessToken=".$token;
 	$ch=curl_init();
