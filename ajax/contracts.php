@@ -9,7 +9,7 @@ header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
 $json=array();
 // print_r($raw['result']['row'] );
-$json['@attributes']=$raw->result->{'@attributes'};
+// $json['@attributes']=$raw->result->{'@attributes'};
 // foreach ($raw['result']['row'] as $key => $value) {
 // 	$json['row'][$key]=$value['@attributes'];
 // }
