@@ -10,16 +10,23 @@ token_refresh();
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
 $json=array();
-print_r($raw->result->rowset->attributes()[0]);
-$json['attributes']=$raw->result->rowset->attributes();
-$json['row']=array();
+print_r($raw->result->rowset->attributes());
+foreach ($raw->result->rowset->attributes() as $key => $value) {
+	$json['attributes'][$key]=$value;
+}
+// $raw->result->rowset->attributes()
+// $json['attributes']=$raw->result->rowset->attributes();
+// $json['row']=array();
 // print_r($raw->result->rowset);
 foreach ($raw->result->rowset->row as $value) {
-	array_push($json['row'],$value->attributes());
+	// array_push($json['row'],$value->attributes());
+	foreach ($value->attributes() as $key => $value) {
+		$json['row'][$key]=$value;
+	}
 }
 
-// print_r($json);
-// print_r($raw);
+print_r($json);
+print_r($raw);
 // echo json_encode(getcontract(charid(),token()));
 
 ?>
