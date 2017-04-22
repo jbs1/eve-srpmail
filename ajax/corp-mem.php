@@ -12,7 +12,7 @@ $datasource = "tranquility"; // string | The server name you would like data fro
 
 
 try {
-    $corpmem = $api_instance->getCorporationsCorporationIdMembers(cropid($charid));
+    $corpmem = $api_instance->getCorporationsCorporationIdMembers(corpid(charid()));
     echo json_encode($corpmem);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
