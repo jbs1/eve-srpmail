@@ -7,7 +7,7 @@ require_once('../inc.php');
 
 header('Content-Type: application/json;charset=utf-8');
 
-$api_instance = new Swagger\Client\Api\CorpporationApi();
+$api_instance = new Swagger\Client\Api\CorporationApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
 
