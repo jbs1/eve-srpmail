@@ -13,7 +13,7 @@ $raw=getcontract(charid(),token());
 // print_r($json);
 
 foreach ($raw->result->rowset->attributes() as $key => $value) {
-	$json->attributes->[$key]=$value[0];
+	$json->attributes->$key=$value[0];
 }
 print_r($json);
 // // // $raw->result->rowset->attributes()
