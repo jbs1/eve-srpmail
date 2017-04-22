@@ -19,7 +19,7 @@ try {
     foreach ($corpmem as $key => $value) {
     	$json[$key]=$value['character_id'];
     }
-    print_r($json)
+    print_r($json);
     echo json_encode($corpmem);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
