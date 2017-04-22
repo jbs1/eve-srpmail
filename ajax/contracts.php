@@ -9,12 +9,12 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
-// $json->attributes=$raw->result->rowset->attributes();
+$json=$raw->result->rowset->attributes();
 // print_r($json);
 
-foreach ($raw->result->rowset->attributes() as $key => $value) {
-	$json->attributes->$key=$value[0];
-}
+// foreach ($raw->result->rowset->attributes() as $key => $value) {
+// 	$json->attributes->$key=$value[0];
+// }
 print_r($json);
 // // // $raw->result->rowset->attributes()
 // // $json['attributes']=$raw->result->rowset->attributes();
