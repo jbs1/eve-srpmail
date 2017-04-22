@@ -20,12 +20,12 @@ print_r($json);
 // // $json['attributes']=$raw->result->rowset->attributes();
 // // $json['row']=array();
 // // print_r($raw->result->rowset);
-// foreach ($raw->result->rowset->row as $value) {
-// 	// array_push($json['row'],$value->attributes());
-// 	foreach ($value->attributes() as $key => $value) {
-// 		$json['row'][$key]=$value[0];
-// 	}
-// }
+foreach ($raw->result->rowset->row as $value) {
+	array_push($json['row'],$value->attributes());
+	// foreach ($value->attributes() as $key => $value) {
+	// 	$json['row'][$key]=$value[0];
+	// }
+}
 
 // print_r($json);
 // print_r($raw);
