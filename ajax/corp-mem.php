@@ -7,7 +7,15 @@ require_once('../inc.php');
 
 header('Content-Type: application/json;charset=utf-8');
 
-// echo json_encode(getcontract(charid(),token()));
-print_r($_SESSION['charinfo']);
+$api_instance_char = new Swagger\Client\Api\CharacterApi();
+
+try {
+    $char = $api_instance_char->getCharactersCharacterId(charid());
+    print_r($char);
+} catch (Exception $e) {
+    echo 'Exception: ', $e->getMessage(), PHP_EOL;
+}
+
+
 
 ?>
