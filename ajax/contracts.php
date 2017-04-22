@@ -10,7 +10,7 @@ $raw=getcontract(charid(),token());
 $json=array();
 $json['@attributes']=$raw['result']['@attributes'];
 foreach ($raw['result']['row'] as $key => $value) {
-	$json['row'][$key]=$value['@attributes']
+	$json['row'][$key]=$value['@attributes'];
 }
 print_r(getcontract(charid(),token()));
 echo json_encode(getcontract(charid(),token()));
