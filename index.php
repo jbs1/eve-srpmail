@@ -36,20 +36,7 @@ echo'
 ';
 
 
-echo '
-<script>
-$(function (){
-	$.ajax({
-		type: \'GET\',
-		url: \'ajax/contracts.php\',
-		success: function(data){
-			console.log(\'success\',data);
-		}
-	});
-});
-</script>
-
-<title>srp mail</title>
+echo '<title>srp mail</title>
 </head>
 <body>';
 
@@ -75,7 +62,23 @@ echo '
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool</div>
-				<div role="tabpanel" class="tab-pane" id="accept">accept</div>
+				<div role="tabpanel" class="tab-pane" id="accept">
+					<script>
+						$(function (){
+							$.ajax({
+								type: \'GET\',
+								url: \'ajax/contracts.php\',
+								success: function(data){
+									console.log(\'success\',data);
+								}
+							});
+						});
+					</script>
+
+
+
+
+				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
 			</div>
