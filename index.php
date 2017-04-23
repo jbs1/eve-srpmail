@@ -39,7 +39,7 @@ echo'
 echo '
 <script>
 $(function (){
-	$.alert("dsadassda");
+	alert("dsadassda");
 });
 </script>
 
