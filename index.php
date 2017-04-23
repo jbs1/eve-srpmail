@@ -45,7 +45,7 @@ echo '
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-md-12 col-md-offset-2 page-header">
+		<div class="col-md-12 page-header">
 			<h1>EVE srp mail <small>An assistant for srp officers</small></h1>
 		</div>
 	</div>
