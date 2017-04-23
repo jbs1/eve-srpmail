@@ -39,7 +39,13 @@ echo'
 echo '
 <script>
 $(function (){
-	alert("dsadassda");
+	$.ajax({
+		type: \'GET\',
+		url: \'/ajax/contracts.php\',
+		success: function(data){
+			console.log(data);
+		}
+	});
 });
 </script>
 
