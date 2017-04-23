@@ -9,6 +9,7 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token());
+print_r($raw)
 $json=$raw->result->rowset;
 echo json_encode($json);
 
