@@ -43,7 +43,7 @@ $(function (){
 		type: \'GET\',
 		url: \'/ajax/contracts.php\',
 		success: function(data){
-			console.log(data);
+			console.log(\'success\',data);
 		}
 	});
 });
