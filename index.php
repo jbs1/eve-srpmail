@@ -64,7 +64,7 @@ $(function (){
 	})
 });
 </script>
-';}
+';
 
 
 echo '<title>srp mail</title>
