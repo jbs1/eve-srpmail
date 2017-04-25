@@ -9,7 +9,7 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 
-$api_crop = new Swagger\Client\Api\CorporationApi();
+$api_corp = new Swagger\Client\Api\CorporationApi();
 $api_universe = new Swagger\Client\Api\UniverseApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
