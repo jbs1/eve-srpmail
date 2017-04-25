@@ -26,7 +26,7 @@ try {
     }
     $json=array();
     foreach ($chars as $value){
-        array_push($json,array($value['id'],$value['name']));
+        array_push($json,array($value['id']=>$value['name']));
     }
     echo json_encode($json);
     $_SESSION['corpmem']=$json;//save in ses for caching
