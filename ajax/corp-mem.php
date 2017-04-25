@@ -26,6 +26,8 @@ try {
     }
     $json=array();
     foreach ($chars as $value){
+        print_r($value);
+        print_r(array($value['id'],$value['name']));
         array_push($json,array($value['id'],$value['name']));
     }
     print_r($json);
