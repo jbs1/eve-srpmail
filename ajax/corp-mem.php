@@ -24,7 +24,7 @@ try {
     foreach ($split_ids as $value){
         $chars=array_merge($json,$api_universe->postUniverseNames($value, $datasource));
     }
-    $json=array()
+    $json=array();
     foreach ($chars as $value){
         array_push($json,array($value['id'],$value['name']));
     }
