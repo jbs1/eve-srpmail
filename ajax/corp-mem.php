@@ -20,7 +20,7 @@ try {
     	$ids[$key]=$value['character_id'];
     }
     $split_ids=array_chunk($ids,1000);
-    echo $split_ids;
+    print_r($split_ids);
 //     $json=array();
 //     foreach ($split_ids as $value){
 //         $json=array_merge($json,$api_universe->postUniverseNames($value, $datasource));
