@@ -29,6 +29,7 @@ try {
         array_push($json,array($value['id'],$value['name']));
     }
     echo json_encode($json);
+    $_SESSION['corpmem']=$json;//save in ses for caching
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 }
