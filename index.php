@@ -53,7 +53,7 @@ echo '
 echo '
 <script>
 $(function (){
-	$('a[data-toggle="tab"][href="#accept"]').on('shown.bs.tab', function (e) {
+	$(\'a[data-toggle="tab"][href="#accept"]\').on(\'shown.bs.tab\', function (e) {
 		$.ajax({
 			type: \'GET\',
 			url: \'ajax/contracts.php\',
