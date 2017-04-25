@@ -22,13 +22,10 @@ try {
     $split_ids=array_chunk($ids,1000);
     $chars=array();
     foreach ($split_ids as $value){
-        $chars=array_merge($json,$api_universe->postUniverseNames($value, $datasource));
+        $chars=array_merge($chars,$api_universe->postUniverseNames($value, $datasource));
     }
     $json=array();
-    print_r($chars);
     foreach ($chars as $value){
-        print_r($value);
-        print_r(array($value['id'],$value['name']));
         array_push($json,array($value['id'],$value['name']));
     }
     print_r($json);
