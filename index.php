@@ -51,12 +51,6 @@ echo '
 ';}
 
 echo '
-
-  e.target // newly activated tab
-  e.relatedTarget // previous active tab  
-
-
-
 <script>
 $(function (){
 	$('a[data-toggle="tab"][href="#accept"]').on('shown.bs.tab', function (e) {
@@ -70,12 +64,7 @@ $(function (){
 	})
 });
 </script>
-
-
-
 ';}
-
-
 
 
 echo '<title>srp mail</title>
