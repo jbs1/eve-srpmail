@@ -11,11 +11,8 @@ header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token())->result->rowset;
 $json=array();
 foreach ($raw->row as $value) {
-	// print_r($value);
 	array_push($json,$value);
 }
-// 
-
 
 echo json_encode($json);
 
