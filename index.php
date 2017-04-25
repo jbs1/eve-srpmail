@@ -43,7 +43,7 @@ echo '
 			type: \'GET\',
 			url: \'ajax/corp-mem.php\',
 			success: function(data){
-				console.log(\'success\',data);
+				console.log(\'Corp-Mem\',data);
 			}
 		});
 	});
@@ -58,7 +58,7 @@ $(function (){
 			type: \'GET\',
 			url: \'ajax/contracts.php\',
 			success: function(data){
-				console.log(\'success\',data);
+				console.log(\'Contracts\',data);
 			}
 		})
 	})
