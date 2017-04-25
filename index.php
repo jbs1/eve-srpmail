@@ -35,6 +35,23 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
+if(empty($_SESSION['corpmem'])){
+echo'
+<script>
+	$(function (){
+		$.ajax({
+			type: \'GET\',
+			url: \'ajax/corp-mem.php\',
+			success: function(data){
+				console.log(\'success\',data);
+			}
+		});
+	});
+</script>
+';	
+}
+
+
 
 echo '<title>srp mail</title>
 </head>
