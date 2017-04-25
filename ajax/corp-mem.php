@@ -25,6 +25,7 @@ try {
         $chars=array_merge($json,$api_universe->postUniverseNames($value, $datasource));
     }
     $json=array();
+    print_r($chars);
     foreach ($chars as $value){
         print_r($value);
         print_r(array($value['id'],$value['name']));
