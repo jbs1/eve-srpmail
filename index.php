@@ -36,7 +36,7 @@ echo'
 ';
 
 if(empty($_SESSION['corpmem'])){
-echo'
+echo '
 <script>
 	$(function (){
 		$.ajax({
@@ -48,8 +48,33 @@ echo'
 		});
 	});
 </script>
-';	
-}
+';}
+
+echo '
+
+  e.target // newly activated tab
+  e.relatedTarget // previous active tab  
+
+
+
+<script>
+$(function (){
+	$('a[data-toggle="tab"][href="#accept"]').on('shown.bs.tab', function (e) {
+		$.ajax({
+			type: \'GET\',
+			url: \'ajax/contracts.php\',
+			success: function(data){
+				console.log(\'success\',data);
+			}
+		})
+	})
+});
+</script>
+
+
+
+';}
+
 
 
 
@@ -80,21 +105,6 @@ echo '
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
-					<script>
-						$(function (){
-							$.ajax({
-								type: \'GET\',
-								url: \'ajax/contracts.php\',
-								success: function(data){
-									console.log(\'success\',data);
-								}
-							});
-						});
-					</script>
-
-
-
-
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
