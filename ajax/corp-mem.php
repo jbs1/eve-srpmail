@@ -28,13 +28,7 @@ try {
     foreach ($chars as $value){
         array_push($json,array($value['id'],$value['name']));
     }
-    print_r($json);
-//     echo'
-//     <script>
-//     console.log(\'json\',JSON.parse('.json_encode($json).'));
-//     </script>
-//     ';
-//     echo json_encode($json);
+    echo json_encode($json);
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 }
