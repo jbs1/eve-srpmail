@@ -21,11 +21,11 @@ try {
     }
     $split_ids=array_chunk($ids,1000);
     print_r($split_ids);
-//     $json=array();
+    $json=array();
     foreach ($split_ids as $value){
-        print_r($api_universe->postUniverseNames($value, $datasource));
-//         $json=array_merge($json,$api_universe->postUniverseNames($value, $datasource));
+        $json=array_merge($json,$api_universe->postUniverseNames($value, $datasource));
     }
+    print_r($json);
 //     echo'
 //     <script>
 //     console.log(\'json\',JSON.parse('.json_encode($json).'));
