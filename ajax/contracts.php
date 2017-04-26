@@ -12,7 +12,7 @@ $raw=getcontract(charid(),token())->result->rowset;
 $json=array();
 
 foreach ($raw->row as $value) {
-	if($value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&strtotime($value["dateIssued"])>strtotime('-18 day')){
+	if($value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&strtotime($value["dateIssued"])>strtotime('-25 day')){
 		array_push($json,$value);
 	}
 }
