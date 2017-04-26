@@ -10,9 +10,9 @@ token_refresh();
 header('Content-Type: application/json;charset=utf-8');
 $raw=getcontract(charid(),token())->result->rowset;
 $json=array();
-echo date("Y-m-d H:i:s",strtotime('-5 hour'));
+
 foreach ($raw->row as $value) {
-	if($value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"){
+	if($value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&strtodate($value["dateIssued"])<strtotime('-18 day')){
 		array_push($json,$value);
 	}
 }
