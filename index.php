@@ -60,7 +60,7 @@ $(function (){
 			success: function(data){
 				console.log(\'Contracts\',data);
 				$.each(data,function(i, item){
-					$("#cont-table").append("<tr><td>bla</td></tr>");
+					$("table#cont-table > tbody").append("<tr><td>bla</td></tr>");
 				});
 			}
 		})
@@ -98,6 +98,12 @@ echo '
 				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
 					<table class="table table-striped" id="cont-table">
+						<thead>
+						<tr>
+						<th>Reciever</th><th>Time issued</th>
+						</tr>
+						</thead>
+						<tbody></tbody>
 					</table>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
