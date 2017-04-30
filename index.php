@@ -59,6 +59,9 @@ $(function (){
 			url: \'ajax/contracts.php\',
 			success: function(data){
 				console.log(\'Contracts\',data);
+				$.each(data,function(i, item){
+					$(\'#cont-table\').appened("<tr><td>bla</td></tr>")
+				});
 			}
 		})
 	})
@@ -94,6 +97,8 @@ echo '
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
+					<table class="table table-striped" id="cont-table">
+					</table>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
