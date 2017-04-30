@@ -60,7 +60,15 @@ $(function (){
 			success: function(data){
 				console.log(\'Contracts\',data);
 				$.each(data,function(i, item){
-					$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>");
+					var flag = 0;
+					$("table#cont-table > tbody > tr > td:eq(0)").each(function(i,e){
+						if(e.val() == item["@attributes"].contractID){
+							flag = 1;
+						}
+					});
+					if(flag==0){
+						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>")
+					}
 				});
 			}
 		})
@@ -100,7 +108,7 @@ echo '
 					<table class="table table-striped" id="cont-table">
 						<thead>
 						<tr>
-						<th>Reciever</th><th>Time issued</th>
+						<th>Contract ID</th><th>Reciever</th><th>Time issued</th>
 						</tr>
 						</thead>
 						<tbody></tbody>
