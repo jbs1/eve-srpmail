@@ -61,8 +61,10 @@ $(function (){
 				console.log(\'Contracts\',data);
 				$.each(data,function(i, item){
 					var flag = 0;
-					$("table#cont-table > tbody > tr > td:eq(0)").each(function(i,e){
-						console.log(e)
+					$("table#cont-table > tbody > tr > td:eq(0)").each(function(){
+						if($(this).val() == item["@attributes"].contractID){
+							flag = 1;
+						}
 					});
 					if(flag==0){
 						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>")
