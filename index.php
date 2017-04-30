@@ -60,7 +60,7 @@ $(function (){
 			success: function(data){
 				console.log(\'Contracts\',data);
 				$.each(data,function(i, item){
-					$(\'#cont-table\').append("<tr><td>bla</td></tr>")
+					$("#cont-table").append("<tr><td>bla</td></tr>");
 				});
 			}
 		})
