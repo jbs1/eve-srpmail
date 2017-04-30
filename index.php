@@ -60,7 +60,7 @@ $(function (){
 			success: function(data){
 				console.log(\'Contracts\',data);
 				$.each(data,function(i, item){
-					$("table#cont-table > tbody").append("<tr><td>bla</td></tr>");
+					$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>");
 				});
 			}
 		})
