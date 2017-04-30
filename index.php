@@ -35,7 +35,7 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
-// if(empty($_SESSION['corpmem'])){
+if(empty($_SESSION['corpmem'])){
 echo '
 <script>
 	$(function (){
@@ -48,8 +48,7 @@ echo '
 		});
 	});
 </script>
-';
-// }
+';}
 
 echo '
 <script>
@@ -96,7 +95,7 @@ echo '
 
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool</div>
+				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool'.phpinfo().'</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
 					<table class="table table-striped" id="cont-table">
 						<thead>
