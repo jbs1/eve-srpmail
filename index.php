@@ -35,7 +35,7 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
-if(empty($_SESSION['corpmem'])){
+// if(empty($_SESSION['corpmem'])){
 echo '
 <script>
 	$(function (){
@@ -48,7 +48,8 @@ echo '
 		});
 	});
 </script>
-';}
+';
+// }
 
 echo '
 <script>
