@@ -35,20 +35,21 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
-if(empty($_SESSION['corpmem'])){
 echo '
 <script>
+	var mem;
 	$(function (){
 		$.ajax({
 			type: \'GET\',
 			url: \'ajax/corp-mem.php\',
 			success: function(data){
-				console.log(\'Corp-Mem\',data);
+				mem = data;
+				console.log(\'Corp-Mem\',mem);
 			}
 		});
 	});
 </script>
-';}
+';
 
 echo '
 <script>
@@ -66,6 +67,7 @@ $(function (){
 							flag = 1;
 						}
 					});
+					console.log(\'Corp-Mem\',mem);
 					if(flag==0){
 						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>")
 					}
