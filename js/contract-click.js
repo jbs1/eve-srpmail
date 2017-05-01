@@ -1,5 +1,6 @@
 $(function (){
-	$('#cont-table > tbody > tr').click(function () {
+	$('table#cont-table > tbody > tr').click(function () {
+		console.log("bla");
 		$.ajax({
 			type: 'GET',
 			url: 'ajax/contract-form.php',
