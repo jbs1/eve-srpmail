@@ -24,7 +24,7 @@ print_r($station);
 <textarea class="form-control" id="intro-text" rows="8" readonly>
 Hello,<br><br>
 I have reviewed and approved your SRP request.<br><br>
-Your replacement ship is avialable at the following station: [Station link]<br><br>
+Your replacement ship is avialable at the following station: <url=showinfo:<?php echo $station['type_id']."//".$station['station_id'];?>></url><br><br>
 The contract for the ship can be found here: [contract link]<br><br>
 
 <br><br><url=showinfo:57//60014731>Slays VII - Moon 3 - Center for Advanced Studies School</url>
