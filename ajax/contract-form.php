@@ -40,18 +40,19 @@ The contract for the ship can be found here: <url=contract:<?php echo $station['
 
 <div class="form-group">
 <label for="optional-text">Optional comments for the mail</label>
-<textarea class="form-control" id="optional-text" rows="5">
+<textarea class="form-control" id="optional-text" rows="4">
 </textarea>
 <small id="optional-help" class="form-text text-muted">Use &quot;&lt;br&gt;&quot; to start a new line</small>
 </div>
 
 <div class="form-group">
-<textarea class="form-control" id="end-text" rows="8" readonly>
+<textarea class="form-control" id="end-text" rows="4" readonly>
 Fly Safe,<br>
 <url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem'][charid()]; ?></url><br>
 <url=showinfo:2//917701062>EVE University</url>
 </textarea>
 </div>
+<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
 </dif>

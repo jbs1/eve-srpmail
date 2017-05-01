@@ -22,7 +22,17 @@ $(function (){
 								data: {"contid":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
 								success: function(data){
 									$("table#cont-table").hide(350);
-									$('#accept').append(data);
+									var form=$('#accept').append(data);
+									form.children('.contrfrm > form').submit(function(event) {
+										type: 'POST',
+										url: 'form/accept.php'
+										data: $(this).serialize(),
+										success: function(data){
+											$('#accept').append(data);
+										}
+									});
+
+
 								}
 							})
 						})
