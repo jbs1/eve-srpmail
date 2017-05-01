@@ -23,22 +23,22 @@ $(function (){
 								success: function(data){
 									$("table#cont-table").hide(350);
 									var form=$('#accept').append(data);
-									form.children('.contrfrm > form').submit(function(event) {
-										method: "POST",
-										url: 'form/accept.php',
-										data: $(this).serialize(),
-										success: function(data){
-											$('#accept').append(data);
-										}
-									});
-
-
+									form.children('.contrfrm > form').submit(function() {
+										$.ajax({
+											method: 'POST',
+											url: 'form/accept.php',
+											data: $(this).serialize(),
+											success: function(data){
+												$('#accept').append(data);
+											}
+										})
+									})
 								}
 							})
 						})
 					}
-				});
+				})
 			}
 		})
 	})
-});
+})
