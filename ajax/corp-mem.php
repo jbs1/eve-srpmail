@@ -30,6 +30,7 @@ try {
             $json->$value['id'] = $value['name'];
             // array_push($json,array($value['id']=>$value['name']));
         }
+        print_r($json)
         $_SESSION['corpmem']=$json;//save in ses for caching
         echo json_encode($_SESSION['corpmem'],TRUE);
     // } else {
