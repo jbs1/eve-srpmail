@@ -25,7 +25,7 @@ try {
         foreach ($split_ids as $value){
             $chars=array_merge($chars,$api_universe->postUniverseNames($value, $datasource));
         }
-        $json=new stdClass();
+        $json=array();
         foreach ($chars as $value){
             $json[$value['id']] = $value['name'];
             // array_push($json,array($value['id']=>$value['name']));
