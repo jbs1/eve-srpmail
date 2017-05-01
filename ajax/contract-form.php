@@ -16,7 +16,7 @@ a<br>
 <label for="optional-text">Optional comments for the mail</label>
 <textarea class="form-control" id="optional-text" rows="5">
 </textarea>
-<small id="optional-help" class="form-text text-muted">Use &gt;br&lt; to start a new line</small>
+<small id="optional-help" class="form-text text-muted">Use &quot;&lt;br&gt;&quot; to start a new line</small>
 </div>
 
 <div class="form-group">
