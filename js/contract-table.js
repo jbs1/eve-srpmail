@@ -15,6 +15,16 @@ $(function (){
 					});
 					if(flag==0){
 						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
+						$('#cont-table > tbody > tr').click(function () {
+							console.log("bla");
+							// $.ajax({
+							// 	type: 'GET',
+							// 	url: 'ajax/contract-form.php',
+							// 	success: function(data){
+							// 		$('#accept').html(data);
+							// 	}
+							// })
+						})
 					}
 				});
 			}

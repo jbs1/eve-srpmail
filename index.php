@@ -39,20 +39,6 @@ echo'
 echo '
 <script src="js/corp.js"></script>
 <script src="js/contract-table.js"></script>
-<script>
-$(function (){
-	$(\'#intro\').click(function () {
-		console.log("bla");
-		$.ajax({
-			type: \'GET\',
-			url: \'ajax/contract-form.php\',
-			success: function(data){
-				$(\'#accept\').html(data);
-			}
-		})
-	})
-});
-</script>
 ';
 
 
