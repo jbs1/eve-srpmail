@@ -12,14 +12,27 @@ $value=array($_GET["station"],$_GET["assignee"]);
 $api_universe = new Swagger\Client\Api\UniverseApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);
-print_r($station);
-
 ?>
 
 <div id="contrfrm">
 <h2>SRP accepted!</h2>
 
 <form>
+<div class="form-group">
+<label for="sender">Sender:</label>
+<input type="text" class="form-control" id="sender" placeholder="" readonly>
+</div>
+
+<div class="form-group">
+<label for="reciever">Reciever:</label>
+<input type="text" class="form-control" id="reciever" placeholder="" readonly>
+</div>
+
+<div class="form-group">
+<label for="subject">Subject:</label>
+<input type="text" class="form-control" id="subject" placeholder="" readonly>
+</div>
+
 <div class="form-group">
 <textarea class="form-control" id="intro-text" rows="8" readonly>
 Hello,<br><br>
