@@ -24,7 +24,7 @@ $(function (){
 									$("table#cont-table").hide(350);
 									var form=$('#accept').append(data);
 									form.children('.contrfrm > form').submit(function(event) {
-										type: 'POST',
+										method: "POST",
 										url: 'form/accept.php',
 										data: $(this).serialize(),
 										success: function(data){
