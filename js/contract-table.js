@@ -20,6 +20,7 @@ $(function (){
 							$.ajax({
 								type: 'GET',
 								url: 'ajax/contract-form.php',
+								data: {"contID":item["@attributes"].contractID,"station":"bla"},
 								success: function(data){
 									$('#accept').html(data);
 								}
