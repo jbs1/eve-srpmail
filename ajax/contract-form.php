@@ -43,7 +43,7 @@ echo $station['system_id']."//".$_GET['contid'];
 <div class="form-group">
 <textarea class="form-control" id="end-text" rows="8" readonly>
 Fly Safe,<br>
-<url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem']->charid(); ?></url>
+<url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem'][charid()]; ?></url>
 <br>
 <url=showinfo:2//917701062>EVE University</url>
 </textarea>
