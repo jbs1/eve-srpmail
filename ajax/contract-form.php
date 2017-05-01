@@ -7,15 +7,16 @@ require_once('../inc.php');
 
 
 token_refresh();
-$value=array($_GET["contID"],$_GET["station"],$_GET["assignee"]);
+$value=array($_GET["station"],$_GET["assignee"]);
 
 $api_universe = new Swagger\Client\Api\UniverseApi();
 $datasource = "tranquility"; // string | The server name you would like data from
-print_r($api_universe->postUniverseNames($value, $datasource));
+$ids=$api_universe->postUniverseNames($value, $datasource);
 
 
 ?>
 
+<div id="contrfrm">
 <h2>forum header</h2>
 
 <form>
@@ -43,3 +44,4 @@ vlalsdsa<br>
 </div>
 
 </form>
+</dif>
