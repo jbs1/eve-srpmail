@@ -16,7 +16,7 @@ $(function (){
 					if(flag==0){
 						var row = $("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
 						row.click(function () {
-							console.log(this.text());
+							console.log(this;
 							// $.ajax({
 							// 	type: 'GET',
 							// 	url: 'ajax/contract-form.php',
