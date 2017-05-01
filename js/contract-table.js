@@ -23,7 +23,7 @@ $(function (){
 								success: function(data){
 									$("table#cont-table").hide(350);
 									var form=$('#accept').append(data);
-									console.log(form.children('#contrfrom > form'));
+									console.log(form.children('#contrfrm > form'));
 									// $(this).submit(function(e) {
 									// 	e.preventDefault();
 									// 	$.ajax({
