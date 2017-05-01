@@ -17,13 +17,13 @@ $(function (){
 						var row = $("table#cont-table > tbody").append("<tr id="+item["@attributes"].contractID+"><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
 						row.children('#'+item["@attributes"].contractID).click(function () {
 							console.log(this);
-							// $.ajax({
-							// 	type: 'GET',
-							// 	url: 'ajax/contract-form.php',
-							// 	success: function(data){
-							// 		$('#accept').html(data);
-							// 	}
-							// })
+							$.ajax({
+								type: 'GET',
+								url: 'ajax/contract-form.php',
+								success: function(data){
+									$('#accept').html(data);
+								}
+							})
 						})
 					}
 				});
