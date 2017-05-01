@@ -67,7 +67,7 @@ $(function (){
 							flag = 1;
 						}
 					});
-					console.log(mem.95502888);
+					console.log(mem["95502888"]);
 					if(flag==0){
 						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>")
 					}
