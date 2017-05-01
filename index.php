@@ -69,7 +69,7 @@ echo '
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool<br/> Session expirey in seconds:'.ini_get("session.gc_maxlifetime").'</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
-					<table class="table table-striped" id="cont-table">
+					<table class="table table-striped table-bordered table-condensed table-hover" id="cont-table">
 						<thead>
 						<tr>
 						<th>Contract ID</th><th>Reciever</th><th>Time issued</th><th>Status</th>
