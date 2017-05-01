@@ -19,18 +19,13 @@ $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasour
 
 <form>
 <div class="form-group">
-<label for="sender">Sender:</label>
-<input type="text" class="form-control" id="sender" placeholder="" readonly>
-</div>
-
-<div class="form-group">
 <label for="reciever">Reciever:</label>
-<input type="text" class="form-control" id="reciever" placeholder="" readonly>
+<input type="text" class="form-control" id="reciever-text" placeholder="<?php echo $_SESSION['corpmem'][$_GET["assignee"]]; ?>" readonly>
 </div>
 
 <div class="form-group">
 <label for="subject">Subject:</label>
-<input type="text" class="form-control" id="subject" placeholder="" readonly>
+<input type="text" class="form-control" id="subject" placeholder="Your Ship Replacement" readonly>
 </div>
 
 <div class="form-group">
