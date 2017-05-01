@@ -1,4 +1,4 @@
-<h3>forum header</h3>
+<h2>forum header</h2>
 
 <form>
 <div class="form-group">
@@ -16,7 +16,7 @@ a<br>
 <label for="optional-text">Optional comments for the mail</label>
 <textarea class="form-control" id="optional-text" rows="5">
 </textarea>
-<small id="optional-help" class="form-text text-muted">Use <pre><br></pre> to start a new line</small>
+<small id="optional-help" class="form-text text-muted">Use <br> to start a new line</small>
 </div>
 
 <div class="form-group">
