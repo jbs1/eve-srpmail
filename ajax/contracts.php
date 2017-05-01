@@ -15,7 +15,8 @@ $cid=corpid(charid());
 //shows only the most recent privat item exchanges issued by the logged in user
 foreach ($raw->row as $value) {
 	//600 ms without corpid check vs 2.5 sec with corpid check on 13 out of max 50 contracs
-	if((strtotime($value["dateIssued"])>strtotime('-6 hour'))&&($value["status"]=="Outstanding"||$value["status"]=="Completed")&&$value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&corpid($value["assigneeID"])==$cid){
+	//(strtotime($value["dateIssued"])>strtotime('-6 hour'))&&
+	if(($value["status"]=="Outstanding"||$value["status"]=="Completed")&&$value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&corpid($value["assigneeID"])==$cid){
 		array_unshift($json,$value);
 	}
 }
