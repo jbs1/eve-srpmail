@@ -14,7 +14,7 @@ $api_universe = new Swagger\Client\Api\UniverseApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    if(empty($_SESSION['corpmem'])){
+    // if(empty($_SESSION['corpmem'])){
         $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(charid()),$datasource,token());
         $ids = array();
         foreach ($corpmem as $key => $value) {
@@ -25,15 +25,16 @@ try {
         foreach ($split_ids as $value){
             $chars=array_merge($chars,$api_universe->postUniverseNames($value, $datasource));
         }
-        $json=array();
+        $json=new stdClass();
         foreach ($chars as $value){
-            array_push($json,array($value['id']=>$value['name']));
+            $json->$value['id'] = $value['name'];
+            // array_push($json,array($value['id']=>$value['name']));
         }
-        $_SESSION['corpmem']=(object)$json;//save in ses for caching
+        $_SESSION['corpmem']=$json;//save in ses for caching
         echo json_encode($_SESSION['corpmem'],TRUE);
-    } else {
-        echo json_encode($_SESSION['corpmem'],TRUE);
-    }
+    // } else {
+    //     echo json_encode($_SESSION['corpmem'],TRUE);
+    // }
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 }
