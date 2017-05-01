@@ -41,7 +41,7 @@ echo '
 <script src="js/contract-table.js"></script>
 <script>
 $(function (){
-	$(\'#cont-table > tbody > tr\').click(function () {
+	$(\'#intro\').click(function () {
 		console.log("bla");
 		$.ajax({
 			type: \'GET\',
