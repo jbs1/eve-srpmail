@@ -11,5 +11,5 @@ function submit_a(){
 				}
 			})
 		})
-	}
+	})
 }
