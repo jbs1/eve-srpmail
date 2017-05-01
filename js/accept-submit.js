@@ -1,6 +1,6 @@
-function submit_a(){
-	$(function (e){
-		e.preventDefault()
+function submit_a(e){
+	e.preventDefault();
+	$(function (){
 		$(this).submit(function() {
 			$.ajax({
 				method: 'POST',
