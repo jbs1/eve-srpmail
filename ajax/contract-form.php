@@ -21,12 +21,11 @@ print_r($api_universe->postUniverseNames($value, $datasource));
 <form>
 <div class="form-group">
 <textarea class="form-control" id="intro-text" rows="8" readonly>
-vlalsdsa<br>
-dsa<br>
-sda<br>
-dsa<br>
-as<br>
-a<br>
+<url=http://killfeed.eveuniversity.org/?a=kill_detail&kll_id=412897>http://killfeed.eveuniversity.org/?a=kill_detail&kll_id=412897</url>
+<br><br><url=showinfo:57//60014731>Slays VII - Moon 3 - Center for Advanced Studies School</url>
+<br><br><url=contract:30003798//117662366>Scythe</url> 
+<br><br><url=showinfo:1379//95601269>Palja Kurman</url>
+<br><br><url=showinfo:2//917701062>EVE University</url>
 </textarea>
 </div>
 
