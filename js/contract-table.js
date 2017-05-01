@@ -16,11 +16,10 @@ $(function (){
 					if(flag==0){
 						var row = $("table#cont-table > tbody").append("<tr id="+item["@attributes"].contractID+"><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
 						row.children('#'+item["@attributes"].contractID).click(function () {
-							console.log(this);
 							$.ajax({
 								type: 'GET',
 								url: 'ajax/contract-form.php',
-								data: {"contID":item["@attributes"].contractID,"station":"bla"},
+								data: {"contID":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
 								success: function(data){
 									$('#accept').html(data);
 								}
