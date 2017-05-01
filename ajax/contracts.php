@@ -15,7 +15,7 @@ $cid=corpid(charid());
 //shows only the most recent privat item exchanges issued by the logged in user
 foreach ($raw->row as $value) {
 	//&&strtotime($value["dateIssued"])>strtotime('-6 hour')
-	if($value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&corpid($value["assigneeID"])==$cid){
+	if($value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"){
 		array_unshift($json,$value);
 	}
 }
