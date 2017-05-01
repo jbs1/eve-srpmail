@@ -4,7 +4,16 @@ require_once('../SwaggerClient-php/autoload.php');
 require_once('../vendor/autoload.php');
 require_once('../provider.php');
 require_once('../inc.php');
-print_r($_GET);
+
+
+token_refresh();
+$value=array($_GET["contID"],$_GET["station"],$_GET["assignee"]);
+
+$api_universe = new Swagger\Client\Api\UniverseApi();
+$datasource = "tranquility"; // string | The server name you would like data from
+print_r($api_universe->postUniverseNames($value, $datasource));
+
+
 ?>
 
 <h2>forum header</h2>
