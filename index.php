@@ -67,9 +67,8 @@ $(function (){
 							flag = 1;
 						}
 					});
-					console.log(mem[item["@attributes"].assigneeID]);
 					if(flag==0){
-						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+item["@attributes"].assigneeID+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>")
+						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td></tr>")
 					}
 				});
 			}
