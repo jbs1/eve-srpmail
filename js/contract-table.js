@@ -19,7 +19,7 @@ $(function (){
 							$.ajax({
 								type: 'GET',
 								url: 'ajax/contract-form.php',
-								data: {"contID":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
+								data: {"contid":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
 								success: function(data){
 									$("table#cont-table").hide(350);
 									$('#accept').append(data);

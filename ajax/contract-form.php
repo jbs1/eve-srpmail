@@ -25,12 +25,7 @@ print_r($station);
 Hello,<br><br>
 I have reviewed and approved your SRP request.<br><br>
 Your replacement ship is avialable at the following station: <url=showinfo:<?php echo $station['type_id']."//".$station['station_id'];?>></url><br><br>
-The contract for the ship can be found here: [contract link]<br><br>
-
-<br><br><url=showinfo:57//60014731>Slays VII - Moon 3 - Center for Advanced Studies School</url>
-<br><br><url=contract:30003798//117662366>Scythe</url> 
-<br><br><url=showinfo:1379//95601269>Palja Kurman</url>
-<br><br><url=showinfo:2//917701062>EVE University</url>
+The contract for the ship can be found here: <url=contract:<?php echo $station['system_id']."//".$_GET['contid'];?>>Contract</url><br><br>
 </textarea>
 </div>
 
@@ -43,7 +38,10 @@ The contract for the ship can be found here: [contract link]<br><br>
 
 <div class="form-group">
 <textarea class="form-control" id="end-text" rows="8" readonly>
-vlalsdsa<br>
+Fly Safe,<br>
+<url=showinfo:1377//<?php echo charid(); ?>><?php echo mem[charid()]; ?></url>
+<br><br><url=showinfo:2//917701062>EVE University</url>
+
 </textarea>
 </div>
 
