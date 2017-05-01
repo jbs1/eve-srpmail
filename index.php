@@ -35,47 +35,10 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
-//save members in global js variable, session caching is done at the endpoint
-echo '
-<script>
-	var mem;
-	$(function (){
-		$.ajax({
-			type: \'GET\',
-			url: \'ajax/corp-mem.php\',
-			success: function(data){
-				mem = data;
-			}
-		});
-	});
-</script>
-';
 
 echo '
-<script>
-$(function (){
-	$(\'a[data-toggle="tab"][href="#accept"]\').on(\'shown.bs.tab\', function (e) {
-		$.ajax({
-			type: \'GET\',
-			url: \'ajax/contracts.php\',
-			success: function(data){
-				console.log(\'Contracts\',data);
-				$.each(data,function(i, item){
-					var flag = 0;
-					$("table#cont-table > tbody > tr > td:eq(0)").each(function(){
-						if($(this).text() == item["@attributes"].contractID){
-							flag = 1;
-						}
-					});
-					if(flag==0){
-						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
-					}
-				});
-			}
-		})
-	})
-});
-</script>
+<script src="js/corp.js"></script>
+<script src="js/contract-table.js"></script>
 ';
 
 
