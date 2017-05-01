@@ -25,7 +25,7 @@ $(function (){
 									var form=$('#accept').append(data);
 									form.children('.contrfrm > form').submit(function(event) {
 										type: 'POST',
-										url: 'form/accept.php'
+										url: 'form/accept.php',
 										data: $(this).serialize(),
 										success: function(data){
 											$('#accept').append(data);
