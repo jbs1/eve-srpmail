@@ -1,5 +1,5 @@
 $(function (){
-	$('table#cont-table > tbody > tr').click(function () {
+	$('#cont-table > tbody > tr').click(function () {
 		console.log("bla");
 		$.ajax({
 			type: 'GET',
