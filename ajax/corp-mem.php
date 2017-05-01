@@ -30,9 +30,9 @@ try {
             array_push($json,array($value['id']=>$value['name']));
         }
         $_SESSION['corpmem']=$json;//save in ses for caching
-        echo json_encode($_SESSION['corpmem']);
+        echo json_encode($_SESSION['corpmem'],TRUE);
     } else {
-        echo json_encode($_SESSION['corpmem']);
+        echo json_encode($_SESSION['corpmem'],TRUE);
     }
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
