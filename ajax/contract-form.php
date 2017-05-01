@@ -17,7 +17,7 @@ $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasour
 <div id="contrfrm">
 <h2>SRP accepted!</h2>
 
-<form>
+<form onsubmit="js/accept-submit.js">
 <div class="form-group">
 <label for="reciever">Reciever:</label>
 <input type="text" class="form-control" id="reciever-text" placeholder="<?php echo $_SESSION['corpmem'][$_GET["assignee"]]; ?>" readonly>
