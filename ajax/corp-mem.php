@@ -14,7 +14,7 @@ $api_universe = new Swagger\Client\Api\UniverseApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    // if(empty($_SESSION['corpmem'])){
+    if(empty($_SESSION['corpmem'])){
         $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(charid()),$datasource,token());
         $ids = array();
         foreach ($corpmem as $key => $value) {
@@ -31,9 +31,9 @@ try {
         }
         $_SESSION['corpmem']=$json;//save in ses for caching
         echo json_encode($_SESSION['corpmem']);
-    // } else {
-    //     echo json_encode($_SESSION['corpmem'],TRUE);
-    // }
+    } else {
+        echo json_encode($_SESSION['corpmem']);
+    }
 } catch (Exception $e) {
     echo 'Exception: ', $e->getMessage(), PHP_EOL;
 }
