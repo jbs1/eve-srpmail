@@ -24,12 +24,8 @@ print_r($station);
 <textarea class="form-control" id="intro-text" rows="8" readonly>
 Hello,<br><br>
 I have reviewed and approved your SRP request.<br><br>
-Your replacement ship is avialable at the following station: <url=showinfo:<?php echo $station['type_id']."//".$station['station_id'];?>></url><br><br>
-The contract for the ship can be found here: <url=contract:
-<?php 
-echo $station['system_id']."//".$_GET['contid'];
-?>
->Contract</url><br><br>
+Your replacement ship is avialable at the following station: <url=showinfo:<?php echo $station['type_id']."//".$station['station_id'].">".$station['name'];?></url><br><br>
+The contract for the ship can be found here: <url=contract:<?php echo $station['system_id']."//".$_GET['contid'];?>>Contract</url><br><br>
 </textarea>
 </div>
 
@@ -43,8 +39,7 @@ echo $station['system_id']."//".$_GET['contid'];
 <div class="form-group">
 <textarea class="form-control" id="end-text" rows="8" readonly>
 Fly Safe,<br>
-<url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem'][charid()]; ?></url>
-<br>
+<url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem'][charid()]; ?></url><br>
 <url=showinfo:2//917701062>EVE University</url>
 </textarea>
 </div>
