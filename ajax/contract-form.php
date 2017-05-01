@@ -11,18 +11,22 @@ $value=array($_GET["station"],$_GET["assignee"]);
 
 $api_universe = new Swagger\Client\Api\UniverseApi();
 $datasource = "tranquility"; // string | The server name you would like data from
-$ids=$api_universe->postUniverseNames($value, $datasource);
-
+$station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);
+print_r($station);
 
 ?>
 
 <div id="contrfrm">
-<h2>forum header</h2>
+<h2>SRP accepted!</h2>
 
 <form>
 <div class="form-group">
 <textarea class="form-control" id="intro-text" rows="8" readonly>
-<url=http://killfeed.eveuniversity.org/?a=kill_detail&kll_id=412897>http://killfeed.eveuniversity.org/?a=kill_detail&kll_id=412897</url>
+Hello,<br><br>
+I have reviewed and approved your SRP request.<br><br>
+Your replacement ship is avialable at the following station: [Station link]<br><br>
+The contract for the ship can be found here: [contract link]<br><br>
+
 <br><br><url=showinfo:57//60014731>Slays VII - Moon 3 - Center for Advanced Studies School</url>
 <br><br><url=contract:30003798//117662366>Scythe</url> 
 <br><br><url=showinfo:1379//95601269>Palja Kurman</url>
