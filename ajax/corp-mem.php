@@ -27,10 +27,11 @@ try {
         }
         $json=new stdClass();
         foreach ($chars as $value){
+            print_r($value['id']);
             $json->$value['id'] = $value['name'];
             // array_push($json,array($value['id']=>$value['name']));
         }
-        print_r($json);
+        // print_r($json);
         $_SESSION['corpmem']=$json;//save in ses for caching
         echo json_encode($_SESSION['corpmem'],TRUE);
     // } else {
