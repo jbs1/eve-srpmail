@@ -23,6 +23,18 @@ $(function (){
 								success: function(data){
 									$("table#cont-table").hide(350);
 									var form=$('#accept').append(data);
+									alert(form)
+									// $(this).submit(function(e) {
+									// 	e.preventDefault();
+									// 	$.ajax({
+									// 		method: 'POST',
+									// 		url: 'form/accept.php',
+									// 		data: $(this).serialize(),
+									// 		success: function(data){
+									// 			alert(data);
+									// 		}
+									// 	})
+									// })
 								}
 							})
 						})

@@ -39,7 +39,6 @@ echo'
 echo '
 <script src="js/corp.js"></script>
 <script src="js/contract-table.js"></script>
-<script src="js/accept-submit.js"></script>
 ';
 
 
