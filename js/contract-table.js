@@ -14,8 +14,8 @@ $(function (){
 						}
 					});
 					if(flag==0){
-						$("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
-						$('#cont-table > tbody > tr').click(function () {
+						var row = $("table#cont-table > tbody").append("<tr><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
+						row.click(function () {
 							console.log("bla");
 							// $.ajax({
 							// 	type: 'GET',
