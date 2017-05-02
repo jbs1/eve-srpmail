@@ -22,8 +22,7 @@ $(function (){
 								data: {"contid":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
 								success: function(data){
 									$("table#cont-table").hide(350);
-									var div=$('#accept').append(data);
-									var form=div.find('div#contrfrm > form');
+									var form=$('#accept').append(data).find('div#contrfrm > form');
 									console.log(form);
 									// $(this).submit(function(e) {
 									// 	e.preventDefault();
