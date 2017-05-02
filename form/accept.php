@@ -19,12 +19,12 @@ $mail["body"] = $_POST["body"];
 $mail["recipients"] = $resp;
 $datasource = "tranquility";
 
-// try {
-//     $result = $api_instance->postCharactersCharacterIdMail($character_id, $mail, $datasource,);
-//     print_r($result);
-// } catch (Exception $e) {
-//     echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
-// }
+try {
+    $result = $api_instance->postCharactersCharacterIdMail($character_id, $mail, $datasource, token());
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
+}
 
 
 
