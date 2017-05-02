@@ -16,20 +16,17 @@ $resp["recipient_id"] = $_POST["recv"];
 $mail = new \Swagger\Client\Model\PostCharactersCharacterIdMailMail();
 $mail["subject"] = $_POST["subj"];
 $mail["body"] = $_POST["body"];
-$mail["recipients"] = $resp;
+$mail["recipients"] = array($resp);
 $datasource = "tranquility";
-echo charid();
-echo $mail;
-echo  $datasource;
-echo  token();
 
 
-// try {
-//     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
-//     print_r($result);
-// } catch (Exception $e) {
-//     echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
-// }
+
+try {
+    $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
+}
 
 
 
