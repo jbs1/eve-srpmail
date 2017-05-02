@@ -8,7 +8,7 @@ require_once('../inc.php');
 
 token_refresh();
 
-// print_r($_POST);
+print_r($_POST);
 
 
 
@@ -23,7 +23,7 @@ $mail["recipients"] = $resp;
 $datasource = "tranquility";
 
 
-print_r($resp);
+
 print_r($mail);
 
 // try {
