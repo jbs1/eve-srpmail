@@ -7,7 +7,7 @@ $(function (){
 			success: function(data){
 				console.log('Contracts',data);
 				if(data.length == 0){
-					$("table#cont-table > tbody").append("<tr id=\"empty\"><td colspan=3> No contracts avialable! </td></tr>");
+					$("table#cont-table > tbody").append("<tr id=\"empty\"><td colspan=4> No contracts avialable! </td></tr>");
 				} else {
 					$("table#cont-table > tbody").remove("#empty");
 					$.each(data,function(i, item){
