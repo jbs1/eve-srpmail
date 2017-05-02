@@ -25,7 +25,7 @@ $(function (){
 									var form=$('#accept').append(data).find('div#contrfrm > form');
 									form.submit(function(e) {
 										e.preventDefault();
-										console.log($(this).serialize())
+										console.log($(this).find(':input'))
 										$.ajax({
 											method: 'POST',
 											url: 'form/accept.php',
