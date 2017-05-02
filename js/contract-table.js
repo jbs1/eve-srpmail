@@ -25,7 +25,10 @@ $(function (){
 									var form=$('#accept').append(data).find('div#contrfrm > form');
 									form.submit(function(e) {
 										e.preventDefault();
-										console.log($(this).find('#reciever').val());
+										var rec = $(this).find('#reciever').val();
+										var subj = $(this).find('#subject').val();
+										var text=$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('end-text').val();
+										console.log(text);
 										// $.ajax({
 										// 	method: 'POST',
 										// 	url: 'form/accept.php',
