@@ -31,10 +31,11 @@ $(function (){
 										var form=$('#accept').append(data).find('div#contrfrm > form');
 										form.submit(function(e) {
 											e.preventDefault();
+											var body =$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+'<br><br>'+$(this).find('#end-text').val();
 											$.ajax({
 												method: 'POST',
 												url: 'form/accept.php',
-												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val()},
+												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body.replace("\n","<br>")},
 												success: function(data){
 													$('tr#'+data).addClass('table-success');
 													$('div#contrfrm').remove();
