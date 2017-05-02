@@ -41,7 +41,7 @@ echo '
 <script src="js/contract-table.js"></script>
 <script>
 function refresh() {
-	$("a[data-toggle="tab"][href="#accept"]").trigger("shown.bs.tab");
+	$(\'a[data-toggle="tab"][href="#accept"]\').trigger("shown.bs.tab");
 }
 </script>
 ';
