@@ -21,12 +21,12 @@ $datasource = "tranquility";
 print_r(charid(), $mail, $datasource, token());
 
 
-try {
-    $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
-}
+// try {
+//     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
+//     print_r($result);
+// } catch (Exception $e) {
+//     echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
+// }
 
 
 
