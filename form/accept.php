@@ -18,7 +18,10 @@ $mail["subject"] = $_POST["subj"];
 $mail["body"] = $_POST["body"];
 $mail["recipients"] = $resp;
 $datasource = "tranquility";
-print_r(charid(), $mail, $datasource, token());
+echo charid();
+echo $mail;
+echo  $datasource;
+echo  token();
 
 
 // try {
