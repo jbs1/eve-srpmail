@@ -25,7 +25,7 @@ $(function (){
 									var form=$('#accept').append(data).find('div#contrfrm > form');
 									form.submit(function(e) {
 										e.preventDefault();
-										console.log($(this).find('#reciever'));
+										console.log($(this).find('#reciever').val());
 										// $.ajax({
 										// 	method: 'POST',
 										// 	url: 'form/accept.php',
