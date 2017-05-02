@@ -7,6 +7,8 @@ require_once('inc.php');
 
 token_refresh();
 
-print_r(getcontract(charid(),token()));
+$return=getcontract(charid(),token());
+
+print_r($return);
 
 ?>
