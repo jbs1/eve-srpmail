@@ -39,6 +39,11 @@ echo'
 echo '
 <script src="js/corp.js"></script>
 <script src="js/contract-table.js"></script>
+<script>
+function refresh() {
+	$("a[data-toggle="tab"][href="#accept"]").trigger("shown.bs.tab");
+}
+</script>
 ';
 
 
@@ -77,7 +82,7 @@ echo '
 						</thead>
 						<tbody></tbody>
 					</table>
-					<button type="button" class="btn btn-primary" onclick="$(\'a[data-toggle=\'tab\'][href=\'#accept\']\').trigger(\'shown.bs.tab\');">Refresh!</button>
+					<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
