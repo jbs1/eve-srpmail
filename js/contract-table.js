@@ -9,7 +9,7 @@ $(function (){
 				if(data.length == 0){
 					$("table#cont-table > tbody").append("<tr id=\"empty\"><td colspan=4> No contracts avialable! </td></tr>");
 				} else {
-					$("table#cont-table > tbody > #empty").remove();
+					$("table#cont-table > tbody > tr#empty").remove();
 					$.each(data,function(i, item){
 						var flag = 0;
 						$("table#cont-table > tbody > tr > td:eq(0)").each(function(){
