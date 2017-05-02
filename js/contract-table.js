@@ -25,12 +25,13 @@ $(function (){
 									var form=$('#accept').append(data).find('div#contrfrm > form');
 									form.submit(function(e) {
 										e.preventDefault();
+										console.log($(this).serialize())
 										$.ajax({
 											method: 'POST',
 											url: 'form/accept.php',
 											data: $(this).serialize(),
 											success: function(data){
-												alert(data);
+												// console.log(data);
 											}
 										})
 									})
