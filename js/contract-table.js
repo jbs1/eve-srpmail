@@ -25,14 +25,15 @@ $(function (){
 									var form=$('#accept').append(data).find('div#contrfrm > form');
 									form.submit(function(e) {
 										e.preventDefault();
-										$.ajax({
-											method: 'POST',
-											url: 'form/accept.php',
-											data: $(this).find(':input'),
-											success: function(data){
-												console.log(data);
-											}
-										})
+										console.log($(this).find('#reciever'));
+										// $.ajax({
+										// 	method: 'POST',
+										// 	url: 'form/accept.php',
+										// 	data: ,
+										// 	success: function(data){
+										// 		console.log(data);
+										// 	}
+										// })
 									})
 								}
 							})
