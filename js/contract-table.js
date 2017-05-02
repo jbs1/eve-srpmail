@@ -25,18 +25,14 @@ $(function (){
 									var form=$('#accept').append(data).find('div#contrfrm > form');
 									form.submit(function(e) {
 										e.preventDefault();
-										var rec = $(this).find('#reciever').val();
-										var subj = $(this).find('#subject').val();
-										var text=$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val();
-										console.log(text);
-										// $.ajax({
-										// 	method: 'POST',
-										// 	url: 'form/accept.php',
-										// 	data: ,
-										// 	success: function(data){
-										// 		console.log(data);
-										// 	}
-										// })
+										$.ajax({
+											method: 'POST',
+											url: 'form/accept.php',
+											data: {'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val()},
+											success: function(data){
+												console.log(data);
+											}
+										})
 									})
 								}
 							})
