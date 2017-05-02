@@ -29,6 +29,7 @@ $(function (){
 									success: function(data){
 										$("table#cont-table").hide(350);
 										var form=$('#accept').append(data).find('div#contrfrm > form');
+										console.log(form.serialize());
 										form.submit(function(e) {
 											e.preventDefault();
 											$.ajax({
