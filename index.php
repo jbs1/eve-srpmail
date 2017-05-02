@@ -77,6 +77,7 @@ echo '
 						</thead>
 						<tbody></tbody>
 					</table>
+					<button type="button" class="btn btn-primary" onclick="$(\'a[data-toggle=\'tab\'][href=\'#accept\']\').trigger(\'shown.bs.tab\')">Refresh!</button>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
