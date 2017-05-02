@@ -36,7 +36,7 @@ $(function (){
 												url: 'form/accept.php',
 												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val()},
 												success: function(data){
-													console.log(data);
+													$('tr#'+data).addClass('table-success');
 													$('div#contrfrm').remove();
 													$("table#cont-table").show(350);
 												}
