@@ -18,6 +18,8 @@ $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasour
 <h2>SRP accepted!</h2>
 
 <form>
+<input type="hidden" id="contract" name="contract" value="<?php echo $_GET['contid']; ?>"></input>
+
 <div class="form-group">
 <label for="reciever">Reciever:</label>
 <input type="text" class="form-control" id="reciever-text" name="reciever-text" value="<?php echo $_SESSION['corpmem'][$_GET["assignee"]]; ?>" readonly>

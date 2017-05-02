@@ -34,8 +34,9 @@ $(function (){
 											$.ajax({
 												method: 'POST',
 												url: 'form/accept.php',
-												data: {'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val()},
+												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val()},
 												success: function(data){
+													console.log(data);
 													$('div#contrfrm').remove();
 													$("table#cont-table").show(350);
 												}

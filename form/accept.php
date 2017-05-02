@@ -20,6 +20,9 @@ $mail["recipients"] = array($resp);
 $datasource = "tranquility";
 
 
+//save in session or just mark via js
+print_r($_POST["cntr"]);
+
 
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
