@@ -14,12 +14,12 @@ token_refresh();
 
 $api_instance = new Swagger\Client\Api\MailApi();
 $resp = new \Swagger\Client\Model\PostCharactersCharacterIdMailRecipient();
-$resp->recipient_type = "character";
-$resp->recipient_id = $_POST["recv"];
+$resp["recipient_type"] = "character";
+$resp["recipient_id"] = $_POST["recv"];
 $mail = new \Swagger\Client\Model\PostCharactersCharacterIdMailMail();
-$mail->subject = $_POST["subj"];
-$mail->body = $_POST["body"];
-$mail->recipients = $resp;
+$mail["subject"] = $_POST["subj"];
+$mail["body"] = $_POST["body"];
+$mail["recipients"] = $resp;
 $datasource = "tranquility";
 
 
