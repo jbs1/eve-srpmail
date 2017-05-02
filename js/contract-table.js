@@ -27,7 +27,7 @@ $(function (){
 										e.preventDefault();
 										var rec = $(this).find('#reciever').val();
 										var subj = $(this).find('#subject').val();
-										var text=$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('end-text').val();
+										var text=$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+$(this).find('#end-text').val();
 										console.log(text);
 										// $.ajax({
 										// 	method: 'POST',
