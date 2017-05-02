@@ -20,7 +20,7 @@ $mail["recipients"] = $resp;
 $datasource = "tranquility";
 
 try {
-    $result = $api_instance->postCharactersCharacterIdMail($character_id, $mail, $datasource, token());
+    $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
