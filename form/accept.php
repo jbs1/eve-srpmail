@@ -18,6 +18,8 @@ $mail["subject"] = $_POST["subj"];
 $mail["body"] = $_POST["body"];
 $mail["recipients"] = $resp;
 $datasource = "tranquility";
+print_r(charid(), $mail, $datasource, token());
+
 
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
