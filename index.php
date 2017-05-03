@@ -74,15 +74,17 @@ echo '
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool<br/> Session expirey in seconds:'.ini_get("session.gc_maxlifetime").'</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
-					<table class="table table-bordered table-hover" id="cont-table">
-						<thead>
-						<tr>
-						<th>Contract ID</th><th>Reciever</th><th>Time issued</th><th>Status</th>
-						</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
-					<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button>
+					<div id="contract-table">
+						<table class="table table-bordered table-hover" id="cont-table">
+							<thead>
+							<tr>
+							<th>Contract ID</th><th>Reciever</th><th>Time issued</th><th>Status</th>
+							</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+						<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button>
+					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>

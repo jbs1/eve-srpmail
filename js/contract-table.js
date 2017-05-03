@@ -28,7 +28,7 @@ $(function (){
 									url: 'ajax/contract-form.php',
 									data: {"contid":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
 									success: function(data){
-										$("table#cont-table").hide(350);
+										$("div#contract-table").hide(350);
 										var form=$('#accept').append(data).find('div#contrfrm > form');
 										form.submit(function(e) {
 											e.preventDefault();
@@ -40,7 +40,7 @@ $(function (){
 												success: function(data){
 													// $('tr#'+data).addClass('table-success');
 													$('div#contrfrm').remove();
-													$("table#cont-table").show(350);
+													$("div#contract-table").show(350);
 												}
 											})
 										})

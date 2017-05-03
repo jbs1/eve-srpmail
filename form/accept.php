@@ -21,7 +21,10 @@ $datasource = "tranquility";
 
 
 //save in session or just mark via js
-if(isset($_SESSION['finished_contracts']) && !in_array($_POST["cntr"], $_SESSION['finished_contracts'])){
+if(isset($_SESSION['finished_contracts'])){
+	$_SESSION['finished_contracts']);
+	array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
+}elseif (!in_array($_POST["cntr"], $_SESSION['finished_contracts'])){
 	array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
 }
 
