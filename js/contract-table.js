@@ -55,6 +55,7 @@ $(function (){
 				}
 			},
 			complete: function(){
+				addfinish();
 				$.ajax({
 					url: 'ajax/contracts-cached.php',
 					type: 'GET',
@@ -64,7 +65,6 @@ $(function (){
 				})
 			}
 		})
-		addfinish();
 	})
 })
 
