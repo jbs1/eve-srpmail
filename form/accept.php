@@ -15,7 +15,7 @@ $resp["recipient_type"] = "character";
 $resp["recipient_id"] = $_POST["recv"];
 $mail = new \Swagger\Client\Model\PostCharactersCharacterIdMailMail();
 $mail["subject"] = $_POST["subj"];
-$mail["body"] = nl2br($_POST["body"]);
+$mail["body"] = str_replace(array("\r\n","\r","\n"), "<br>", $_POST["body"]);
 $mail["recipients"] = array($resp);
 $datasource = "tranquility";
 
