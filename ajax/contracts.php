@@ -13,7 +13,7 @@ $raw=$xml->result->rowset;
 $json=array();
 $cid=corpid(charid());
 
-print_r(strtotime($xml->cachedUntil)-strtotime($xml->currentTime));
+$_SESSION["contracts_cached"]=strtotime($xml->cachedUntil)-strtotime($xml->currentTime);
 
 //shows only the most recent privat item exchanges issued by the logged in user
 foreach ($raw->row as $value) {

@@ -83,7 +83,8 @@ echo '
 							</thead>
 							<tbody></tbody>
 						</table>
-						<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button>
+						<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button><br />
+						Contracts cached until (sec):<span id="contracts-time-cached">0</span>
 					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>

@@ -53,6 +53,15 @@ $(function (){
 						}
 					})
 				}
+			},
+			complete: function(){
+				$.ajax({
+					url: 'ajax/contracts-cached.php',
+					type: 'GET',
+					success: function(data){
+						$("#contracts-time-cached").text(data);
+					}
+				})
 			}
 		})
 		addfinish();
