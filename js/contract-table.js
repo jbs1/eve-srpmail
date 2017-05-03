@@ -39,6 +39,7 @@ $(function (){
 												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body.replace("\n","<br>")},
 												success: function(data){
 													// $('tr#'+data).addClass('table-success');
+													console.log(data);
 													$('div#contrfrm').remove();
 													$("div#contract-table").show(350);
 												}

@@ -29,6 +29,7 @@ if(isset($_SESSION['finished_contracts'])){
 }
 
 print_r($_POST["cntr"]);
+print_r($_SESSION['finished_contracts']);
 
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
