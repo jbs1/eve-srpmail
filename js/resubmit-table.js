@@ -13,7 +13,7 @@ $(function (){
 							$.ajax({
 								type: 'GET',
 								url: 'ajax/resubmit-form.php',
-								data: {"assignee":item["@attributes"].assigneeID},
+								data: {"assignee":key},
 								success: function(data){
 									$("div#resubmit-table").hide(350);
 									var form=$('#resubmit').append(data).find('div#rsmbfrm > form');
