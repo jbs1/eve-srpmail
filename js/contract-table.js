@@ -41,6 +41,7 @@ $(function (){
 													console.log('Mail-ID',data);
 													$('div#contrfrm').remove();
 													$("div#contract-table").show(350);
+													addfinish();
 												}
 											})
 										})
@@ -52,14 +53,20 @@ $(function (){
 				}
 			}
 		})
-		$.ajax({
-			url: 'ajax/contracts-finished.php',
-			type: 'GET',
-			success: function(data){
-				for(var i in data){
-					$('table#cont-table > tbody > tr#'+data).addClass('success');
-				}
-			}
-		})
+		addfinish();
 	})
 })
+
+
+
+function addfinish(){
+	$.ajax({
+		url: 'ajax/contracts-finished.php',
+		type: 'GET',
+		success: function(data){
+			for(var i in data){
+				$('table#cont-table > tbody > tr#'+data).addClass('success');
+			}
+		}
+	})
+}
