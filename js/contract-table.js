@@ -41,6 +41,8 @@ $(function (){
 													console.log('Mail-ID',data);
 													$('div#contrfrm').remove();
 													$("div#contract-table").show(350);
+												},
+												complete: function(){
 													addfinish();
 												}
 											})
