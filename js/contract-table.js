@@ -36,7 +36,7 @@ $(function (){
 											$.ajax({
 												method: 'POST',
 												url: 'form/accept.php',
-												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body.replace("\n","<br>")},
+												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body},
 												success: function(data){
 													console.log('Mail-ID',data);
 													$('div#contrfrm').remove();
