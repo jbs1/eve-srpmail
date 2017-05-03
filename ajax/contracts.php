@@ -9,11 +9,11 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 $xml=getcontract(charid(),token());
-print_r($xml->cachedUntil);
-print_r($xml->currentTime);
 $raw=$xml->result->rowset;
 $json=array();
 $cid=corpid(charid());
+
+print_r(strtotime($xml->cachedUntil)-strtotime($xml->currentTime));
 
 //shows only the most recent privat item exchanges issued by the logged in user
 foreach ($raw->row as $value) {
