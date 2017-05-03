@@ -9,7 +9,7 @@ $(function (){
 					$.each(data,function(key, val){
 						var row = $("table#resub-table > tbody").append("<tr id="+key+"><td>"+val+"</td><td>"+key+"</td></tr>");
 						row.css('cursor', 'pointer');
-						row.children('#'+item["@attributes"].contractID).click(function () {
+						row.children('#'+key).click(function () {
 							$.ajax({
 								type: 'GET',
 								url: 'ajax/resubmit-form.php',
