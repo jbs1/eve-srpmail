@@ -8,7 +8,9 @@ require_once('../inc.php');
 token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
-$raw=getcontract(charid(),token())->result->rowset;
+$xml=getcontract(charid(),token());
+print_r($xml);
+$raw=$xml->result->rowset;
 $json=array();
 $cid=corpid(charid());
 
