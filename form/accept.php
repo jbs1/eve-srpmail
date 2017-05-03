@@ -28,10 +28,10 @@ if(!isset($_SESSION['finished_contracts'])){
 	array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
 }
 
-print_r($_POST["cntr"]);
 
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
 }
