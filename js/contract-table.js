@@ -20,7 +20,8 @@ $(function (){
 							}
 						});
 						if(flag==0){
-							var row = $("table#cont-table > tbody").append("<tr id="+item["@attributes"].contractID+"><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>")
+							var row = $("table#cont-table > tbody").append("<tr id="+item["@attributes"].contractID+"><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>");
+							row.css('cursor', 'pointer');
 							row.children('#'+item["@attributes"].contractID).click(function () {
 								$.ajax({
 									type: 'GET',
@@ -37,7 +38,7 @@ $(function (){
 												url: 'form/accept.php',
 												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body.replace("\n","<br>")},
 												success: function(data){
-													$('tr#'+data).addClass('table-success');
+													// $('tr#'+data).addClass('table-success');
 													$('div#contrfrm').remove();
 													$("table#cont-table").show(350);
 												}
