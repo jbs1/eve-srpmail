@@ -39,6 +39,7 @@ echo'
 echo '
 <script src="js/corp.js"></script>
 <script src="js/contract-table.js"></script>
+<script src="js/resubmit-table.js"></script>
 <script>
 function refresh() {
 	$(\'a[data-toggle="tab"][href="#accept"]\').trigger("shown.bs.tab");
@@ -87,7 +88,19 @@ echo '
 						Contracts cached until (sec):<span id="contracts-time-cached">0</span>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane" id="resubmit">resubmit</div>
+				<div role="tabpanel" class="tab-pane" id="resubmit">
+				Who do you want to write this email to?
+					<div id="resubmit-table">
+						<table class="table table-bordered table-hover" id="resub-table">
+							<thead>
+							<tr>
+							<th>Membername</th><th>Member ID</th>
+							</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
 				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
 			</div>
 		</div>

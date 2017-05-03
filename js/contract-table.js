@@ -8,7 +8,7 @@ $(function (){
 				console.log('Contracts',data);
 				if(data.length == 0){
 					if($("table#cont-table > tbody > tr").length == 0){
-					$("table#cont-table > tbody").append("<tr id=\"empty\" class=\"error\"><td colspan=4> No contracts avialable! </td></tr>");
+					$("table#cont-table > tbody").append("<tr id=\"empty\" class=\"warning\"><td colspan=4> No contracts avialable! </td></tr>");
 					};
 				} else {
 					$("table#cont-table > tbody > tr#empty").remove();
