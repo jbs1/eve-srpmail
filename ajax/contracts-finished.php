@@ -14,6 +14,5 @@ if(isset($_SESSION['finished_contracts'])){
 } else {
 	echo "[]";
 }
-print_r($_SESSION);
 
 ?>
