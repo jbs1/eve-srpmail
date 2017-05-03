@@ -10,7 +10,7 @@ token_refresh();
 header('Content-Type: application/json;charset=utf-8');
 
 if(isset($_SESSION['finished_contracts'])){
-	echo json_decode(json)
+	echo json_decode(json);
 } else {
 	echo "[]";
 }
