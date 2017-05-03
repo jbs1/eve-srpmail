@@ -9,7 +9,8 @@ token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 $xml=getcontract(charid(),token());
-print_r($xml);
+print_r($xml->cachedUntil);
+print_r($xml->currentTime);
 $raw=$xml->result->rowset;
 $json=array();
 $cid=corpid(charid());
