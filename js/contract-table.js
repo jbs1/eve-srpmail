@@ -32,7 +32,7 @@ $(function (){
 										var form=$('#accept').append(data).find('div#contrfrm > form');
 										form.submit(function(e) {
 											e.preventDefault();
-											var body =$(this).find('#intro-text').val()+$(this).find('#optional-text').val()+'<br><br>'+$(this).find('#end-text').val();
+											var body =$(this).find('#intro-text').val()+$(this).find('#additional-text').val()+'<br><br>'+$(this).find('#end-text').val();
 											$.ajax({
 												method: 'POST',
 												url: 'form/accept.php',

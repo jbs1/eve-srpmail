@@ -8,13 +8,10 @@ require_once('../inc.php');
 
 token_refresh();
 
-$api_universe = new Swagger\Client\Api\UniverseApi();
-$datasource = "tranquility"; // string | The server name you would like data from
-$station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);
 ?>
 
-<div id="contrfrm">
-<h2>SRP accepted!</h2>
+<div id="rsmbfrm">
+<h2>SRP resubmission!</h2>
 
 <form>
 <input type="hidden" id="contract" name="contract" value="<?php echo $_GET['contid']; ?>"></input>
@@ -31,20 +28,18 @@ $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasour
 </div>
 
 <div class="form-group">
-<textarea class="form-control" id="intro-text" name="intro-text" rows="8" readonly>
+<textarea class="form-control" id="intro-text" name="intro-text" rows="5" readonly>
 Hello,
 
-I have reviewed and approved your SRP request.
-Your replacement ship is avialable at the following station: <url=showinfo:<?php echo $station['type_id']."//".$station['station_id'].">".$station['name'];?></url>
-
-The contract for the ship can be found here: <url=contract:<?php echo $station['system_id']."//".$_GET['contid'];?>>Contract</url>
+We have recieved your ship replacement request.
+However there is at least one issue preventing us from fulfilling your request:
 
 </textarea>
 </div>
 
 <div class="form-group">
-<label for="additional-text">Optional comments for the mail</label>
-<textarea class="form-control" id="additional-text" name="additional-text" rows="4">
+<label for="additional-text">List the problems</label>
+<textarea class="form-control" id="additional-text" name="additional-text" rows="5">
 </textarea>
 </div>
 

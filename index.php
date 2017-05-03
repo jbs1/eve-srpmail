@@ -89,8 +89,8 @@ echo '
 					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">
-				Who do you want to write this email to?
 					<div id="resubmit-table">
+						Who do you want to write this email to?
 						<table class="table table-bordered table-hover" id="resub-table">
 							<thead>
 							<tr>
