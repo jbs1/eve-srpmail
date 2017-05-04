@@ -52,7 +52,7 @@ $("#resub-table").searchable({
 	searchType: "fuzzy",
 	clearOnLoad: true,
 	onSearchFocus: function(){
-		alert("bla");
+		console.log("bla");
 	}
 });
 </script>
