@@ -100,7 +100,7 @@ echo '
 					<li>Everything on this website is saved in session on the server. This means when you stay inactive for too long or close
 					your browser you will have to login again and it will not remember the contracs anymore for which you send email already.</li>
 					<ul>
-						<li>The session expiry time on the current server is: '.ini_get("session.gc_maxlifetime").' seconds</li>
+						<li>The session expiry time on the current server is: <b>'.ini_get("session.gc_maxlifetime").'</b> seconds</li>
 					</ul>
 					</ul>
 				</p>
