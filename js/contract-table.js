@@ -15,6 +15,7 @@ $(function (){
 					$.each(data,function(i, item){
 						var flag = 0;
 						$("table#cont-table > tbody > tr > td:eq(0)").each(function(){
+							console.log($(this).text())
 							if($(this).text() == item["@attributes"].contractID){
 								flag = 1;
 							}
