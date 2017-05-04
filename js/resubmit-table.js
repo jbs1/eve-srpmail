@@ -39,7 +39,6 @@ $(function (){
 				complete: function(){
 					$('#resub-table').searchable({
 						searchField:'#resubmit-search',
-						searchType: 'fuzzy',
 						clearOnLoad: true
 					});
 				}
