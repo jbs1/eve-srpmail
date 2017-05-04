@@ -46,18 +46,6 @@ function refresh() {
 }
 </script>
 <script src="js/jquery.searchable.js"></script>
-<script>
-$(function(){
-	$("#resub-table").searchable({
-		searchField:"#resubmit-search",
-		searchType: "fuzzy",
-		clearOnLoad: true,
-		onSearchFocus: function(){
-			console.log("bla");
-		}
-	})
-});
-</script>
 ';
 
 
