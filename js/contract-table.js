@@ -73,7 +73,7 @@ $(function (){
 					type: 'GET',
 					success: function(data){
 						var d = new Date();
-						d.setSeconds(d.getSeconds() + data);
+						d.setTime(d.getTime() + data*1000);
 						$("#contracts-time-cached-sec").text(data);
 						$("#contracts-time-cached-time").text(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" local time"+d.toTimeString()+d.toLocaleTimeString());
 					}
