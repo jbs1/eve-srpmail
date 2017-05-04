@@ -40,10 +40,7 @@ $(function (){
 					$('#resub-table').searchable({
 						searchField:'#resubmit-search',
 						searchType: 'fuzzy',
-						clearOnLoad: true,
-						onSearchFocus: function(){
-							alert("bla");
-						}
+						clearOnLoad: true
 					});
 				}
 			})
