@@ -45,7 +45,7 @@ function refresh() {
 	$(\'a[data-toggle="tab"][href="#accept"]\').trigger("shown.bs.tab");
 }
 </script>
-<script src="js/jquery.searchable-1.1.0.min.js"></script>
+<script src="js/jquery.searchable.js"></script>
 <script>
 $("#resub-table").searchable({
 	searchField:"#resubmit-search",
