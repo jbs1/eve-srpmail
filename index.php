@@ -46,6 +46,16 @@ function refresh() {
 }
 </script>
 <script src="js/jquery.searchable-1.1.0.min.js"></script>
+<script>
+$("#resub-table").searchable({
+	searchField:"#resubmit-search",
+	searchType: "fuzzy",
+	clearOnLoad: true,
+	onSearchFocus: function(){
+		alert("bla");
+	}
+});
+</script>
 ';
 
 
@@ -101,7 +111,10 @@ echo '
 							<th>Membername</th><th>Member ID</th>
 							</tr>
 							</thead>
-							<tbody></tbody>
+							<tbody>
+								<tr><td>bjaskasnkasa</td><td>12133121</td></tr>
+								<tr><td>bkdflgfk</td><td>1557765</td></tr>
+							</tbody>
 						</table>
 					</div>
 				</div>
