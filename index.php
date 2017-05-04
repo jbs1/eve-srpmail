@@ -93,7 +93,7 @@ echo '
 					<div id="resubmit-table">
 						<div class="input-group">
 							<span class="input-group-addon" id="resubmit-search-addon">Member-Search:</span>
-							<input type="text" class="form-control" placeholder="Character Name" aria-describedby="resubmit-search-addon">
+							<input type="text" class="form-control" id="resubmit-search" placeholder="Character Name" aria-describedby="resubmit-search-addon">
 						</div>
 						<table class="table table-bordered table-hover" id="resub-table">
 							<thead>

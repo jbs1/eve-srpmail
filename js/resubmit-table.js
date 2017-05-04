@@ -29,6 +29,13 @@ $(function (){
 												$('div#rsmbfrm').remove();
 												$("div#resubmit-table").show(350);
 											},
+											complete: function(){
+												$('#resub-table').searchable({
+													searchField:'#resubmit-search',
+													searchType: 'fuzzy',
+													clearOnLoad: true
+												});
+											}
 										})
 									})
 								}
