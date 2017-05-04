@@ -20,19 +20,17 @@ $mail["body"] = str_replace(array("\r\n","\r","\n"), "<br>", $_POST["body"]);
 $mail["recipients"] = array($resp);
 $datasource = "tranquility";
 
-
-//save in session or just mark via js
-if(!isset($_SESSION['finished_contracts'])){
-	$_SESSION['finished_contracts']=array();
-	array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
-}elseif (!in_array($_POST["cntr"], $_SESSION['finished_contracts'])){
-	array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
-}
-
-
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
     print_r(json_encode(array("success"=>true,"return"=>$result)));
+
+    //only save in session if successful
+	if(!isset($_SESSION['finished_contracts'])){
+		$_SESSION['finished_contracts']=array();
+		array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
+	}elseif (!in_array($_POST["cntr"], $_SESSION['finished_contracts'])){
+		array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
+	}
 } catch (Exception $e) {
 	print_r(json_encode(array("success"=>false,"return"=>'Exception when calling MailApi->postCharactersCharacterIdMail: '+$e->getMessage())));
 }
