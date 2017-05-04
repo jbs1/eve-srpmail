@@ -8,7 +8,8 @@ $(function (){
 			// 	type: 'GET',
 			// 	url: 'ajax/corp-mem.php',
 			// 	success: function(data){
-					$.each(data,function(key, val){
+				console.log(mem)
+					$.each(mem,function(key, val){
 						var row = $("table#resub-table > tbody").append("<tr id="+key+"><td>"+val+"</td><td>"+key+"</td></tr>");
 						row.css('cursor', 'pointer');
 						row.children('#'+key).click(function () {
