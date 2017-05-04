@@ -1,4 +1,4 @@
-#EVE-srpmail
+# EVE-srpmail
 
 This is a small and simple tool to make the tedious task of of writing SRP mails easier for officers.  
 This works for all corporations not just EVE uni as it pulls the infos about the corps and chars dynamically from the API.  
@@ -6,7 +6,7 @@ Nothing will be save on the server itself for longer than the session.
 Only works if contracts are in stations not in citadels.
 
 
-#Install
+# Install
 
 ### Install Prerequisites
 
