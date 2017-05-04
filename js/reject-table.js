@@ -26,6 +26,10 @@ $(function (){
 											data: {'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body},
 											success: function(data){
 												console.log('Mail-ID',data);
+												if{data["success"]}{
+													var alt=$(#art).append('<div class="alert alert-success" role="alert" >Mail Sent! Mail-ID:'.data["return"].'</div>')
+													alt.alert();
+												}
 												$('div#rjctfrm').remove();
 												$("div#reject-table").show(350);
 											},
