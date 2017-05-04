@@ -33,7 +33,10 @@ $(function (){
 												$('#resub-table').searchable({
 													searchField:'#resubmit-search',
 													searchType: 'fuzzy',
-													clearOnLoad: true
+													clearOnLoad: true,
+													onSearchFocus: function(){
+														alert("bla");
+													}
 												});
 											}
 										})
