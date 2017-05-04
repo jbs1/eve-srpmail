@@ -2,10 +2,12 @@
 $(function (){
 	$('a[data-toggle="tab"][href="#resubmit"]').on('shown.bs.tab', function (e) {
 		if($("table#resub-table > tbody >tr").length == 0){
-			$.ajax({
-				type: 'GET',
-				url: 'ajax/corp-mem.php',
-				success: function(data){
+			$('table#resub-table').on('update-mem', function(e){
+				// })
+			// $.ajax({
+			// 	type: 'GET',
+			// 	url: 'ajax/corp-mem.php',
+			// 	success: function(data){
 					$.each(data,function(key, val){
 						var row = $("table#resub-table > tbody").append("<tr id="+key+"><td>"+val+"</td><td>"+key+"</td></tr>");
 						row.css('cursor', 'pointer');
@@ -47,13 +49,13 @@ $(function (){
 							})
 						})
 					})
-				},
-				complete: function(){
+				// },
+				// complete: function(){
 					$('#resub-table').searchable({
 						searchField:'#resubmit-search',
 						clearOnLoad: true
 					});
-				}
+				// }
 			})
 		}
 	})

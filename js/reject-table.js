@@ -2,11 +2,13 @@
 $(function (){
 	$('a[data-toggle="tab"][href="#reject"]').on('shown.bs.tab', function (e) {
 		if($("table#rej-table > tbody >tr").length == 0){
-			$.ajax({
-				type: 'GET',
-				url: 'ajax/corp-mem.php',
-				success: function(data){
-					$.each(data,function(key, val){
+			$('table#rej-table').on('update-mem', function(e){
+			// })
+			// $.ajax({
+			// 	type: 'GET',
+			// 	url: 'ajax/corp-mem.php',
+				// success: function(data){
+					$.each(mem,function(key, val){
 						var row = $("table#rej-table > tbody").append("<tr id="+key+"><td>"+val+"</td><td>"+key+"</td></tr>");
 						row.css('cursor', 'pointer');
 						row.children('#'+key).click(function () {
@@ -47,13 +49,13 @@ $(function (){
 							})
 						})
 					})
-				},
-				complete: function(){
+				// },
+				// complete: function(){
 					$('#rej-table').searchable({
 						searchField:'#reject-search',
 						clearOnLoad: true
 					});
-				}
+				// }
 			})
 		}
 	})
