@@ -1,6 +1,6 @@
 //save members in global js variable, session caching is done at the endpoint
 $(function (){
-	$('a[data-toggle="tab"][href="#resubmit"]').on('shown.bs.tab', function (e) {
+	// $('a[data-toggle="tab"][href="#resubmit"]').on('shown.bs.tab', function (e) {
 		if($("table#resub-table > tbody >tr").length == 0){
 			$('table#resub-table').on('update-mem', function(e){
 				// })
@@ -60,4 +60,4 @@ $(function (){
 			})
 		}
 	})
-})
+// })
