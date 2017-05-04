@@ -7,6 +7,7 @@ require_once('../inc.php');
 
 
 token_refresh();
+header('Content-Type: application/json;charset=utf-8');
 
 
 $api_instance = new Swagger\Client\Api\MailApi();
