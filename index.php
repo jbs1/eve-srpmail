@@ -46,16 +46,6 @@ function refresh() {
 }
 </script>
 <script src="js/jquery.searchable.js"></script>
-<script>
-$("#resub-table").searchable({
-	searchField:"#resubmit-search",
-	searchType: "fuzzy",
-	clearOnLoad: true,
-	onSearchFocus: function(){
-		console.log("bla");
-	}
-});
-</script>
 ';
 
 
@@ -126,23 +116,20 @@ echo '
 ';
 
 
+echo '
+<script>
+$("#resub-table").searchable({
+	searchField:"#resubmit-search",
+	searchType: "fuzzy",
+	clearOnLoad: true,
+	onSearchFocus: function(){
+		console.log("bla");
+	}
+});
+</script>';
 
 echo '</body>
 </html>';
-
-
-
-// $api_instance = new Swagger\Client\Api\MailApi();
-// $datasource = "tranquility"; // string | The server name you would like data from
-
-
-// try {
-//     $result = $api_instance->getCharactersCharacterIdMail(charid());
-//     print_r($result);
-// } catch (Exception $e) {
-//     echo 'Exception: ', $e->getMessage(), PHP_EOL;
-// }
-
 
 
 ?>
