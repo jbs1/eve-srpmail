@@ -38,7 +38,13 @@ $(function (){
 												url: 'form/accept.php',
 												data: {'cntr':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body},
 												success: function(data){
-													console.log('Mail-ID',data);
+													if(data["success"]){
+														var alt=$('#art').append('<div class="alert alert-success alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Mail Sent! Mail-ID:'+data["return"]+'</div>')
+														alt.alert();
+													}else{
+														var alt=$('#art').append('<div class="alert alert-danger" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+data["return"]+'</div>')
+														alt.alert();
+													}
 													$('div#contrfrm').remove();
 													$("div#contract-table").show(350);
 												},
