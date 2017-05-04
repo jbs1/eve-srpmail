@@ -113,10 +113,7 @@ echo '
 							<th>Membername</th><th>Member ID</th>
 							</tr>
 							</thead>
-							<tbody>
-								<tr><td>bjaskasnkasa</td><td>12133121</td></tr>
-								<tr><td>bkdflgfk</td><td>1557765</td></tr>
-							</tbody>
+							<tbody></tbody>
 						</table>
 					</div>
 				</div>
