@@ -31,9 +31,9 @@ if(!isset($_SESSION['finished_contracts'])){
 
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
-    print_r($result);
+    print_r(json_encode(array("success"=>true,"return"=>$result)));
 } catch (Exception $e) {
-    echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
+	print_r(json_encode(array("success"=>false,"return"=>'Exception when calling MailApi->postCharactersCharacterIdMail: '+$e->getMessage())));
 }
 
 
