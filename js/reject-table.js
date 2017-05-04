@@ -31,6 +31,11 @@ $(function (){
 											},
 										})
 									})
+								},
+								complete: function(){
+									$('#reject').find('div#rjctfrm > form > button#back').click(function() {
+										$('div#rjctfrm').remove();
+									});
 								}
 							})
 						})

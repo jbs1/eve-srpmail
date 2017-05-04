@@ -52,7 +52,7 @@ Fly Safe,
 <url=showinfo:2//917701062>EVE University</url>
 </textarea>
 </div>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Submit</button><button type="button" class="btn btn-warning" id="back">Back</button>
 
 </form>
 </div>
