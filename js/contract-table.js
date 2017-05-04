@@ -15,7 +15,6 @@ $(function (){
 					$.each(data,function(i, item){
 						var flag = 0;
 						$("table#cont-table > tbody > tr > td:first-child").each(function(){
-							console.log($(this).text())
 							if($(this).text() == item["@attributes"].contractID){
 								flag = 1;
 							}
@@ -92,6 +91,7 @@ function addfinish(){
 		type: 'GET',
 		success: function(data){
 			for(var i in data){
+				console.log(data)
 				$('table#cont-table > tbody > tr#'+data).addClass('success');
 			}
 		}
