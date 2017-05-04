@@ -59,7 +59,7 @@ echo '
 
 	<div class="row">
 		<div class="col-md-12 page-header">
-			<h1>EVE-Uni SRP mailer <small>Mailing tool for SRP-Officer</small></h1>
+			<h1>EVE-Uni SRP mailer <small>Mailing tool for SRP-Officers</small></h1>
 		</div>
 	</div>
 	<div class="row">
@@ -96,7 +96,7 @@ echo '
 					<ul>
 						<li>This make it advisable to first create all contracts and then refresh them on this website.</li>
 						<li>The time until you can refresh contracts is shown on the website</li>
-					</li>
+					</ul>
 					<li>Everything on this website is saved in session on the server. This means when you stay inactive for too long or close
 					your browser you will have to login again and it will not remember the contracs anymore for which you send email already.</li>
 					<ul>
