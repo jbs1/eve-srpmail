@@ -27,10 +27,10 @@ $(function (){
 											success: function(data){
 												console.log('Mail-ID',data);
 												if(data["success"]){
-													var alt=$('#art').append('<div class="alert alert-success" role="alert" >Mail Sent! Mail-ID:'.data["return"].'</div>')
+													var alt=$('#art').append('<div class="alert alert-success" role="alert" >Mail Sent! Mail-ID:'+data["return"]+'</div>')
 													alt.alert();
 												}else{
-													var alt=$('#art').append('<div class="alert alert-danger" role="alert" >'.data["return"].'</div>')
+													var alt=$('#art').append('<div class="alert alert-danger" role="alert" >'+data["return"]+'</div>')
 													alt.alert();
 												}
 												$('div#rjctfrm').remove();
