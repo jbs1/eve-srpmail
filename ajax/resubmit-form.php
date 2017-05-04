@@ -43,7 +43,10 @@ However there is at least one issue preventing us from fulfilling your request:
 </div>
 
 <div class="form-group">
-<textarea class="form-control" id="end-text" name="end-text" rows="4" readonly>
+<textarea class="form-control" id="end-text" name="end-text" rows="7" readonly>
+Fell free to contact me with further information regarding these.
+Once resolved, we'll try to issue the new ship as fast as possible.
+
 Fly Safe,
 <url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem'][charid()]; ?></url>
 <url=showinfo:2//917701062>EVE University</url>
