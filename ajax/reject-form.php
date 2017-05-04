@@ -36,7 +36,7 @@ Unfortunately we have had to decline your ship replacement request due to one or
 </div>
 
 <div class="form-group">
-<label for="additional-text">List the reasons for rejection</label>
+<label for="additional-text">List the reasons for rejection and supply the Killboard Link</label>
 <textarea class="form-control" id="additional-text" name="additional-text" rows="5">
 </textarea>
 </div>

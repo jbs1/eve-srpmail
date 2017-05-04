@@ -37,7 +37,7 @@ However there is at least one issue preventing us from fulfilling your request:
 </div>
 
 <div class="form-group">
-<label for="additional-text">List the problems</label>
+<label for="additional-text">List the problems and supply the Killboard Link</label>
 <textarea class="form-control" id="additional-text" name="additional-text" rows="5">
 </textarea>
 </div>
