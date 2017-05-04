@@ -35,6 +35,7 @@ $(function (){
 								complete: function(){
 									$('#reject').find('div#rjctfrm > form > button#back').click(function() {
 										$('div#rjctfrm').remove();
+										$("div#reject-table").show(350);
 									});
 								}
 							})

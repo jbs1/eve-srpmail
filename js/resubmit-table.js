@@ -31,6 +31,12 @@ $(function (){
 											},
 										})
 									})
+								},
+								complete: function(){
+									$('#resubmit').find('div#rsmbfrm > form > button#back').click(function() {
+										$('div#rsmbfrm').remove();
+										$("div#resubmit-table").show(350);
+									});
 								}
 							})
 						})

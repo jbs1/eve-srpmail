@@ -47,6 +47,12 @@ $(function (){
 												}
 											})
 										})
+									},
+									complete: function(){
+										$('#accept').find('div#contrfrm > form > button#back').click(function() {
+											$('div#contrfrm').remove();
+											$("div#contract-table").show(350);
+										});
 									}
 								})
 							})
