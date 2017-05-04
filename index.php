@@ -91,7 +91,10 @@ echo '
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">
 					<div id="resubmit-table">
-						Who do you want to write this email to?
+						<div class="input-group">
+							<span class="input-group-addon" id="resubmit-search-addon">Member-Search:</span>
+							<input type="text" class="form-control" placeholder="Character Name" aria-describedby="resubmit-search-addon">
+						</div>
 						<table class="table table-bordered table-hover" id="resub-table">
 							<thead>
 							<tr>
