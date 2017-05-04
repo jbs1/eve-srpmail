@@ -102,6 +102,7 @@ echo '
 					<ul>
 						<li>The session expiry time on the current server is: <b>'.ini_get("session.gc_maxlifetime").'</b> seconds</li>
 					</ul>
+					<li>If the target station is a Citadel it will not work. So far only Stations work.</li>
 					</ul>
 				</p>
 				<p>
