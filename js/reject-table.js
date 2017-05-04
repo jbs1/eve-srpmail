@@ -25,9 +25,8 @@ $(function (){
 											url: 'form/reject.php',
 											data: {'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':body},
 											success: function(data){
-												console.log('Mail-ID',data);
 												if(data["success"]){
-													var alt=$('#art').append('<div class="alert alert-success" role="alert" >Mail Sent! Mail-ID:'+data["return"]+'</div>')
+													var alt=$('#art').append('<div class="alert alert-success alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Mail Sent! Mail-ID:'+data["return"]+'</div>')
 													alt.alert();
 												}else{
 													var alt=$('#art').append('<div class="alert alert-danger" role="alert" >'+data["return"]+'</div>')
