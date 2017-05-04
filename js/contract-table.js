@@ -91,6 +91,7 @@ function addfinish(){
 		type: 'GET',
 		success: function(data){
 			for(var i in data){
+				console.log(i);
 				$('table#cont-table > tbody > tr#'+i).addClass('success');
 			}
 		}
