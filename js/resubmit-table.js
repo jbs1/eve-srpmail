@@ -29,9 +29,6 @@ $(function (){
 												$('div#rsmbfrm').remove();
 												$("div#resubmit-table").show(350);
 											},
-											complete: function(){
-												addfinish();
-											}
 										})
 									})
 								}

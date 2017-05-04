@@ -14,7 +14,6 @@ token_refresh();
 <h2>SRP resubmission!</h2>
 
 <form>
-<input type="hidden" id="contract" name="contract" value="<?php echo $_GET['contid']; ?>"></input>
 
 <div class="form-group">
 <label for="reciever">Reciever:</label>
@@ -28,7 +27,7 @@ token_refresh();
 </div>
 
 <div class="form-group">
-<textarea class="form-control" id="intro-text" name="intro-text" rows="5" readonly>
+<textarea class="form-control" id="intro-text" name="intro-text" rows="6" readonly>
 Hello,
 
 We have recieved your ship replacement request.
@@ -54,5 +53,3 @@ Fly Safe,
 
 </form>
 </div>
-
-?>
