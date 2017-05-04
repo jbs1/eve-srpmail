@@ -75,7 +75,7 @@ $(function (){
 						var d = new Date();
 						d.setSeconds(d.getSeconds() + data);
 						$("#contracts-time-cached-sec").text(data);
-						$("#contracts-time-cached-time").text(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" local time");
+						$("#contracts-time-cached-time").text(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" local time"+d.toTimeString()+d.toLocaleTimeString());
 					}
 				})
 			}
