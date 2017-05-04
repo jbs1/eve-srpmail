@@ -59,7 +59,7 @@ echo '
 
 	<div class="row">
 		<div class="col-md-12 page-header">
-			<h1>EVE srp mail <small>An assistant for srp officers</small></h1>
+			<h1>EVE-Uni SRP mailer <small>Mailing tool for SRP-Officer</small></h1>
 		</div>
 	</div>
 	<div class="row">
@@ -75,7 +75,42 @@ echo '
 
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="intro">Here comes an intro text for this tool<br/> Session expirey in seconds:'.ini_get("session.gc_maxlifetime").'</div>
+				<div role="tabpanel" class="tab-pane active" id="intro">
+				<p>
+					<h3>How it work:</h3>
+					You have 3 choices:<br />
+					Accept or reject a request or ask the character to resubmit.<br />
+					For rejection and resubmission it works similarly, just search for the character in the table, and write an email by clicking on it.<br />
+					For accepting an SRP request you first have to create the contract ingame. Then this script will pull your contracts via API.<br />
+					It will only show you private Item-Exchange contracts from the last 6 hours from you to any member of your corp,<br />
+					as these are the only ones that are relevant. From there on out it is the same process as with rejection/resubmission.<br />
+					It will prefil all important things automatically in the template and you can write additional info if you want.<br />
+					It will mark the contracts for which you wrote an email in the current session already.
+				</p>
+				<p>
+					<h3>Limitation:</h3>
+					<ul>
+					<li>The XML API from CCP will at max. only return the last 50 contracts create. This is a hardcoded limit.</li>
+					<li>The XML API will cache the results for 20 minutes. This mean, when you just refeshed the contracts on the website
+					and then create new contracts it will take 20 minutes until the refesh will pull the new contracts.</li>
+					<li><ul>
+						<li>This make it advisable to first create all contracts and then refresh them on this website.</li>
+						<li>The time until you can refresh contracts is shown on the website</li>
+					</ul></li>
+					<li>Everything on this website is saved in session on the server. This means when you stay inactive for too long or close
+					your browser you will have to login again and it will not remember the contracs anymore for which you send email already.</li>
+					<li><ul>
+						<li>This make it advisable to first create all contracts and then refresh them on this website.</li>
+						<li>The time until you can refresh contracts is shown on the website</li>
+					</ul></li>
+					</ul>
+				</p>
+				<p>
+					<h3>Possible future. Maybe....:</h3>
+					It would be nice to be able to also create the contracs from the website. But CCP has not yet implemented the contracts endpoint in the new ESI API.
+				</p>
+				Here comes an intro text for this tool<br/> Session expirey in seconds:'.ini_get("session.gc_maxlifetime").'
+				</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
 					<div id="contract-table">
 						<table class="table table-bordered table-hover" id="cont-table">
