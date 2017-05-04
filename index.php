@@ -40,6 +40,7 @@ echo '
 <script src="js/corp.js"></script>
 <script src="js/contract-table.js"></script>
 <script src="js/resubmit-table.js"></script>
+<script src="js/reject-table.js"></script>
 <script>
 function refresh() {
 	$(\'a[data-toggle="tab"][href="#accept"]\').trigger("shown.bs.tab");
@@ -105,7 +106,22 @@ echo '
 						</table>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane" id="reject">reject</div>
+				<div role="tabpanel" class="tab-pane" id="reject">
+					<div id="reject-table">
+						<div class="input-group">
+							<span class="input-group-addon" id="reject-search-addon">Member-Search:</span>
+							<input type="text" class="form-control" id="reject-search" placeholder="Character Name" aria-describedby="reject-search-addon">
+						</div>
+						<table class="table table-bordered table-hover" id="rej-table">
+							<thead>
+							<tr>
+							<th>Membername</th><th>Member ID</th>
+							</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
