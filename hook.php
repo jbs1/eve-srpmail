@@ -21,7 +21,7 @@ $LOCAL_REPO_NAME    = "eve-srpmail";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "git@github.com:jbs1/eve-srpmail.git";
 $BRANCH             = "master";
-$GIT_PREFIX         = "GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa' git";
+$GIT_PREFIX         = "sudo -u ubuntu GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa' git";
 
 //file_put_contents("{$LOCAL_ROOT}/push-log","test".print_r($_REQUEST,true));
 
