@@ -32,21 +32,24 @@ sudo apt-get install php-curl
 sudo apt-get install php-mbstring
 sudo apt-get install php-xml
 sudo service apache2 restart
+sudo apt-get install composer
 ```
 
 ### Get source
-You have two options:  
-
-Option 1:  
-Download the release from [https://github.com/jbs1/eve-srpmail/releases] and deplop it on a webserver.  
-Easiest for most cases.  
-
-Option 2:  
 Clone repo in webfolder or symlink repo to webfolder, eg.:  
 ```
 git clone git@github.com:jbs1/eve-srpmail.git
 sudo ln -sf ~/eve-srpmail/ /var/www/html
 ```
+
+### Install dependencies
+After you setup the repo you need to install the composer dependencies by running:
+```
+composer install
+```
+in the root of the repo.
+
+
 
 To use your own webhook you need to fork the repo an set it up as explanied [here](hook.md)
 
