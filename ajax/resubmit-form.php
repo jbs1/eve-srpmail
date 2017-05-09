@@ -40,6 +40,7 @@ However there is at least one issue preventing us from fulfilling your request:
 <label for="additional-text">List the problems and supply the Killboard Link</label>
 <textarea class="form-control" id="additional-text" name="additional-text" rows="5">
 </textarea>
+<span class="help-block">To add links they have to be in the format &quot;&lt;url=[target-url]&gt;[some text]&lt;/url&gt;&quot;.</span>
 </div>
 
 <div class="form-group">
