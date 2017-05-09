@@ -31,7 +31,7 @@ sudo service apache2 restart
 
 ### Get source
 Clone repo in webfolder or symlink repo to webfolder, eg.:  
-```php
+```
 git clone git@github.com:jbs1/eve-srpmail.git
 sudo ln -sf ~/eve-srpmail/ /var/www/html
 ```
