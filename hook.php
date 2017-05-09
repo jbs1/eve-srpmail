@@ -21,7 +21,7 @@ $LOCAL_REPO_NAME    = "eve-srpmail";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "git@github.com:jbs1/eve-srpmail.git";
 $BRANCH             = "master";
-$GIT_PREFIX         = "sudo GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa' git";
+$GIT_PREFIX         = "GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa' git";
 
 //file_put_contents("{$LOCAL_ROOT}/push-log","test".print_r($_REQUEST,true));
 
@@ -31,12 +31,15 @@ if ( $_POST['payload'] ) {
 
   if( file_exists($LOCAL_REPO) ) {
     // If there is already a repo, just run a git pull to grab the latest changes
-    shell_exec("cd {$LOCAL_REPO} && {$GIT_PREFIX} pull");
+    shell_exec("cd {$LOCAL_REPO}");
+    shell_exec("{$GIT_PREFIX} fetch --all --prune");
+    shell_exec("{$GIT_PREFIX} checkout {$BRANCH}");
+    shell_exec("{$GIT_PREFIX} pull");
     file_put_contents("{$LOCAL_ROOT}/push-log","Pushed: ".date("H:i:s d.m.Y")."\n", FILE_APPEND);
     die("Updated: ".date("H:i:s d.m.Y"));
   } else {
     // If the repo does not exist, then clone it into the parent directory
-    shell_exec("cd {$LOCAL_ROOT} && {$GIT_PREFIX} clone {$REMOTE_REPO}");
+    shell_exec("cd {$LOCAL_ROOT} && {$GIT_PREFIX} clone {$REMOTE_REPO} {$BRANCH}");
     file_put_contents("{$LOCAL_ROOT}/push-log","Pushed: ".date("H:i:s d.m.Y")."\n", FILE_APPEND);
     die("Updated: ".date("H:i:s d.m.Y"));
   }
