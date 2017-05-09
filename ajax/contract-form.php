@@ -46,6 +46,7 @@ The contract for the ship can be found here: <url=contract:<?php echo $station['
 <label for="additional-text">Optional comments for the mail</label>
 <textarea class="form-control" id="additional-text" name="additional-text" rows="4">
 </textarea>
+<span class="help-block">To add links they have to be in the format &quot;&lt;url=[target-url]&gt;[some text]&lt;/url&gt;&quot;.</span>
 </div>
 
 <div class="form-group">
