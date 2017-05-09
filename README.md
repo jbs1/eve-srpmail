@@ -3,7 +3,7 @@
 This is a small and simple tool to make the tedious task of of writing SRP mails easier for officers.  
 This works for all corporations not just EVE uni as it pulls the infos about the corps and chars dynamically from the API.  
 Nothing will be save on the server itself for longer than the session.
-Only works if contracts are in stations not in citadels.
+As of now it only works if contracts are in stations not in citadels.
 
 
 Future plan's:
@@ -15,6 +15,7 @@ Future plan's:
 * [ ] switch over to esi-api for contracts when the endpoint is implemeted
 * [ ] possibilty to create conracts from the api (NO endpoint yet)
   * [ ] possible problems with ships beeing inside locked containers
+* [ ] make it work with citadels
 
 If all endpoints are implemeted, it would remove the need to be ingame at all which would mean SRP could be done on the go e.g. through our phone.
 
