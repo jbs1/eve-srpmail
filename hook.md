@@ -1,12 +1,10 @@
-from https://github.com/jbs1/jlecture
-
 ## website changes
 Website changes are now automatically pushed to the webserver. Every push event calls a webhook which pulls the changes to an amazon-ec2-instance.  
 ### enable auto sync with github:
 * add the following code to the `etc/sudoers`-file by doing `sudo visudo` on the instance:
 ```
 Defaults env_keep += "GIT_SSH_COMMAND"
-www-data ALL=NOPASSWD: /usr/bin/git
+www-data ALL=(ALL) NOPASSWD: /usr/bin/git
 ```
 * add usergroup `web_pub` via `sudo groupadd web_pub`
 * add the proper users to the new group
