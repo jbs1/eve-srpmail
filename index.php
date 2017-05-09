@@ -110,8 +110,8 @@ echo '
 					</ul>
 				</p>
 				<p>
-					<h3>Possible future. Maybe....:</h3>
-					It would be nice to be able to also create the contracs from the website. But CCP has not yet implemented the contracts endpoint in the new ESI API.
+					<h4>Source code:</h4>
+					The sourcecode to the mailer can be found <a href="https://github.com/jbs1/eve-srpmail">here</href> together with a list of future plans.
 				</p>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
