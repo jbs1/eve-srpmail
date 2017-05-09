@@ -111,7 +111,7 @@ echo '
 				</p>
 				<p>
 					<h4>Source code:</h4>
-					The sourcecode to the mailer can be found <a href="https://github.com/jbs1/eve-srpmail">here</href> together with a list of future plans.
+					The sourcecode to the mailer can be found <a href="https://github.com/jbs1/eve-srpmail">here</a> together with a list of future plans.
 				</p>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="accept">
