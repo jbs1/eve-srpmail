@@ -2,6 +2,7 @@
 session_start();
 require_once('vendor/autoload.php');
 require_once('provider.php');
+require_once('inc.php');
 
 
 // If we don't have an authorization code then get one
@@ -45,6 +46,15 @@ if (!isset($_GET['code'])) {
         //save accessToken and char info in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
         $_SESSION['charinfo']=$resourceOwner->toArray();
+
+        //save corp info
+        $api_universe = new Swagger\Client\Api\UniverseApi();
+        $datasource = "tranquility"; // string | The server name you would like data from
+        $corp=$api_universe->postUniverseNames(array(corpid($_SESSION['charinfo']['CharacterID'])), $datasource);
+        $_SESSION['charinfo']['corpid']=$corp[0]['id'];
+        $_SESSION['charinfo']['corpname']=$corp[0]['name'];
+
+
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 
