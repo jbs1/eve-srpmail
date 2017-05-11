@@ -50,7 +50,7 @@ Once resolved, we'll try to issue the new ship as fast as possible.
 
 Fly Safe,
 <url=showinfo:1377//<?php echo charid(); ?>><?php echo $_SESSION['corpmem'][charid()]; ?></url>
-<url=showinfo:2//917701062>EVE University</url>
+<url=showinfo:2//<?php echo $_SESSION['charinfo']['corpid'];?>><?php echo $_SESSION['charinfo']['corpname'];?></url>
 </textarea>
 </div>
 <button type="submit" class="btn btn-primary">Submit</button><button type="button" class="btn btn-warning" id="back">Back</button>
