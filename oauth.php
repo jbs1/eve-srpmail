@@ -53,6 +53,7 @@ if (!isset($_GET['code'])) {
         $corp=$api_universe->postUniverseNames(array(corpid($_SESSION['charinfo']['CharacterID'])), $datasource);
         $_SESSION['charinfo']['corpid']=$corp[0]['id'];
         $_SESSION['charinfo']['corpname']=$corp[0]['name'];
+        var_dump($corp);
 
 
 
