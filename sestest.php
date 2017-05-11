@@ -1,3 +1,5 @@
 <?php
-print_r($_SESSION);
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
 ?>
