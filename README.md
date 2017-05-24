@@ -7,6 +7,7 @@ As of now it only works if contracts are in stations not in citadels.
 
 
 Future plan's:
+* [ ] Visual Requirement comparison for BLAP fits from killboard links
 * [ ] Add versions for advanced SRP similar to reject/resubmit
   * [ ] Have catalogue with prefetched ISK reimbursement amounts
   * [ ] possibly make payments through api (NO endpoint yet)
