@@ -19,6 +19,7 @@ Future plan's:
   * [ ] possible problems with ships beeing inside locked containers
 * [ ] make it work with citadels
 * [ ] fix bug with contract status not refeshing
+  * [ ] deleted/timed out contracts don't disappear from list as the javascript only add's and doesn't remove
 * [x] corp name lookup for mails instead of static (possibly save name in session on login/auth)
 
 If all endpoints are implemeted, it would remove the need to be ingame at all which would mean SRP could be done on the go e.g. through our phone.
