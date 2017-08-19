@@ -48,11 +48,12 @@ if (!isset($_GET['code'])) {
         $_SESSION['charinfo']=$resourceOwner->toArray();
 
         //save corp info
-        $api_universe = new Swagger\Client\Api\UniverseApi();
+        $api_corporation = new Swagger\Client\Api\CorporationApi();
         $datasource = "tranquility"; // string | The server name you would like data from
-        $corp=$api_universe->postUniverseNames(array(corpid($_SESSION['charinfo']['CharacterID'])), $datasource);
-        $_SESSION['charinfo']['corpid']=$corp[0]['id'];
-        $_SESSION['charinfo']['corpname']=$corp[0]['name'];
+        $corp=$api_corporation->getCorporationsNames(corpid($_SESSION['charinfo']['CharacterID']), $datasource);
+
+        $_SESSION['charinfo']['corpid']=$corp[0]['corporation_id'];
+        $_SESSION['charinfo']['corpname']=$corp[0]['corporation_name'];
 
 
 
