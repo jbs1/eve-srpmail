@@ -34,7 +34,7 @@ if ( $_POST['payload'] ) {
     shell_exec("cd {$LOCAL_REPO}");
     shell_exec("{$GIT_PREFIX} fetch --all --prune");
     shell_exec("{$GIT_PREFIX} checkout {$BRANCH}");
-    shell_exec("{$GIT_PREFIX} pull");
+    shell_exec("{$GIT_PREFIX} reset --hard origin/{$BRANCH}");
     file_put_contents("{$LOCAL_ROOT}/push-log","Pushed: ".date("H:i:s d.m.Y")."\n", FILE_APPEND);
     die("Updated: ".date("H:i:s d.m.Y"));
   } else {
