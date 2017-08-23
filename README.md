@@ -13,7 +13,7 @@ Future plan's:
   * [ ] Have catalogue with prefetched ISK reimbursement amounts
   * [ ] possibly make payments through api (NO endpoint yet)
 * [ ] additional (optional) field in forms for link to killmail
-* [ ] add some loading indicator (especially for loading members) since that can take up to 15 seconds
+* [x] add some loading indicator (especially for loading members) since that can take up to 15 seconds
 * [ ] switch over to esi-api for contracts when the endpoint is implemeted
 * [ ] possibilty to create conracts from the api (NO endpoint yet)
   * [ ] possible problems with ships beeing inside locked containers
@@ -22,6 +22,7 @@ Future plan's:
   * [ ] deleted/timed out contracts don't disappear from list as the javascript only add's and doesn't remove
 * [x] corp name lookup for mails instead of static (possibly save name in session on login/auth)
 * [ ] Replace header corp name with logo, also make it dynamic lookup
+* [ ] autoclose mails notifications after some time
 
 If all endpoints are implemeted, it would remove the need to be ingame at all which would mean SRP could be done on the go e.g. through our phone.
 

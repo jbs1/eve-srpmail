@@ -37,10 +37,15 @@ echo'
 
 
 echo '
+
+
+<link rel="stylesheet" href="css/loader.css">
 <script src="js/corp.js"></script>
 <script src="js/contract-table.js"></script>
 <script src="js/resubmit-table.js"></script>
 <script src="js/reject-table.js"></script>
+<script src="js/loader.js"></script>
+
 <script>
 function refresh() {
 	$(\'a[data-toggle="tab"][href="#accept"]\').trigger("shown.bs.tab");
@@ -63,6 +68,12 @@ echo '
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-md-8 col-md-offset-2" id="loading_status">
+			<table>
+				<tr id="row_loader"></tr>
+				<tr id="row_text"></tr>
+			</table>
+		</div>
 		<div class="col-md-6 col-md-offset-3" id="art">
 		</div>
 	</div>
