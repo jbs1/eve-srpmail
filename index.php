@@ -55,7 +55,7 @@ function refresh() {
 ';
 
 
-echo '<title>srp mail</title>
+echo '<title>SRP Mailer</title>
 </head>
 <body>';
 
@@ -63,8 +63,11 @@ echo '
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-md-12 page-header">
-			<h1>EVE-Uni SRP mailer <small>Mailing tool for SRP-Officers</small></h1>
+		<div class="col-md-1 col-md-offset-2">
+			<img src="https://image.eveonline.com/Corporation/'.$_SESSION["charinfo"]["corpid"].'_128.png">
+		</div>
+		<div class="col-md-7 page-header">
+			<h1>SRP mailer <small>Mailing tool for SRP-Officers</small></h1>
 		</div>
 	</div>
 	<div class="row">
