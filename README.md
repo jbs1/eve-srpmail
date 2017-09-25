@@ -26,6 +26,7 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 * [ ] show logged in char
 * [ ] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
 * [ ] fix "session already started" console warning
+* [ ] use TravisCI for auto code cleanup on realease branch commit
 
 
 #### Tabs
