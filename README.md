@@ -24,6 +24,8 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 * [ ] make it work with citadels
 * [ ] don't autoload contracts (?)
 * [ ] show logged in char
+* [ ] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
+* [ ] fix "session already started" console warning
 
 
 #### Tabs
@@ -92,4 +94,4 @@ The following library's were used:
   * To use the api, every PHP document must include the api [manually](https://github.com/jbs1/eve-srpmail/tree/master/SwaggerClient-php#manual-installation).
 * [OAuth Client](https://github.com/thephpleague/oauth2-client)
   * Installed via compser (`composer require league/oauth2-client` inside the repo's root folder)
-* a [webhook](hook.md) to pull commits for webserver
+* ~~a [webhook](hook.md) to pull commits for webserver~~
