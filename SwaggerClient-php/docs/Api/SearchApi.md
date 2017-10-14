@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Search on a string
 
-Search for entities that match a given sub-string.  ---  Alternate route: `/v2/characters/{character_id}/search/`   ---  This route is cached for up to 3600 seconds
+Search for entities that match a given sub-string.  --- Alternate route: `/v2/characters/{character_id}/search/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
@@ -23,14 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\SearchApi();
+$api_instance = new Swagger\Client\Api\SearchApi(new \Http\Adapter\Guzzle6\Client());
 $categories = array("categories_example"); // string[] | Type of entities to search for
 $character_id = 56; // int | An EVE character ID
 $search = "search_example"; // string | The string to search on
 $datasource = "tranquility"; // string | The server name you would like data from
-$language = "en-us"; // string | Search locale
+$language = "en-us"; // string | Language to use in the response
 $strict = false; // bool | Whether the search should be a strict match
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -51,9 +51,9 @@ Name | Type | Description  | Notes
  **character_id** | **int**| An EVE character ID |
  **search** | **string**| The string to search on |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **language** | **string**| Search locale | [optional] [default to en-us]
+ **language** | **string**| Language to use in the response | [optional] [default to en-us]
  **strict** | **bool**| Whether the search should be a strict match | [optional] [default to false]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -77,18 +77,18 @@ Name | Type | Description  | Notes
 
 Search on a string
 
-Search for entities that match a given sub-string.  ---  Alternate route: `/v1/search/`  Alternate route: `/legacy/search/`   ---  This route is cached for up to 3600 seconds
+Search for entities that match a given sub-string.  --- Alternate route: `/v1/search/`  Alternate route: `/legacy/search/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\SearchApi();
+$api_instance = new Swagger\Client\Api\SearchApi(new \Http\Adapter\Guzzle6\Client());
 $categories = array("categories_example"); // string[] | Type of entities to search for
 $search = "search_example"; // string | The string to search on
 $datasource = "tranquility"; // string | The server name you would like data from
-$language = "en-us"; // string | Search locale
+$language = "en-us"; // string | Language to use in the response
 $strict = false; // bool | Whether the search should be a strict match
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
  **categories** | [**string[]**](../Model/string.md)| Type of entities to search for |
  **search** | **string**| The string to search on |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **language** | **string**| Search locale | [optional] [default to en-us]
+ **language** | **string**| Language to use in the response | [optional] [default to en-us]
  **strict** | **bool**| Whether the search should be a strict match | [optional] [default to false]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]

@@ -14,14 +14,14 @@ Method | HTTP request | Description
 
 List sovereignty campaigns
 
-Shows sovereignty data for campaigns.  ---  Alternate route: `/v1/sovereignty/campaigns/`  Alternate route: `/legacy/sovereignty/campaigns/`  Alternate route: `/dev/sovereignty/campaigns/`   ---  This route is cached for up to 5 seconds
+Shows sovereignty data for campaigns.  --- Alternate route: `/v1/sovereignty/campaigns/`  Alternate route: `/legacy/sovereignty/campaigns/`  Alternate route: `/dev/sovereignty/campaigns/`  --- This route is cached for up to 5 seconds
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\SovereigntyApi();
+$api_instance = new Swagger\Client\Api\SovereigntyApi(new \Http\Adapter\Guzzle6\Client());
 $datasource = "tranquility"; // string | The server name you would like data from
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
@@ -63,14 +63,14 @@ No authorization required
 
 List sovereignty of systems
 
-Shows sovereignty information for solar systems  ---  Alternate route: `/v1/sovereignty/map/`  Alternate route: `/legacy/sovereignty/map/`  Alternate route: `/dev/sovereignty/map/`   ---  This route is cached for up to 3600 seconds
+Shows sovereignty information for solar systems  --- Alternate route: `/v1/sovereignty/map/`  Alternate route: `/legacy/sovereignty/map/`  Alternate route: `/dev/sovereignty/map/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\SovereigntyApi();
+$api_instance = new Swagger\Client\Api\SovereigntyApi(new \Http\Adapter\Guzzle6\Client());
 $datasource = "tranquility"; // string | The server name you would like data from
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
@@ -112,14 +112,14 @@ No authorization required
 
 List sovereignty structures
 
-Shows sovereignty data for structures.  ---  Alternate route: `/v1/sovereignty/structures/`  Alternate route: `/legacy/sovereignty/structures/`  Alternate route: `/dev/sovereignty/structures/`   ---  This route is cached for up to 120 seconds
+Shows sovereignty data for structures.  --- Alternate route: `/v1/sovereignty/structures/`  Alternate route: `/legacy/sovereignty/structures/`  Alternate route: `/dev/sovereignty/structures/`  --- This route is cached for up to 120 seconds
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\SovereigntyApi();
+$api_instance = new Swagger\Client\Api\SovereigntyApi(new \Http\Adapter\Guzzle6\Client());
 $datasource = "tranquility"; // string | The server name you would like data from
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent

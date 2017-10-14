@@ -12,14 +12,14 @@ Method | HTTP request | Description
 
 Retrieve the uptime and player counts
 
-EVE Server status  ---  Alternate route: `/v1/status/`  Alternate route: `/legacy/status/`  Alternate route: `/dev/status/`   ---  This route is cached for up to 30 seconds
+EVE Server status  --- Alternate route: `/v1/status/`  Alternate route: `/legacy/status/`  Alternate route: `/dev/status/`  --- This route is cached for up to 30 seconds
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\StatusApi();
+$api_instance = new Swagger\Client\Api\StatusApi(new \Http\Adapter\Guzzle6\Client());
 $datasource = "tranquility"; // string | The server name you would like data from
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent

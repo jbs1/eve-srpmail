@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Set Autopilot Waypoint
 
-Set a solar system as autopilot waypoint  ---  Alternate route: `/v2/ui/autopilot/waypoint/`  Alternate route: `/dev/ui/autopilot/waypoint/`
+Set a solar system as autopilot waypoint  --- Alternate route: `/v2/ui/autopilot/waypoint/`  Alternate route: `/dev/ui/autopilot/waypoint/`
 
 ### Example
 ```php
@@ -26,12 +26,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\UserInterfaceApi();
+$api_instance = new Swagger\Client\Api\UserInterfaceApi(new \Http\Adapter\Guzzle6\Client());
 $add_to_beginning = false; // bool | Whether this solar system should be added to the beginning of all waypoints
 $clear_other_waypoints = false; // bool | Whether clean other waypoints beforing adding this one
 $destination_id = 789; // int | The destination to travel to, can be solar system, station or structure's id
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
  **clear_other_waypoints** | **bool**| Whether clean other waypoints beforing adding this one | [default to false]
  **destination_id** | **int**| The destination to travel to, can be solar system, station or structure&#39;s id |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -75,7 +75,7 @@ void (empty response body)
 
 Open Contract Window
 
-Open the contract window inside the client  ---  Alternate route: `/v1/ui/openwindow/contract/`  Alternate route: `/legacy/ui/openwindow/contract/`  Alternate route: `/dev/ui/openwindow/contract/`
+Open the contract window inside the client  --- Alternate route: `/v1/ui/openwindow/contract/`  Alternate route: `/legacy/ui/openwindow/contract/`  Alternate route: `/dev/ui/openwindow/contract/`
 
 ### Example
 ```php
@@ -85,10 +85,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\UserInterfaceApi();
+$api_instance = new Swagger\Client\Api\UserInterfaceApi(new \Http\Adapter\Guzzle6\Client());
 $contract_id = 56; // int | The contract to open
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contract_id** | **int**| The contract to open |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -130,7 +130,7 @@ void (empty response body)
 
 Open Information Window
 
-Open the information window for a character, corporation or alliance inside the client  ---  Alternate route: `/v1/ui/openwindow/information/`  Alternate route: `/legacy/ui/openwindow/information/`  Alternate route: `/dev/ui/openwindow/information/`
+Open the information window for a character, corporation or alliance inside the client  --- Alternate route: `/v1/ui/openwindow/information/`  Alternate route: `/legacy/ui/openwindow/information/`  Alternate route: `/dev/ui/openwindow/information/`
 
 ### Example
 ```php
@@ -140,10 +140,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\UserInterfaceApi();
+$api_instance = new Swagger\Client\Api\UserInterfaceApi(new \Http\Adapter\Guzzle6\Client());
 $target_id = 56; // int | The target to open
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **target_id** | **int**| The target to open |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -185,7 +185,7 @@ void (empty response body)
 
 Open Market Details
 
-Open the market details window for a specific typeID inside the client  ---  Alternate route: `/v1/ui/openwindow/marketdetails/`  Alternate route: `/legacy/ui/openwindow/marketdetails/`  Alternate route: `/dev/ui/openwindow/marketdetails/`
+Open the market details window for a specific typeID inside the client  --- Alternate route: `/v1/ui/openwindow/marketdetails/`  Alternate route: `/legacy/ui/openwindow/marketdetails/`  Alternate route: `/dev/ui/openwindow/marketdetails/`
 
 ### Example
 ```php
@@ -195,10 +195,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\UserInterfaceApi();
+$api_instance = new Swagger\Client\Api\UserInterfaceApi(new \Http\Adapter\Guzzle6\Client());
 $type_id = 56; // int | The item type to open in market window
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type_id** | **int**| The item type to open in market window |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -240,7 +240,7 @@ void (empty response body)
 
 Open New Mail Window
 
-Open the New Mail window, according to settings from the request if applicable  ---  Alternate route: `/v1/ui/openwindow/newmail/`  Alternate route: `/legacy/ui/openwindow/newmail/`  Alternate route: `/dev/ui/openwindow/newmail/`
+Open the New Mail window, according to settings from the request if applicable  --- Alternate route: `/v1/ui/openwindow/newmail/`  Alternate route: `/legacy/ui/openwindow/newmail/`  Alternate route: `/dev/ui/openwindow/newmail/`
 
 ### Example
 ```php
@@ -250,10 +250,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\UserInterfaceApi();
+$api_instance = new Swagger\Client\Api\UserInterfaceApi(new \Http\Adapter\Guzzle6\Client());
 $new_mail = new \Swagger\Client\Model\PostUiOpenwindowNewmailNewMail(); // \Swagger\Client\Model\PostUiOpenwindowNewmailNewMail | The details of mail to create
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -269,9 +269,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **new_mail** | [**\Swagger\Client\Model\PostUiOpenwindowNewmailNewMail**](../Model/\Swagger\Client\Model\PostUiOpenwindowNewmailNewMail.md)| The details of mail to create |
+ **new_mail** | [**\Swagger\Client\Model\PostUiOpenwindowNewmailNewMail**](../Model/PostUiOpenwindowNewmailNewMail.md)| The details of mail to create |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 

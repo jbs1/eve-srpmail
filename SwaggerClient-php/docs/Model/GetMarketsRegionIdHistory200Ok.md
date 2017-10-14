@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **average** | **float** | average number | 
-**date** | [**\DateTime**](Date.md) | The date of this historical statistic entry | 
+**date** | [**\DateTime**](\DateTime.md) | The date of this historical statistic entry | 
 **highest** | **float** | highest number | 
 **lowest** | **float** | lowest number | 
 **order_count** | **int** | Total number of orders happened that day | 

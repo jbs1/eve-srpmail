@@ -10,8 +10,10 @@ Name | Type | Description | Notes
 **graphic_id** | **int** | graphic_id integer | [optional] 
 **group_id** | **int** | group_id integer | 
 **icon_id** | **int** | icon_id integer | [optional] 
+**market_group_id** | **int** | This only exists for types that can be put on the market | [optional] 
 **mass** | **float** | mass number | [optional] 
 **name** | **string** | name string | 
+**packaged_volume** | **float** | packaged_volume number | [optional] 
 **portion_size** | **int** | portion_size integer | [optional] 
 **published** | **bool** | published boolean | 
 **radius** | **float** | radius number | [optional] 

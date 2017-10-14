@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Delete fitting
 
-Delete a fitting from a character  ---  Alternate route: `/v1/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/legacy/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/dev/characters/{character_id}/fittings/{fitting_id}/`
+Delete a fitting from a character  --- Alternate route: `/v1/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/legacy/characters/{character_id}/fittings/{fitting_id}/`  Alternate route: `/dev/characters/{character_id}/fittings/{fitting_id}/`
 
 ### Example
 ```php
@@ -24,11 +24,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FittingsApi();
-$character_id = 56; // int | ID for a character
+$api_instance = new Swagger\Client\Api\FittingsApi(new \Http\Adapter\Guzzle6\Client());
+$character_id = 56; // int | An EVE character ID
 $fitting_id = 56; // int | ID for a fitting of this character
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -44,10 +44,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| ID for a character |
+ **character_id** | **int**| An EVE character ID |
  **fitting_id** | **int**| ID for a fitting of this character |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -71,7 +71,7 @@ void (empty response body)
 
 Get fittings
 
-Return fittings of a character  ---  Alternate route: `/v1/characters/{character_id}/fittings/`  Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/`   ---  This route is cached for up to 300 seconds
+Return fittings of a character  --- Alternate route: `/v1/characters/{character_id}/fittings/`  Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/`  --- This route is cached for up to 300 seconds
 
 ### Example
 ```php
@@ -81,10 +81,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FittingsApi();
-$character_id = 56; // int | ID for a character
+$api_instance = new Swagger\Client\Api\FittingsApi(new \Http\Adapter\Guzzle6\Client());
+$character_id = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -101,9 +101,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| ID for a character |
+ **character_id** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 Create fitting
 
-Save a new fitting for a character  ---  Alternate route: `/v1/characters/{character_id}/fittings/`  Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/`
+Save a new fitting for a character  --- Alternate route: `/v1/characters/{character_id}/fittings/`  Alternate route: `/legacy/characters/{character_id}/fittings/`  Alternate route: `/dev/characters/{character_id}/fittings/`
 
 ### Example
 ```php
@@ -137,11 +137,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: evesso
 Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\FittingsApi();
-$character_id = 56; // int | ID for a character
+$api_instance = new Swagger\Client\Api\FittingsApi(new \Http\Adapter\Guzzle6\Client());
+$character_id = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 $fitting = new \Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting(); // \Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting | Details about the new fitting
-$token = "token_example"; // string | Access token to use, if preferred over a header
+$token = "token_example"; // string | Access token to use if unable to set a header
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers
 $x_user_agent = "x_user_agent_example"; // string | Client identifier, takes precedence over User-Agent
 
@@ -158,10 +158,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| ID for a character |
+ **character_id** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
- **fitting** | [**\Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting**](../Model/\Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting.md)| Details about the new fitting | [optional]
- **token** | **string**| Access token to use, if preferred over a header | [optional]
+ **fitting** | [**\Swagger\Client\Model\PostCharactersCharacterIdFittingsFitting**](../Model/PostCharactersCharacterIdFittingsFitting.md)| Details about the new fitting | [optional]
+ **token** | **string**| Access token to use if unable to set a header | [optional]
  **user_agent** | **string**| Client identifier, takes precedence over headers | [optional]
  **x_user_agent** | **string**| Client identifier, takes precedence over User-Agent | [optional]
 

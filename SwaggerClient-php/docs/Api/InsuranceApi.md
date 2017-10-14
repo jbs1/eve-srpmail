@@ -12,14 +12,14 @@ Method | HTTP request | Description
 
 List insurance levels
 
-Return available insurance levels for all ship types  ---  Alternate route: `/v1/insurance/prices/`  Alternate route: `/legacy/insurance/prices/`  Alternate route: `/dev/insurance/prices/`   ---  This route is cached for up to 3600 seconds
+Return available insurance levels for all ship types  --- Alternate route: `/v1/insurance/prices/`  Alternate route: `/legacy/insurance/prices/`  Alternate route: `/dev/insurance/prices/`  --- This route is cached for up to 3600 seconds
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\InsuranceApi();
+$api_instance = new Swagger\Client\Api\InsuranceApi(new \Http\Adapter\Guzzle6\Client());
 $datasource = "tranquility"; // string | The server name you would like data from
 $language = "en-us"; // string | Language to use in the response
 $user_agent = "user_agent_example"; // string | Client identifier, takes precedence over headers

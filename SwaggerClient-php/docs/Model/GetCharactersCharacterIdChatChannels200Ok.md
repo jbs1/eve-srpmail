@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **blocked** | [**\Swagger\Client\Model\GetCharactersCharacterIdChatChannelsBlocked[]**](GetCharactersCharacterIdChatChannelsBlocked.md) | blocked array | 
 **channel_id** | **int** | Unique channel ID. Always negative for player-created channels. Permanent (CCP created) channels have a positive ID, but don&#39;t appear in the API | 
 **comparison_key** | **string** | Normalized, unique string used to compare channel names | 
-**has_password** | **bool** | Whether this is a password protected channel | 
+**has_password** | **bool** | If this is a password protected channel | 
 **motd** | **string** | Message of the day for this channel | 
 **muted** | [**\Swagger\Client\Model\GetCharactersCharacterIdChatChannelsMuted[]**](GetCharactersCharacterIdChatChannelsMuted.md) | muted array | 
 **name** | **string** | Displayed name of channel | 
