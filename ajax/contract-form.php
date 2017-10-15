@@ -1,15 +1,11 @@
 <?php
 session_start();
-require_once('../SwaggerClient-php/vendor/autoload.php');
-require_once('../vendor/autoload.php');
-require_once('../provider.php');
 require_once('../inc.php');
 
 
 token_refresh();
 
 $api_universe = new Swagger\Client\Api\UniverseApi();
-$datasource = "tranquility"; // string | The server name you would like data from
 $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);
 ?>
 

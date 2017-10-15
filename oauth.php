@@ -1,7 +1,5 @@
 <?php
 session_start();
-require_once('vendor/autoload.php');
-require_once('provider.php');
 require_once('inc.php');
 
 
@@ -49,7 +47,7 @@ if (!isset($_GET['code'])) {
 
         //save corp info
         $api_corporation = new Swagger\Client\Api\CorporationApi();
-        $datasource = "tranquility"; // string | The server name you would like data from
+
         $corp=$api_corporation->getCorporationsNames(corpid($_SESSION['charinfo']['CharacterID']), $datasource);
 
         $_SESSION['charinfo']['corpid']=$corp[0]['corporation_id'];

@@ -1,8 +1,5 @@
 <?php
 session_start();
-require_once('../SwaggerClient-php/vendor/autoload.php');
-require_once('../vendor/autoload.php');
-require_once('../provider.php');
 require_once('../inc.php');
 
 
@@ -18,7 +15,6 @@ $mail = new \Swagger\Client\Model\PostCharactersCharacterIdMailMail();
 $mail["subject"] = $_POST["subj"];
 $mail["body"] = str_replace(array("\r\n","\r","\n"), "<br>", $_POST["body"]);
 $mail["recipients"] = array($resp);
-$datasource = "tranquility";
 
 
 try {
