@@ -25,7 +25,7 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 * [ ] don't autoload contracts (?)
 * [ ] show logged in char
 * [ ] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
-* [ ] fix "session already started" console warning
+* [x] fix "session already started" console warning
 * [ ] use TravisCI for auto code cleanup on realease branch commit
 
 
@@ -69,22 +69,23 @@ sudo apt-get install composer
 ```
 
 ### Get source
-Clone repo in webfolder or symlink repo to webfolder, eg.:  
+Clone repo in webfolder or symlink repo to webfolder, eg.:
 ```
 git clone git@github.com:jbs1/eve-srpmail.git
 sudo ln -sf ~/eve-srpmail/ /var/www/html
 ```
 
-### Install dependencies
+### Dependencies
+You need the repo with the esi php client. Put it in the same dir as eve-srpmail.
+```
+git clone git@github.com:jbs1/esi-phpclient.git
+```
+
 After you setup the repo you need to install the composer dependencies by running:
 ```
 composer install
 ```
 in the root of the repo.
-
-
-
-To use your own webhook you need to fork the repo an set it up as explanied [here](hook.md)
 
 
 #### Library's used

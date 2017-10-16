@@ -1,12 +1,9 @@
 <?php
-session_start();
-require_once('inc.php');
+require_once('header.php');
 
-
-token_refresh();
 header('Content-Type: application/json;charset=utf-8');
 
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
+
 
 
 $api_instance = new Swagger\Client\Api\MailApi();

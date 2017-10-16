@@ -1,14 +1,10 @@
 <?php
-session_start();
-require_once('inc.php');
+require_once('header.php');
 
 if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
 	header('Location: oauth.php');
 } else {
 	token_refresh();
-	Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
-}
-
 
 echo '<!DOCTYPE html>
 <html>
@@ -181,5 +177,6 @@ echo '
 echo '</body>
 </html>';
 
+}
 
 ?>

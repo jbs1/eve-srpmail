@@ -1,9 +1,6 @@
 <?php
-session_start();
-require_once('../inc.php');
+require_once('../header.php');
 
-
-token_refresh();
 
 $api_universe = new Swagger\Client\Api\UniverseApi();
 $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);

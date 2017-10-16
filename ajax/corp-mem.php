@@ -1,8 +1,6 @@
 <?php
-session_start();
-require_once('../inc.php');
+require_once('../header.php');
 
-token_refresh();
 
 header('Content-Type: application/json;charset=utf-8');
 
@@ -13,7 +11,6 @@ try {
     if(empty($_SESSION['corpmem'])){
         $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(charid()),$datasource,token());
         $ids = array();
-        print_r(token());
         foreach ($corpmem as $key => $value) {
         	$ids[$key]=$value['character_id'];
         }

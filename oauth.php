@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once('inc.php');
+require_once('header.php');
 
 
 // If we don't have an authorization code then get one
@@ -44,6 +43,8 @@ if (!isset($_GET['code'])) {
         //save accessToken and char info in session.
         $_SESSION['accesstoken-obj']=serialize($accessToken);
         $_SESSION['charinfo']=$resourceOwner->toArray();
+
+        Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(unserialize($_SESSION['accesstoken-obj'])->getToken());
 
         //save corp info
         $api_corporation = new Swagger\Client\Api\CorporationApi();

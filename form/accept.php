@@ -1,9 +1,6 @@
 <?php
-session_start();
-require_once('../inc.php');
+require_once('../header.php');
 
-
-token_refresh();
 header('Content-Type: application/json;charset=utf-8');
 
 

@@ -1,8 +1,5 @@
 <?php
-session_start();
-require_once('../inc.php');
-
-token_refresh();
+require_once('../header.php');
 
 header('Content-Type: application/json;charset=utf-8');
 $xml=getcontract(charid(),token());

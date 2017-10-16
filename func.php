@@ -1,21 +1,14 @@
 <?php
-session_start();
-require_once('SwaggerClient-php/vendor/autoload.php');
-require_once('vendor/autoload.php');
-require_once('provider.php');
-
-
-$datasource = "tranquility"; // string | The server name you would like data from
-
 
 function token_refresh()//refresh access token if expired
 {
 	global $provider;
-	if(unserialize($_SESSION['accesstoken-obj'])->hasExpired()){//get new access token if expired
+	if(isset($_SESSION['accesstoken-obj'])&&unserialize($_SESSION['accesstoken-obj'])->hasExpired()){//get new access token if expired
 		$newAccessToken=$provider->getAccessToken('refresh_token', [
 			'refresh_token' => unserialize($_SESSION['accesstoken-obj'])->getRefreshToken()
 		]);
 		$_SESSION['accesstoken-obj']=serialize($newAccessToken);
+		Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(unserialize($_SESSION['accesstoken-obj'])->getToken());
 	}
 }
 
@@ -48,6 +41,5 @@ function getcontract($charid,$token){
 	curl_close($ch);
 	return simplexml_load_string($raw);
 }
-
 
 ?>

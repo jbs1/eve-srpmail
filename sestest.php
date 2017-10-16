@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once('header.php');
+
 echo "<pre>";
 var_dump($_SESSION);
 echo "</pre>";
