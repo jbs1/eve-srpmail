@@ -96,4 +96,3 @@ The following library's were used:
   * To use the api, every PHP document must include the api [manually](https://github.com/jbs1/eve-srpmail/tree/master/SwaggerClient-php#manual-installation).
 * [OAuth Client](https://github.com/thephpleague/oauth2-client)
   * Installed via compser (`composer require league/oauth2-client` inside the repo's root folder)
-* ~~a [webhook](hook.md) to pull commits for webserver~~

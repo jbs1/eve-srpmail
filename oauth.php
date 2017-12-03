@@ -1,14 +1,13 @@
 <?php
 require_once('header.php');
 
-
 // If we don't have an authorization code then get one
 if (!isset($_GET['code'])) {
 
     // Fetch the authorization URL from the provider; this returns the
     // urlAuthorize option and generates and applies any necessary parameters
     // (e.g. state).
-    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['characterContractsRead','esi-mail.send_mail.v1', 'esi-corporations.read_corporation_membership.v1']]);
+    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['esi-mail.send_mail.v1', 'esi-corporations.read_corporation_membership.v1','esi-contracts.read_character_contracts.v1']]);
 
     // Get the state generated for you and store it to the session.
     $_SESSION['oauth2state'] = $provider->getState();
@@ -26,7 +25,6 @@ if (!isset($_GET['code'])) {
 } else {
 
     try {
-
         // Try to get an access token using the authorization code grant.
         $accessToken = $provider->getAccessToken('authorization_code', [
             'code' => $_GET['code']
@@ -44,10 +42,10 @@ if (!isset($_GET['code'])) {
         $_SESSION['accesstoken-obj']=serialize($accessToken);
         $_SESSION['charinfo']=$resourceOwner->toArray();
 
-        Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(unserialize($_SESSION['accesstoken-obj'])->getToken());
+        $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
 
         //save corp info
-        $api_corporation = new Swagger\Client\Api\CorporationApi();
+        $api_corporation = new Swagger\Client\Api\CorporationApi(null,$config);
 
         $corp=$api_corporation->getCorporationsNames(corpid($_SESSION['charinfo']['CharacterID']), $datasource);
 

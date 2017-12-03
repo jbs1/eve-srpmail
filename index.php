@@ -101,13 +101,6 @@ echo '
 				<p>
 					<h3>Limitation:</h3>
 					<ul>
-					<li>The XML API from CCP will at max. only return the last 50 contracts create. This is a hardcoded limit.</li>
-					<li>The XML API will cache the results for 20 minutes. This mean, when you just refeshed the contracts on the website
-					and then create new contracts it will take 20 minutes until the refesh will pull the new contracts.</li>
-					<ul>
-						<li>This make it advisable to first create all contracts and then refresh them on this website.</li>
-						<li>The time until you can refresh contracts is shown on the website</li>
-					</ul>
 					<li>Everything on this website is saved in session on the server. This means when you stay inactive for too long or close
 					your browser you will have to login again and it will not remember the contracs anymore for which you send email already.</li>
 					<ul>
@@ -131,9 +124,9 @@ echo '
 							</thead>
 							<tbody></tbody>
 						</table>
-						<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button><br />
-						Contracts cached <strong><span id="contracts-time-cached-sec">0</span></strong> seconds (<span id="contracts-time-cached-time">0</span>)
-					</div>
+						<button type="button" class="btn btn-primary" onclick="refresh()">Refresh!</button><br />';
+						// Contracts cached <strong><span id="contracts-time-cached-sec">0</span></strong> seconds (<span id="contracts-time-cached-time">0</span>)
+echo '					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="resubmit">
 					<div id="resubmit-table">

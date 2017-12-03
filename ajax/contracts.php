@@ -2,22 +2,23 @@
 require_once('../header.php');
 
 header('Content-Type: application/json;charset=utf-8');
-$xml=getcontract(charid(),token());
-$raw=$xml->result->rowset;
 $json=array();
 $cid=corpid(charid());
 
-$_SESSION["contracts_cached"]=strtotime($xml->cachedUntil)-strtotime($xml->currentTime);
+$contracts = new Swagger\Client\Api\ContractsApi(null,$config);
 
-//shows only the most recent privat item exchanges issued by the logged in user
-foreach ($raw->row as $value) {
-	//600 ms without corpid check vs 2.5 sec with corpid check on 13 out of max 50 contracs
-	//(strtotime($value["dateIssued"])>strtotime('-6 hour'))&&
-	if((strtotime($value["dateIssued"])>strtotime('-6 hour'))&&($value["status"]=="Outstanding"||$value["status"]=="Completed")&&$value["issuerID"]==charid()&&$value["availability"]=="Private"&&$value["type"]=="ItemExchange"&&corpid($value["assigneeID"])==$cid){
-		array_unshift($json,$value);
+try {
+	$result = $contracts->getCharactersCharacterIdContracts(charid(), $datasource);
+	foreach ($result as $row) {
+		// if(($row->getStatus()=="outstanding"||$row->getStatus()=="finished")&&$row->getIssuerId()==charid()&&$row->getAvailability()=="personal"&&$row->getType()=="item_exchange"&&corpid($row->getAssigneeId())==$cid){
+		if(($row->getDateIssued()->getTimestamp()>strtotime('-6 hour'))&&($row->getStatus()=="outstanding"||$row->getStatus()=="finished")&&$row->getIssuerId()==charid()&&$row->getAvailability()=="personal"&&$row->getType()=="item_exchange"&&corpid($row->getAssigneeId())==$cid){
+			array_unshift($json,json_decode(strval($row)));//avoids protected property problems
+		}
 	}
+} catch (Exception $e) {
+	print_r('Exception when calling ContractsApi->getCharactersCharacterIdContracts: '+$e->getMessage());
 }
 
-echo json_encode($json);
+print_r(json_encode($json));
 
 ?>

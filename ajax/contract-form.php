@@ -2,7 +2,7 @@
 require_once('../header.php');
 
 
-$api_universe = new Swagger\Client\Api\UniverseApi();
+$api_universe = new Swagger\Client\Api\UniverseApi(null,$config);
 $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);
 ?>
 

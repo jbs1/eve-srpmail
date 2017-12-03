@@ -2,8 +2,7 @@
 if(session_status() == PHP_SESSION_NONE){
 	session_start();
 }
-
-require_once('SwaggerClient-php/autoload.php');
+require_once('SwaggerClient-php/vendor/autoload.php');
 require_once('vendor/autoload.php');
 require_once('provider.php');
 require_once('func.php');

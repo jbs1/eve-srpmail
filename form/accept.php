@@ -4,7 +4,7 @@ require_once('../header.php');
 header('Content-Type: application/json;charset=utf-8');
 
 
-$api_instance = new Swagger\Client\Api\MailApi();
+$api_instance = new Swagger\Client\Api\MailApi(null,$config);
 $resp = new \Swagger\Client\Model\PostCharactersCharacterIdMailRecipient();
 $resp["recipient_type"] = "character";
 $resp["recipient_id"] = $_POST["recv"];
@@ -14,7 +14,7 @@ $mail["body"] = str_replace(array("\r\n","\r","\n"), "<br>", $_POST["body"]);
 $mail["recipients"] = array($resp);
 
 try {
-    $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource, token());
+    $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource);
     print_r(json_encode(array("success"=>true,"return"=>$result)));
 
     //only save in session if successful

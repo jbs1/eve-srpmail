@@ -15,18 +15,18 @@ $(function (){
 					$.each(data,function(i, item){
 						var flag = 0;
 						$("table#cont-table > tbody > tr > td:first-child").each(function(){
-							if($(this).text() == item["@attributes"].contractID){
+							if($(this).text() == item.contract_id){
 								flag = 1;
 							}
 						});
 						if(flag==0){
-							var row = $("table#cont-table > tbody").append("<tr id="+item["@attributes"].contractID+"><td>"+item["@attributes"].contractID+"</td><td>"+mem[item["@attributes"].assigneeID]+"</td><td>"+item["@attributes"].dateIssued+"</td><td>"+item["@attributes"].status+"</td></tr>");
+							var row = $("table#cont-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.status+"</td></tr>");
 							row.css('cursor', 'pointer');
-							row.children('#'+item["@attributes"].contractID).click(function () {
+							row.children('#'+item.contract_id).click(function () {
 								$.ajax({
 									type: 'GET',
 									url: 'ajax/contract-form.php',
-									data: {"contid":item["@attributes"].contractID,"station":item["@attributes"].startStationID, "assignee":item["@attributes"].assigneeID},
+									data: {"contid":item.contract_id,"station":item.start_location_id, "assignee":item.assignee_id},
 									success: function(data){
 										$("div#contract-table").hide(350);
 										var form=$('#accept').append(data).find('div#contrfrm > form');
@@ -68,16 +68,16 @@ $(function (){
 			},
 			complete: function(){
 				addfinish();
-				$.ajax({
-					url: 'ajax/contracts-cached.php',
-					type: 'GET',
-					success: function(data){
-						var d = new Date();
-						d.setTime(d.getTime() + data*1000);
-						$("#contracts-time-cached-sec").text(data);
-						$("#contracts-time-cached-time").text(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" local time");
-					}
-				})
+				// $.ajax({
+				// 	url: 'ajax/contracts-cached.php',
+				// 	type: 'GET',
+				// 	success: function(data){
+				// 		var d = new Date();
+				// 		d.setTime(d.getTime() + data*1000);
+				// 		$("#contracts-time-cached-sec").text(data);
+				// 		$("#contracts-time-cached-time").text(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" local time");
+				// 	}
+				// })
 			}
 		})
 	})

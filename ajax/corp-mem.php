@@ -4,12 +4,12 @@ require_once('../header.php');
 
 header('Content-Type: application/json;charset=utf-8');
 
-$api_corp = new Swagger\Client\Api\CorporationApi();
-$api_character = new Swagger\Client\Api\CharacterApi();
+$api_corp = new Swagger\Client\Api\CorporationApi(null,$config);
+$api_character = new Swagger\Client\Api\CharacterApi(null,$config);
 
 try {
     if(empty($_SESSION['corpmem'])){
-        $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(charid()),$datasource,token());
+        $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(charid()),$datasource);
         $ids = array();
         foreach ($corpmem as $key => $value) {
         	$ids[$key]=$value['character_id'];
