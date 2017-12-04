@@ -4,7 +4,6 @@ function loader_start (text,id){
 }
 
 function loader_stop (id){
-	console.log($('#loader'+id).length);
 	$('#loader_'+id).css({
 		"border-color": '#14B61B',
 		animation: 'none'

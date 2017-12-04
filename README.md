@@ -20,13 +20,14 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 * [ ] autoclose mails notifications after some time
 * [ ] fix bug with contract status not refeshing
   * [ ] deleted/timed out contracts don't disappear from list as the javascript only add's and doesn't remove
-* [ ] switch over to esi-api for contracts when the endpoint is implemeted
+* [x] switch over to esi-api for contracts when the endpoint is implemeted
 * [ ] make it work with citadels
 * [ ] don't autoload contracts (?)
 * [ ] show logged in char
 * [ ] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
 * [x] fix "session already started" console warning
 * [ ] use TravisCI for auto code cleanup on realease branch commit
+* [x] save finished contracts in cookies to make persistent over sessions
 
 
 #### Tabs

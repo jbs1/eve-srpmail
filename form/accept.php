@@ -15,15 +15,14 @@ $mail["recipients"] = array($resp);
 
 try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource);
-    print_r(json_encode(array("success"=>true,"return"=>$result)));
-
     //only save in session if successful
-	if(!isset($_SESSION['finished_contracts'])){
-		$_SESSION['finished_contracts']=array();
-		array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
-	}elseif (!in_array($_POST["cntr"], $_SESSION['finished_contracts'])){
-		array_push($_SESSION['finished_contracts'], $_POST["cntr"]);
+	if(!isset($_COOKIE['finished_contracts'])){
+		setcookie('finished_contracts[0]',$_POST["cntr"],time()+60*60*8,'/');
+	}elseif (!in_array($_POST["cntr"], $_COOKIE['finished_contracts'])){
+		$x = sizeof($_COOKIE['finished_contracts']);//index for new contract
+		setcookie("finished_contracts[$x]",$_POST["cntr"],time()+60*60*8,'/');
 	}
+	print_r(json_encode(array("success"=>true,"return"=>$result)));//setcookie has to be first
 } catch (Exception $e) {
 	print_r(json_encode(array("success"=>false,"return"=>'Exception when calling MailApi->postCharactersCharacterIdMail: '+$e->getMessage())));
 }
