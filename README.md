@@ -77,12 +77,7 @@ sudo ln -sf ~/eve-srpmail/ /var/www/html
 ```
 
 ### Dependencies
-You need the repo with the esi php client. Put it in the same dir as eve-srpmail.
-```
-git clone git@github.com:jbs1/esi-phpclient.git
-```
-
-After you setup the repo you need to install the composer dependencies by running:
+You need to install the composer dependencies by running:
 ```
 composer install
 ```
@@ -93,7 +88,6 @@ in the root of the repo.
 The following library's were used:
 * [Composer](https://getcomposer.org/download/)
 * CCP's [ESI API](https://esi.tech.ccp.is/latest/)
-  * To update the API simply replace the folder with the generated PHP client from the new swagger.json.
-  * To use the api, every PHP document must include the api [manually](https://github.com/jbs1/eve-srpmail/tree/master/SwaggerClient-php#manual-installation).
+  * To update the API simply run `composer update`. If the repo has been updated, the new version will be pulled.
 * [OAuth Client](https://github.com/thephpleague/oauth2-client)
   * Installed via compser (`composer require league/oauth2-client` inside the repo's root folder)

@@ -1,5 +1,12 @@
 {
+	"repositories":[
+		{
+			"type": "git",
+			"url": "https://github.com/jbs1/esi-php-client.git"
+		}
+	],
     "require": {
-        "league/oauth2-client": "^2.2"
+        "league/oauth2-client": "^2.2",
+        "jbs1/esi-php-client": "*@dev"
     }
 }

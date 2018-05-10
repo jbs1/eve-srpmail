@@ -53,6 +53,7 @@ You have been paid for the following losses:
 
 
 
+Please check your wallet.
 
 Fly Safe,
 <url=showinfo:1377//". charid().">". $_SESSION["corpmem"][charid()] ."</url>
