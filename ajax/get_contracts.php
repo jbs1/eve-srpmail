@@ -8,17 +8,18 @@ $cid=corpid(charid());
 $contracts = new Swagger\Client\Api\ContractsApi(null,$config);
 
 try {
-	$result = $contracts->getCharactersCharacterIdContracts(charid(), $datasource);
-	foreach ($result as $row) {
-		// if(($row->getStatus()=="outstanding"||$row->getStatus()=="finished")&&$row->getIssuerId()==charid()&&$row->getAvailability()=="personal"&&$row->getType()=="item_exchange"&&corpid($row->getAssigneeId())==$cid){
+	$result = $contracts->getCharactersCharacterIdContractsWithHttpInfo(charid(), $datasource);
+	foreach ($result[0] as $row) {
 		if(($row->getDateIssued()->getTimestamp()>strtotime('-6 hour'))&&($row->getStatus()=="outstanding"||$row->getStatus()=="finished")&&$row->getIssuerId()==charid()&&$row->getAvailability()=="personal"&&$row->getType()=="item_exchange"&&corpid($row->getAssigneeId())==$cid){
 			array_unshift($json,json_decode(strval($row)));//avoids protected property problems
 		}
 	}
+
+	print_r(json_encode(array($json,$result[2]['Expires'][0])));
+
 } catch (Exception $e) {
 	print_r('Exception when calling ContractsApi->getCharactersCharacterIdContracts: '+$e->getMessage());
 }
 
-print_r(json_encode($json));
 
 ?>

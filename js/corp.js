@@ -10,8 +10,8 @@ $(function (){
 			mem = data;
 		},
 		complete: function(){
-			$('table#rej-table').trigger('update-mem');
-			$('table#resub-table').trigger('update-mem');
+			$('table#messagessrp-table').trigger('update-mem');
+			$('table#isksrp-table').trigger('update-mem');
 			loader_stop(1);
 		}
 	});
