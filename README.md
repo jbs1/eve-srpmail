@@ -88,6 +88,7 @@ in the root of the repo.
 The following library's were used:
 * [Composer](https://getcomposer.org/download/)
 * CCP's [ESI API](https://esi.tech.ccp.is/latest/)
+  * The swagger php client is hostest [here](https://github.com/jbs1/esi-php-client) and installed via [composer](composer.json)
   * To update the API simply run `composer update`. If the repo has been updated, the new version will be pulled.
 * [OAuth Client](https://github.com/thephpleague/oauth2-client)
-  * Installed via compser (`composer require league/oauth2-client` inside the repo's root folder)
+  * Installed via [composer](composer.json)

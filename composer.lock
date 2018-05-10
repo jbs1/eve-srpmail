@@ -194,7 +194,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jbs1/esi-php-client.git",
-                "reference": "0dc60ad4c7df9875000a64705679dbf1833efddd"
+                "reference": "b0f56d2923801e4a00527636b48bd3c7cc0ca9f3"
             },
             "require": {
                 "ext-curl": "*",
@@ -235,7 +235,7 @@
                 "sdk",
                 "swagger"
             ],
-            "time": "2018-05-10 18:13:00"
+            "time": "2018-05-10 19:03:41"
         },
         {
             "name": "league/oauth2-client",
