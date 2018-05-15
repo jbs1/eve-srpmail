@@ -39,7 +39,7 @@ The contract for the ship can be found here: <url=contract:".$station["system_id
 
 Fly Safe,
 <url=showinfo:1377//". charid().">". $_SESSION["corpmem"][charid()] ."</url>
-<url=showinfo:2//". $_SESSION["charinfo"]["corpid"].">". $_SESSION["charinfo"]["corpname"]."</url>";',
+<url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'Hull SRP Message',
 'hull_mail_form',
 false,
@@ -57,7 +57,7 @@ Please check your wallet.
 
 Fly Safe,
 <url=showinfo:1377//". charid().">". $_SESSION["corpmem"][charid()] ."</url>
-<url=showinfo:2//". $_SESSION["charinfo"]["corpid"].">". $_SESSION["charinfo"]["corpname"]."</url>";',
+<url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'ISK SRP Message',
 'isk_mail_form',
 false,
@@ -76,7 +76,7 @@ Once resolved, we\'ll try to issue the new ship as fast as possible.
 
 Fly Safe,
 <url=showinfo:1377//". charid().">". $_SESSION["corpmem"][charid()] ."</url>
-<url=showinfo:2//". $_SESSION["charinfo"]["corpid"].">". $_SESSION["charinfo"]["corpname"]."</url>";',
+<url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'Resubmission SRP Message',
 'messages_mail_form',
 true,
@@ -94,7 +94,7 @@ A declined request won\'t influence future requests, so feel free to request shi
 
 Fly Safe,
 <url=showinfo:1377//". charid().">". $_SESSION["corpmem"][charid()] ."</url>
-<url=showinfo:2//". $_SESSION["charinfo"]["corpid"].">". $_SESSION["charinfo"]["corpname"]."</url>";',
+<url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'Rejection SRP Message',
 'messages_mail_form',
 true,

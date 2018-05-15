@@ -49,7 +49,7 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
   * [ ] From killmail link, automatically find fit to compare to
 
 #### Mail UI
-* [ ] all tabs use same message ui with one text field, just different templates
+* [x] all tabs use same message ui with one text field, just different templates
 * [ ] adapt wysiwyg editor to support ccps custom tags
 * [ ] list of common text snippets, added by clicking
 
@@ -70,25 +70,23 @@ sudo apt-get install composer
 ```
 
 ### Get source
-Clone repo in webfolder or symlink repo to webfolder, eg.:
-```
-git clone git@github.com:jbs1/eve-srpmail.git
-sudo ln -sf ~/eve-srpmail/ /var/www/html
-```
+Either clone the repository via `git clone git@github.com:jbs1/eve-srpmail.git` or simply download load the latest release from the [Release-Page](https://github.com/jbs1/eve-srpmail/releases).
+
+Put the files in your webdir or link to the via symlink (eg. `sudo ln -sf ~/eve-srpmail/ /var/www/html`).
 
 ### Dependencies
-You need to install the composer dependencies by running:
+You need to install the composer dependencies by running
 ```
 composer install
 ```
-in the root of the repo.
+in the root of the dir.
 
 
 #### Library's used
 The following library's were used:
 * [Composer](https://getcomposer.org/download/)
 * CCP's [ESI API](https://esi.tech.ccp.is/latest/)
-  * The swagger php client is hostest [here](https://github.com/jbs1/esi-php-client) and installed via [composer](composer.json)
+  * The swagger php client is hosted [here](https://github.com/jbs1/esi-php-client) and installed via [composer](composer.json)
   * To update the API simply run `composer update`. If the repo has been updated, the new version will be pulled.
-* [OAuth Client](https://github.com/thephpleague/oauth2-client)
+* [EVE OAuth Client](https://github.com/jbs1/oauth2-eveonline)
   * Installed via [composer](composer.json)

@@ -7,7 +7,7 @@ if (!isset($_GET['code'])) {
     // Fetch the authorization URL from the provider; this returns the
     // urlAuthorize option and generates and applies any necessary parameters
     // (e.g. state).
-    $authorizationUrl = $provider->getAuthorizationUrl(['scope'=>['esi-mail.send_mail.v1', 'esi-corporations.read_corporation_membership.v1','esi-contracts.read_character_contracts.v1']]);
+    $authorizationUrl = $provider->getAuthorizationUrl(array("scope"=>$scope));
 
     // Get the state generated for you and store it to the session.
     $_SESSION['oauth2state'] = $provider->getState();
@@ -17,9 +17,12 @@ if (!isset($_GET['code'])) {
     exit;
 
 // Check given state against previously stored one to mitigate CSRF attack
-} elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
+} elseif (empty($_GET['state']) || (isset($_SESSION['oauth2state']) && $_GET['state'] !== $_SESSION['oauth2state'])) {
 
-    unset($_SESSION['oauth2state']);
+    if (isset($_SESSION['oauth2state'])) {
+        unset($_SESSION['oauth2state']);
+    }
+    
     exit('Invalid state');
 
 } else {
@@ -39,20 +42,10 @@ if (!isset($_GET['code'])) {
         echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")<br>You will be automatically redirected.....";
 
         //save accessToken and char info in session.
-        $_SESSION['accesstoken-obj']=serialize($accessToken);
+        $_SESSION['token']=serialize($accessToken);
         $_SESSION['charinfo']=$resourceOwner->toArray();
 
         $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
-
-        //save corp info
-        $api_corporation = new Swagger\Client\Api\CorporationApi(null,$config);
-
-        $corp=$api_corporation->getCorporationsNames(corpid($_SESSION['charinfo']['CharacterID']), $datasource);
-
-        $_SESSION['charinfo']['corpid']=$corp[0]['corporation_id'];
-        $_SESSION['charinfo']['corpname']=$corp[0]['corporation_name'];
-
-
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 

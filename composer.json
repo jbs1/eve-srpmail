@@ -3,10 +3,14 @@
 		{
 			"type": "git",
 			"url": "https://github.com/jbs1/esi-php-client.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/jbs1/oauth2-eveonline.git"
 		}
 	],
     "require": {
-        "league/oauth2-client": "^2.2",
+        "jbs1/oauth2-eveonline": "*@dev",
         "jbs1/esi-php-client": "*@dev"
     }
 }

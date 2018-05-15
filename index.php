@@ -1,10 +1,9 @@
 <?php
 require_once('header.php');
 
-if(empty($_SESSION['accesstoken-obj'])){//if not logged in redirect to
+if(empty($_SESSION['token'])){//if not logged in redirect to
 	header('Location: oauth.php');
 } else {
-	token_refresh();
 
 echo '<!DOCTYPE html>
 <html>
@@ -57,7 +56,7 @@ echo '
 
 	<div class="row">
 		<div class="col-md-1 col-md-offset-2">
-			<img src="https://image.eveonline.com/Corporation/'.$_SESSION["charinfo"]["corpid"].'_128.png">
+			<img src="https://image.eveonline.com/Corporation/'.$_SESSION["charinfo"]["CorporationID"].'_128.png">
 		</div>
 		<div class="col-md-7 page-header">
 			<h1>SRP mailer <small>Mailing tool for SRP-Officers</small></h1>

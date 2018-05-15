@@ -3,18 +3,18 @@ function token_refresh()//refresh access token if expired
 {
 	global $provider;
 	global $config;
-	if(isset($_SESSION['accesstoken-obj'])&&unserialize($_SESSION['accesstoken-obj'])->hasExpired()){//get new access token if expired
+	if(isset($_SESSION['token'])&&unserialize($_SESSION['token'])->hasExpired()){//get new access token if expired
 		$newAccessToken=$provider->getAccessToken('refresh_token', [
-			'refresh_token' => unserialize($_SESSION['accesstoken-obj'])->getRefreshToken()
+			'refresh_token' => unserialize($_SESSION['token'])->getRefreshToken()
 		]);
-		$_SESSION['accesstoken-obj']=serialize($newAccessToken);
-	} elseif(isset($_SESSION['accesstoken-obj'])) {
+		$_SESSION['token']=serialize($newAccessToken);
+	} elseif(isset($_SESSION['token'])) {
 		$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
 	}
 }
 
 function token(){
-	return unserialize($_SESSION['accesstoken-obj'])->getToken();
+	return unserialize($_SESSION['token'])->getToken();
 }
 
 function charid(){
