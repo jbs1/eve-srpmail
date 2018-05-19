@@ -22,11 +22,10 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
   * [ ] deleted/timed out contracts don't disappear from list as the javascript only add's and doesn't remove
 * [x] switch over to esi-api for contracts when the endpoint is implemeted
 * [ ] make it work with citadels
-* [ ] don't autoload contracts (?)
+* [x] don't autoload contracts (?)
 * [ ] show logged in char
-* [ ] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
+* [x] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
 * [x] fix "session already started" console warning
-* [ ] use TravisCI for auto code cleanup on realease branch commit
 * [x] save finished contracts in cookies to make persistent over sessions
 
 
@@ -38,7 +37,7 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
   * [ ] possibly make payments through api (NO endpoint yet)
   * [ ] selection with ISK reimbursement amounts, autofetched from somewhere (srp google docs?)
 * [ ] Contract SRP
-  * [ ] possibilty to create conracts from the api (NO endpoint yet)
+  * [ ] possibilty to create contracts from the api (NO endpoint yet)
   * [ ] possible problems with ships beeing inside locked containers
 * [ ] General Text
   * [ ] with different templates depending on rejection/resubmission

@@ -38,11 +38,6 @@ echo '
 <script src="js/srp-messages.js"></script>
 <script src="js/loader.js"></script>
 
-<script>
-function hull_table_refresh() {
-	$(\'a[data-toggle="tab"][href="#hullsrp"]\').trigger("shown.bs.tab");
-}
-</script>
 <script src="js/jquery.searchable-1.1.0.min.js"></script>
 ';
 
@@ -53,7 +48,6 @@ echo '<title>SRP Mailer</title>
 
 echo '
 <div class="container-fluid">
-
 	<div class="row">
 		<div class="col-md-1 col-md-offset-2">
 			<img src="https://image.eveonline.com/Corporation/'.$_SESSION["charinfo"]["CorporationID"].'_128.png">
@@ -86,35 +80,39 @@ echo '
 			<!-- Tab panes -->
 			<div class="tab-content">';
 
-
-echo '			<div role="tabpanel" class="tab-pane active" id="intro">
-					<p>
-						<h3>How it work:</h3>
-						You have 3 choices:<br />
-						Accept or reject a request or ask the character to resubmit.<br />
-						For rejection and resubmission it works similarly, just search for the character in the table, and write an email by clicking on it.<br />
-						For accepting an SRP request you first have to create the contract ingame. Then this script will pull your contracts via API.<br />
-						It will only show you private Item-Exchange contracts from the last 6 hours from you to any member of your corp,<br />
-						as these are the only ones that are relevant. From there on out it is the same process as with rejection/resubmission.<br />
-						It will prefil all important things automatically in the template and you can write additional info if you want.<br />
-						It will mark the contracts for which you wrote an email in the current session already.
-					</p>
-					<p>
-						<h3>Limitation:</h3>
-						<ul>
-						<li>Everything on this website is saved in session on the server. This means when you stay inactive for too long or close
-						your browser you will have to login again and it will not remember the contracs anymore for which you send email already.</li>
-						<ul>
-							<li>The session expiry time on the current server is: <b>'.ini_get("session.gc_maxlifetime").'</b> seconds</li>
-						</ul>
-						<li>If the target station is a Citadel it will not work. So far only Stations work.</li>
-						</ul>
-					</p>
-					<p>
-						<h4>Source code:</h4>
-						The sourcecode to the mailer can be found <a href="https://github.com/jbs1/eve-srpmail">here</a> together with a list of future plans.
-					</p>
-				</div>';
+echo '		<div role="tabpanel" class="tab-pane active" id="intro">
+				<p>
+					<h3>How it works:</h3>
+					<ul>
+						<li>Hull SRP:</li>
+						<ul><li>
+							This tab will pull all contracts from you to your corp mates within the last 6 hours. You can select the contract you want to write an email for, by clicking on it.
+						</li></ul>
+						<li>ISK SRP (indev):</li>
+						<ul><li>
+							This tab will pull all payments from the configured corp wallet within the last 6 hours. You can select the payments you want to write an email for, by clicking on them.
+						</li></ul>
+						<li>Messages (indev):</li>
+						<ul><li>
+							This tab will allow you to select various message templates and send them to your corp mates.
+						</li></ul>
+					</ul>					
+				</p>
+				<p>
+					<h3>Limitation:</h3>
+					<ul>
+					<li>Everything on this website is saved in session on the server. Not permanent storage of any kind of data occurs. This means when you stay inactive for too long or close your browser you will have to login again.</li>
+					<ul>
+						<li>The session expiry time on the current server is: <b>'.ini_get("session.gc_maxlifetime").'</b> seconds</li>
+					</ul>
+					<li>If the target station is an Upwell structure, Hull SRP will not work. So far only NPC stations work.</li>
+					</ul>
+				</p>
+				<p>
+					<h4>Source code:</h4>
+					The sourcecode to the mailer can be found on <a href="https://github.com/jbs1/eve-srpmail">Github</a> together with a list of future plans.
+				</p>
+			</div>';
 
 
 echo'			<div role="tabpanel" class="tab-pane" id="hullsrp">
@@ -129,7 +127,7 @@ echo'			<div role="tabpanel" class="tab-pane" id="hullsrp">
 						</tbody>
 					</table>
 					<button type="button" class="btn btn-primary" id="contracts_refresh_button" onclick="hull_table_refresh()">Refresh!</button><br />
-					<span id="contracts-cached-date">Contracts cached until <strong><span id="contracts-cached-date-text"></span></strong>.</span>
+					<span id="contracts-cached-date"></span>
 				</div>';
 
 

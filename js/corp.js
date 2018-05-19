@@ -4,7 +4,7 @@ $(function (){
 		type: 'GET',
 		url: 'ajax/corp-mem.php',
 		beforeSend: function(){
-			loader_start("CORP</br>MEMBERS",1);
+			loader_start("Corp</br>Members",1);
 		},
 		success: function(data){
 			mem = data;

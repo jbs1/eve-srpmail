@@ -1,35 +1,37 @@
 //save members in global js variable, session caching is done at the endpoint
-$(function (){
-	$('a[data-toggle="tab"][href="#hullsrp"]').on('shown.bs.tab', function (e) {
-		$.ajax({
-			type: 'GET',
-			url: 'ajax/get_contracts.php',
-			success: function(data){
-				console.log('Contracts',data);
-				$("span#contracts-cached-date-text").text(data[1]);
-				if(data[0].length > 0){
-					$("table#hullsrp-table > tbody > tr#no_contracts").remove();
-					$.each(data[0],function(i, item){
-						var flag = 0;
-						$("table#hullsrp-table > tbody > tr > td:first-child").each(function(){
-							if($(this).text() == item.contract_id){
-								flag = 1;
-							}
-						});
-						if(flag==0){
-							var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.status+"</td></tr>");
-							row.css('cursor', 'pointer');
-							row.children('#'+item.contract_id).click(function(){hullsrp_ajax_mailform(item)})
+function hull_table_refresh(){
+	$.ajax({
+		type: 'GET',
+		url: 'ajax/get_contracts.php',
+		beforeSend: function(){
+			loader_start("Contracts",2);
+		},
+		success: function(data){
+			console.log('Contracts',data);
+			$("span#contracts-cached-date").html("Contracts cached until <strong>"+data[1]+"</strong>.");
+			if(data[0].length > 0){
+				$("table#hullsrp-table > tbody > tr#no_contracts").remove();
+				$.each(data[0],function(i, item){
+					var flag = 0;
+					$("table#hullsrp-table > tbody > tr > td:first-child").each(function(){
+						if($(this).text() == item.contract_id){
+							flag = 1;
 						}
-					})
-				}
-			},
-			complete: function(data){
-				mark_finished_contracts();
+					});
+					if(flag==0){
+						var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.status+"</td></tr>");
+						row.css('cursor', 'pointer');
+						row.children('#'+item.contract_id).click(function(){hullsrp_ajax_mailform(item)})
+					}
+				})
 			}
-		})
+		},
+		complete: function(data){
+			mark_finished_contracts();
+			loader_stop(2);
+		}
 	})
-})
+}
 
 function hullsrp_ajax_mailform(item){
 	$.ajax({
