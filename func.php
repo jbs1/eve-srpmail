@@ -21,7 +21,11 @@ function charid(){
 	return $_SESSION['charinfo']['CharacterID'];
 }
 
-function corpid($charid){
+function corpid(){
+	return $_SESSION['charinfo']['CorporationID'];
+}
+
+function getcorpid($charid){
 	global $config;
 	$api_instance = new Swagger\Client\Api\CharacterApi(null,$config);
 	try {

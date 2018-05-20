@@ -1,7 +1,7 @@
 <?php
-$corpwallet_id = '';
+$corpwallet_id = 0;
 
-$scope = [];
+$scope = ['esi-mail.send_mail.v1', 'esi-corporations.read_corporation_membership.v1','esi-contracts.read_character_contracts.v1','esi-wallet.read_corporation_wallets.v1'];
 
 $provider = new jbs1\OAuth2\Client\Provider\EveOnline([
     'clientId'                => 'demoapp',    // The client ID assigned to you by the provider

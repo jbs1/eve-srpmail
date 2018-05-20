@@ -41,7 +41,7 @@ function hullsrp_ajax_mailform(item){
 		success: function(data){
 			$("table#hullsrp-table").hide(350);
 			$("span#contracts-cached-date").hide(350);
-			$("button#contracts_refresh_button").hide(350);
+			$("button#hull_refresh_button").hide(350);
 			var form=$('div#hullsrp').append(data).find('form#hull_mail_form');
 			form.submit(function(e) {
 				e.preventDefault();
@@ -58,8 +58,9 @@ function hullsrp_ajax_mailform(item){
 							alt.alert();
 						}
 						$('form#hull_mail_form').remove();
-						$("button#contracts_refresh_button").show(350);
+						$("button#hull_refresh_button").show(350);
 						$("table#hullsrp-table").show(350);
+						$("span#contracts-cached-date").show(350);
 					},
 					complete: function(){
 						mark_finished_contracts();
@@ -72,7 +73,7 @@ function hullsrp_ajax_mailform(item){
 				$('form#hull_mail_form').remove();
 				$("table#hullsrp-table").show(350);
 				$("span#contracts-cached-date").show(350);
-				$("button#contracts_refresh_button").show(350);
+				$("button#hull_refresh_button").show(350);
 			});
 		}
 	})
@@ -80,7 +81,7 @@ function hullsrp_ajax_mailform(item){
 
 function mark_finished_contracts(){
 	$.ajax({
-		url: 'ajax/contracts-finished.php',
+		url: 'ajax/get_contracts_finished.php',
 		type: 'GET',
 		success: function(data){
 			for(var i in data){

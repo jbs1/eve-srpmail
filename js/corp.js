@@ -11,7 +11,7 @@ $(function (){
 		},
 		complete: function(){
 			$('table#messagessrp-table').trigger('update-mem');
-			$('table#isksrp-table').trigger('update-mem');
+			// $('table#isksrp-table').trigger('update-mem');
 			loader_stop(1);
 		}
 	});

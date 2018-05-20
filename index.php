@@ -27,10 +27,7 @@ echo'
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ';
 
-
 echo '
-
-
 <link rel="stylesheet" href="css/loader.css">
 <script src="js/corp.js"></script>
 <script src="js/srp-hull.js"></script>
@@ -40,7 +37,6 @@ echo '
 
 <script src="js/jquery.searchable-1.1.0.min.js"></script>
 ';
-
 
 echo '<title>SRP Mailer</title>
 </head>
@@ -91,6 +87,9 @@ echo '		<div role="tabpanel" class="tab-pane active" id="intro">
 						<li>ISK SRP (indev):</li>
 						<ul><li>
 							This tab will pull all payments from the configured corp wallet within the last 6 hours. You can select the payments you want to write an email for, by clicking on them.
+						</li>
+						<li>
+							One of these roles is required for this feature: <strong>Accountant/Junior Accountant</strong>
 						</li></ul>
 						<li>Messages (indev):</li>
 						<ul><li>
@@ -114,7 +113,6 @@ echo '		<div role="tabpanel" class="tab-pane active" id="intro">
 				</p>
 			</div>';
 
-
 echo'			<div role="tabpanel" class="tab-pane" id="hullsrp">
 					<table class="table table-bordered table-hover" id="hullsrp-table">
 						<thead>
@@ -126,26 +124,24 @@ echo'			<div role="tabpanel" class="tab-pane" id="hullsrp">
 						<tr id="no_contracts" class="warning"><td colspan=4> No contracts available! </td></tr>
 						</tbody>
 					</table>
-					<button type="button" class="btn btn-primary" id="contracts_refresh_button" onclick="hull_table_refresh()">Refresh!</button><br />
+					<button type="button" class="btn btn-primary" id="hull_refresh_button" onclick="hull_table_refresh()">Refresh!</button><br />
 					<span id="contracts-cached-date"></span>
 				</div>';
 
-
 echo '			<div role="tabpanel" class="tab-pane" id="isksrp">
-					<div class="input-group" id="isksrp-search-div">
-						<span class="input-group-addon" id="isksrp-search-addon">Member-Search:</span>
-						<input type="text" class="form-control" id="isksrp-search" placeholder="Character Name" aria-describedby="isksrp-search-addon">
-					</div>
 					<table class="table table-bordered table-hover" id="isksrp-table">
 						<thead>
 						<tr>
-						<th>Membername</th><th>Member ID</th>
+						<th>Payment ID</th><th>Reciever</th><th>Time issued</th><th>Reason</th>
 						</tr>
 						</thead>
-						<tbody></tbody>
+						<tbody>
+						<tr id="no_payments" class="warning"><td colspan=4> No payments available! </td></tr>
+						</tbody>
 					</table>
+					<button type="button" class="btn btn-primary" id="isk_refresh_button" onclick="isk_table_refresh()">Refresh!</button><br />
+					<span id="payments-cached-date"></span>
 				</div>';
-
 
 echo '			<div role="tabpanel" class="tab-pane" id="messagessrp">
 					<div class="input-group">
@@ -161,7 +157,6 @@ echo '			<div role="tabpanel" class="tab-pane" id="messagessrp">
 						<tbody></tbody>
 					</table>
 				</div>';
-
 
 echo '		</div>
 		</div>

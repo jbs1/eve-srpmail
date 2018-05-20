@@ -29,7 +29,15 @@ try {
 					$x = sizeof($_COOKIE['finished_contracts']);//index for new contract
 					setcookie("finished_contracts[$x]",$_POST["contractid"],time()+60*60*24,'/');
 				}
-    			break;
+			break;
+            case 'isk':
+                if(!isset($_COOKIE['finished_payments'])){
+                    setcookie('finished_payments[0]',$_POST["paymentid"],time()+60*60*24,'/');
+                }elseif (!in_array($_POST["paymentid"], $_COOKIE['finished_payments'])){
+                    $x = sizeof($_COOKIE['finished_payments']);//index for new contract
+                    setcookie("finished_payments[$x]",$_POST["paymentid"],time()+60*60*24,'/');
+                }
+            break;
     	}
     }
 

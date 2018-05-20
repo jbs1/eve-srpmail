@@ -9,7 +9,7 @@ $api_character = new Swagger\Client\Api\CharacterApi(null,$config);
 
 try {
     if(empty($_SESSION['corpmem'])){
-        $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(charid()),$datasource);
+        $corpmem = $api_corp->getCorporationsCorporationIdMembers(corpid(),$datasource);
         $split_ids=array_chunk($corpmem,100);
         $chars=array();
 

@@ -51,7 +51,7 @@ false,
 I have reviewed and approved your SRP requests.
 You have been paid for the following losses:
 
-
+".$_GET["reason"]." ".$_GET["value"]." Million
 
 Please check your wallet.
 
@@ -61,7 +61,7 @@ Fly Safe,
 'ISK SRP Message',
 'isk_mail_form',
 false,
-''
+'echo "<input type=\'hidden\' id=\'payment\' name=\'payment\' value=".$_GET[\'paymentid\']."></input>";'
 ],
 ['',
 'echo "Hello,
