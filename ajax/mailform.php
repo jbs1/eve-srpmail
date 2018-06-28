@@ -1,6 +1,6 @@
 <?php
-require_once('../header.php');
-require_once('mail-messages.php');
+require_once(__DIR__.'/../header.php');
+require_once(__DIR__.'/mail-messages.php');
 
 if(!empty($messages[$_GET['textid']][0])){
 	eval($messages[$_GET['textid']][0]);

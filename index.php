@@ -1,5 +1,5 @@
 <?php
-require_once('header.php');
+require_once(__DIR__.'/header.php');
 
 if(empty($_SESSION['token'])){//if not logged in redirect to
 	header('Location: oauth.php');
@@ -90,6 +90,9 @@ echo '		<div role="tabpanel" class="tab-pane active" id="intro">
 						</li>
 						<li>
 							One of these roles is required for this feature: <strong>Accountant/Junior Accountant</strong>
+						</li>
+						<li>
+							The cache timer for wallets is <strong>1 hour</strong>. This means it is best to first make all payments ingame and then refresh the isk srp page.
 						</li></ul>
 						<li>Messages (indev):</li>
 						<ul><li>
@@ -144,7 +147,7 @@ echo '			<div role="tabpanel" class="tab-pane" id="isksrp">
 				</div>';
 
 echo '			<div role="tabpanel" class="tab-pane" id="messagessrp">
-					<div class="input-group">
+					<div class="input-group" id="messagessrp-search-div">
 						<span class="input-group-addon" id="messagessrp-search-addon">Member-Search:</span>
 						<input type="text" class="form-control" id="messagessrp-search" placeholder="Character Name" aria-describedby="messagessrp-search-addon">
 					</div>

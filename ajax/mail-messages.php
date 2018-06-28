@@ -26,7 +26,6 @@ whether it should show up in the general message list
 extra hidden input fields
 */
 
-
 $messages=array(
 ['$api_universe = new Swagger\Client\Api\UniverseApi(null,$config);
 $station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);',
@@ -51,7 +50,7 @@ false,
 I have reviewed and approved your SRP requests.
 You have been paid for the following losses:
 
-".$_GET["reason"]." ".$_GET["value"]." Million
+".(isset($_GET["reason"])?$var:\'[No loss recorded]\').": ".$_GET["value"]." Million
 
 Please check your wallet.
 

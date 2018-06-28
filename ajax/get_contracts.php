@@ -1,5 +1,5 @@
 <?php
-require_once('../header.php');
+require_once(__DIR__.'/../header.php');
 
 header('Content-Type: application/json;charset=utf-8');
 $json=array();
@@ -14,7 +14,7 @@ try {
 		}
 	}
 
-	print_r(json_encode(array($json,$result[2]['Expires'][0])));
+	print_r(json_encode(array($json,$result[2]['Expires'])));
 
 } catch (Exception $e) {
 	print_r('Exception when calling ContractsApi->getCharactersCharacterIdContracts: '+$e->getMessage());
