@@ -4,7 +4,10 @@ $(function (){
 			$.each(mem,function(key, val){
 				var row = $("table#messagessrp-table > tbody").append("<tr id="+key+"><td>"+val+"</td><td>"+key+"</td></tr>");
 				row.css('cursor', 'pointer');
-				row.children('#'+key).click(function(){messagessrp_ajax_mailform(key)})
+				row.children('#'+key).on('click',function(){
+					row.children('#'+key).off('click');
+					messagessrp_ajax_mailform(key);
+				});
 			})
 			$('#messagessrp-table').searchable({
 				searchField:'#messagessrp-search',
@@ -28,6 +31,7 @@ function messagessrp_ajax_mailform(key){
 			var form=$('div#messagessrp').append(data).find('form#messages_mail_form');
 			form.submit(function(e) {
 				e.preventDefault();
+				form.find("button[type='submit']").attr('disabled','disabled');
 				$.ajax({
 					method: 'POST',
 					url: 'ajax/sendmail.php',
@@ -43,6 +47,10 @@ function messagessrp_ajax_mailform(key){
 						$("form#messages_mail_form").remove();
 						$("div#messagessrp-search-div").show(350);
 						$("table#messagessrp-table").show(350);
+						$('#'+key).on('click',function(){
+							$('#'+key).off('click');
+							messagessrp_ajax_mailform(key);
+						});
 					},
 				})
 			})
@@ -52,6 +60,10 @@ function messagessrp_ajax_mailform(key){
 				$("form#messages_mail_form").remove();
 				$("div#messagessrp-search-div").show(350);
 				$("table#messagessrp-table").show(350);
+				$('#'+key).on('click',function(){
+					$('#'+key).off('click');
+					messagessrp_ajax_mailform(key);
+				});
 			});
 		}
 	})

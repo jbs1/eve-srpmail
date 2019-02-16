@@ -50,7 +50,7 @@ false,
 I have reviewed and approved your SRP requests.
 You have been paid for the following losses:
 
-".(isset($_GET["reason"])?$var:\'[No loss recorded]\').": ".$_GET["value"]." Million
+".(isset($_GET["reason"])?$_GET["reason"]:\'[Loss not recorded]\').": ".$_GET["value"]." Million
 
 Please check your wallet.
 

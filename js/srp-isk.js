@@ -20,7 +20,9 @@ function isk_table_refresh(){
 					if(flag==0){
 						var row = $("table#isksrp-table > tbody").append("<tr id="+item.id+"><td>"+item.id+"</td><td>"+mem[item.second_party_id]+"</td><td>"+item.date+"</td><td>"+item.reason+"</td></tr>");
 						row.css('cursor', 'pointer');
-						row.children('#'+item.id).click(function(){isksrp_ajax_mailform(item)})
+						row.children('#'+item.id).on('click',function(){
+							row.children('#'+item.id).off('click');
+							isksrp_ajax_mailform(item);});
 					}
 				})
 			}
@@ -45,6 +47,7 @@ function isksrp_ajax_mailform(item){
 			var form=$('div#isksrp').append(data).find('form#isk_mail_form');
 			form.submit(function(e) {
 				e.preventDefault();
+				form.find("button[type='submit']").attr('disabled','disabled');
 				$.ajax({
 					method: 'POST',
 					url: 'ajax/sendmail.php',
@@ -61,6 +64,10 @@ function isksrp_ajax_mailform(item){
 						$("table#isksrp-table").show(350);
 						$("span#payments-cached-date").show(350);
 						$("button#isk_refresh_button").show(350);
+						$('#'+item.id).on('click',function(){
+							$('#'+item.id).off('click');
+							isksrp_ajax_mailform(item);
+						});
 					},
 				})
 			})
@@ -71,6 +78,10 @@ function isksrp_ajax_mailform(item){
 				$("table#isksrp-table").show(350);
 				$("span#payments-cached-date").show(350);
 				$("button#isk_refresh_button").show(350);
+				$('#'+item.id).on('click',function(){
+					$('#'+item.id).off('click');
+					isksrp_ajax_mailform(item);
+				});
 			});
 		}
 	})

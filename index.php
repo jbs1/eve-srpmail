@@ -49,7 +49,7 @@ echo '
 			<img src="https://image.eveonline.com/Corporation/'.$_SESSION["charinfo"]["CorporationID"].'_128.png">
 		</div>
 		<div class="col-md-7 page-header">
-			<h1>SRP mailer <small>Mailing tool for SRP-Officers</small></h1>
+			<h1>SRP Mailer for SRP-Officers <small>'.$mailer_version.'</small></h1>
 		</div>
 	</div>
 	<div class="row">

@@ -21,7 +21,10 @@ function hull_table_refresh(){
 					if(flag==0){
 						var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.status+"</td></tr>");
 						row.css('cursor', 'pointer');
-						row.children('#'+item.contract_id).click(function(){hullsrp_ajax_mailform(item)})
+						row.children('#'+item.contract_id).on('click',function(){
+							row.children('#'+item.contract_id).off('click');
+							hullsrp_ajax_mailform(item);
+						});
 					}
 				})
 			}
@@ -45,6 +48,7 @@ function hullsrp_ajax_mailform(item){
 			var form=$('div#hullsrp').append(data).find('form#hull_mail_form');
 			form.submit(function(e) {
 				e.preventDefault();
+				form.find("button[type='submit']").attr('disabled','disabled');
 				$.ajax({
 					method: 'POST',
 					url: 'ajax/sendmail.php',
@@ -61,6 +65,10 @@ function hullsrp_ajax_mailform(item){
 						$("button#hull_refresh_button").show(350);
 						$("table#hullsrp-table").show(350);
 						$("span#contracts-cached-date").show(350);
+						$('#'+item.contract_id).on('click',function(){
+							$('#'+item.contract_id).off('click');
+							hullsrp_ajax_mailform(item);
+						});
 					},
 					complete: function(){
 						mark_finished_contracts();
@@ -74,6 +82,10 @@ function hullsrp_ajax_mailform(item){
 				$("table#hullsrp-table").show(350);
 				$("span#contracts-cached-date").show(350);
 				$("button#hull_refresh_button").show(350);
+				$('#'+item.contract_id).on('click',function(){
+					$('#'+item.contract_id).off('click');
+					hullsrp_ajax_mailform(item);
+				});
 			});
 		}
 	})
