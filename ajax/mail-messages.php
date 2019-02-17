@@ -5,16 +5,13 @@
 
 array structure:
 
-[<header>,<body>,<name>,<id>,<public>,<hidden>]
-
-<header> [optional]:
-Header e.g. for api methoded that are needed for the body
+[<body>,<name>,<id>,<public>]
 
 <body>:
 php echo string containing the body of the message
 
 <name>:
-name of the current templated e.g. for message selection list
+name of the current template e.g. for message selection list
 
 <id>:
 id that will be applied to the mail form for js reference
@@ -22,35 +19,29 @@ id that will be applied to the mail form for js reference
 <public>:
 whether it should show up in the general message list
 
-<hidden>:
-extra hidden input fields
 */
 
 $messages=array(
-['$api_universe = new Swagger\Client\Api\UniverseApi(null,$config);
-$station=$api_universe->getUniverseStationsStationId($_GET["station"], $datasource);',
-'echo "Hello,
+['echo "Hello,
 
-I have reviewed and approved your SRP request.
-Your replacement ship is available at the following station: <url=showinfo:".$station["type_id"]."//".$station["station_id"].">".$station["name"]."</url>
+I have reviewed and approved your SRP requests.
+The following contracts where create at the respective stations:
 
-The contract for the ship can be found here: <url=contract:".$station["system_id"]."//".$_GET["contractid"].">Contract</url>
+".$_GET["contract_string"]."
 
 Fly Safe,
 <url=showinfo:1377//". charid().">". $_SESSION["corpmem"][charid()] ."</url>
 <url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'Hull SRP Message',
 'hull_mail_form',
-false,
-'echo "<input type=\'hidden\' id=\'contract\' name=\'contract\' value=".$_GET[\'contractid\']."></input>";'
+false
 ],
-['',
-'echo "Hello,
+['echo "Hello,
 
 I have reviewed and approved your SRP requests.
 You have been paid for the following losses:
 
-".(isset($_GET["reason"])?$_GET["reason"]:\'[Loss not recorded]\').": ".$_GET["value"]." Million
+".$_GET["payment_string"]."
 
 Please check your wallet.
 
@@ -59,11 +50,9 @@ Fly Safe,
 <url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'ISK SRP Message',
 'isk_mail_form',
-false,
-'echo "<input type=\'hidden\' id=\'payment\' name=\'payment\' value=".$_GET[\'paymentid\']."></input>";'
+false
 ],
-['',
-'echo "Hello,
+['echo "Hello,
 
 We have received your ship replacement request.
 However there is at least one issue preventing us from fulfilling your request:
@@ -78,11 +67,9 @@ Fly Safe,
 <url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'Resubmission SRP Message',
 'messages_mail_form',
-true,
-''
+true
 ],
-['',
-'echo "Hello,
+['echo "Hello,
 
 Unfortunately we have had to decline your ship replacement request due to one or more reasons:
 
@@ -96,8 +83,7 @@ Fly Safe,
 <url=showinfo:2//". $_SESSION["charinfo"]["CorporationID"].">". $_SESSION["charinfo"]["CorporationName"]."</url>";',
 'Rejection SRP Message',
 'messages_mail_form',
-true,
-''
+true
 ]
 
 

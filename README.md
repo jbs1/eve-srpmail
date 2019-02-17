@@ -27,11 +27,13 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 * [x] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
 * [x] fix "session already started" console warning
 * [x] save finished contracts in cookies to make persistent over sessions
+* [ ] fix eval vuln in mailform
+* [ ] fix deprecated async in hull mail form
 
 
 #### Tabs
 
-* [ ] for all tabs: first put in killmail to to fetch info such as reciever name/fit for comparison and to put it in text template
+* [ ] for all tabs: first put in killmail to to fetch info such as receiver name/fit for comparison and to put it in text template
   * [ ] support zkill and euni killboard by fetching actuall esi killmail from the pasted link
 * [ ] Money SRP
   * [ ] possibly make payments through api (NO endpoint yet)

@@ -1,4 +1,3 @@
-//save members in global js variable, session caching is done at the endpoint
 function hull_table_refresh(){
 	$.ajax({
 		type: 'GET',
@@ -8,7 +7,6 @@ function hull_table_refresh(){
 			$('#hull_refresh_button').attr('disabled','disabled');
 		},
 		success: function(data){
-			console.log('Contracts',data);
 			$("span#contracts-cached-date").html("Contracts cached until <strong>"+data[1]+"</strong>.");
 			if(data[0].length > 0){
 				$("table#hullsrp-table > tbody > tr#no_contracts").remove();
@@ -20,7 +18,7 @@ function hull_table_refresh(){
 						}
 					});
 					if(flag==0){
-						var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.status+"</td></tr>");
+						var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.start_location_id+"</td><td>"+item.status+"</td></tr>");
 						row.css('cursor', 'pointer');
 						row.children('#'+item.contract_id).on('click',function(){
 							row.children('#'+item.contract_id).off('click');
@@ -39,10 +37,11 @@ function hull_table_refresh(){
 }
 
 function hullsrp_ajax_mailform(item){
+	var contracts=receiver_contracts(item.assignee_id);
 	$.ajax({
 		type: 'GET',
 		url: 'ajax/mailform.php',
-		data: {"contractid":item.contract_id,"station":item.start_location_id,"assignee":item.assignee_id,"textid":0},
+		data: {"assignee":item.assignee_id,"contract_string":contracts[0],"textid":0},
 		success: function(data){
 			$("table#hullsrp-table").hide(350);
 			$("span#contracts-cached-date").hide(350);
@@ -54,7 +53,7 @@ function hullsrp_ajax_mailform(item){
 				$.ajax({
 					method: 'POST',
 					url: 'ajax/sendmail.php',
-					data: {'special':'contract','contractid':$(this).find('#contract').val(),'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#mail-body').val()},
+					data: {'recv':$(this).find('#receiver').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#mail-body').val()},
 					success: function(data){
 						if(data["success"]){
 							var alt=$('#art').append('<div class="alert alert-success alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Mail Sent! Mail-ID:'+data["return"]+'</div>')
@@ -63,32 +62,40 @@ function hullsrp_ajax_mailform(item){
 							var alt=$('#art').append('<div class="alert alert-danger alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+data["return"]+'</div>')
 							alt.alert();
 						}
-						$('form#hull_mail_form').remove();
-						$("button#hull_refresh_button").show(350);
-						$("table#hullsrp-table").show(350);
-						$("span#contracts-cached-date").show(350);
-						$('#'+item.contract_id).on('click',function(){
-							$('#'+item.contract_id).off('click');
-							hullsrp_ajax_mailform(item);
-						});
+						remove_hull_mailform(item);
 					},
 					complete: function(){
-						mark_finished_contracts();
+						set_finished_contracts(contracts[1]);
 					}
 				})
 			})
 		},
 		complete: function(){
-			$('div#hullsrp').find('form#hull_mail_form > button#back').click(function() {
-				$('form#hull_mail_form').remove();
-				$("table#hullsrp-table").show(350);
-				$("span#contracts-cached-date").show(350);
-				$("button#hull_refresh_button").show(350);
-				$('#'+item.contract_id).on('click',function(){
-					$('#'+item.contract_id).off('click');
-					hullsrp_ajax_mailform(item);
-				});
+			$('form#hull_mail_form').find('button#back').click(function() {
+				remove_hull_mailform(item);
 			});
+		}
+	})
+}
+
+function remove_hull_mailform(item){
+	$('form#hull_mail_form').remove();
+	$("table#hullsrp-table").show(350);
+	$("span#contracts-cached-date").show(350);
+	$("button#hull_refresh_button").show(350);
+	$('#'+item.contract_id).on('click',function(){
+		$('#'+item.contract_id).off('click');
+		hullsrp_ajax_mailform(item);
+	});
+}
+
+function set_finished_contracts(ids){
+	$.ajax({
+		url: 'ajax/set_contracts_finished.php',
+		type: 'GET',
+		data: {"contractids": ids},
+		complete: function(){
+			mark_finished_contracts();
 		}
 	})
 }
@@ -97,10 +104,31 @@ function mark_finished_contracts(){
 	$.ajax({
 		url: 'ajax/get_contracts_finished.php',
 		type: 'GET',
-		success: function(data){
-			for(var i in data){
-				$('table#hullsrp-table > tbody > tr#'+data[i]).addClass('success');
+		success: function(contracts){
+			for(var i in contracts){
+				$('table#hullsrp-table > tbody > tr#'+contracts[i]).addClass('success');
 			}
 		}
 	})
+}
+
+function receiver_contracts(assignee){
+	var contracts_string = '';
+	var contractids = [];
+	$("table#hullsrp-table > tbody > tr > td:nth-child(2)").each(function(x,element){
+		if($(element).text()==mem[assignee]&&!$(element).parent().hasClass("success")){
+			$.ajax({
+				url: "ajax/get_station.php",
+				data: {"station":$(element).parent().children("td:nth-child(4)").text()},
+				async: false,
+				success: function(station){
+					contracts_string=contracts_string.concat("<url=contract:"+station.system_id+"//"+$(element).parent().children("td:nth-child(1)").text()+">Contract</url> @ ");
+					contracts_string=contracts_string.concat("<url=showinfo:"+station.type_id+"//"+station.station_id+">"+station.name+"</url>\n");
+					contractids.push(+($(element).parent().children("td:nth-child(1)").text()));
+				}
+			})
+		};
+	});
+
+	return [contracts_string,contractids];
 }

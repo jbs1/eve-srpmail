@@ -120,13 +120,14 @@ echo'			<div role="tabpanel" class="tab-pane" id="hullsrp">
 					<table class="table table-bordered table-hover" id="hullsrp-table">
 						<thead>
 						<tr>
-						<th>Contract ID</th><th>Reciever</th><th>Time issued</th><th>Status</th>
+						<th>Contract ID</th><th>Receiver</th><th>Time issued</th><th>Station ID</th><th>Status</th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr id="no_contracts" class="warning"><td colspan=4> No contracts available! </td></tr>
+						<tr id="no_contracts" class="warning"><td colspan=5> No contracts available! </td></tr>
 						</tbody>
 					</table>
+					<span class="help-block">When more than one contract to the same person exists, all contracts will be send in one mail!</span>
 					<button type="button" class="btn btn-primary" id="hull_refresh_button" onclick="hull_table_refresh()">Refresh!</button><br />
 					<span id="contracts-cached-date"></span>
 				</div>';
@@ -135,13 +136,14 @@ echo '			<div role="tabpanel" class="tab-pane" id="isksrp">
 					<table class="table table-bordered table-hover" id="isksrp-table">
 						<thead>
 						<tr>
-						<th>Payment ID</th><th>Reciever</th><th>Time issued</th><th>Reason</th>
+						<th>Payment ID</th><th>Receiver</th><th>Time issued</th><th>Amount(ISK)</th><th>Reason</th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr id="no_payments" class="warning"><td colspan=4> No payments available! </td></tr>
+						<tr id="no_payments" class="warning"><td colspan=5> No payments available! </td></tr>
 						</tbody>
 					</table>
+					<span class="help-block">When more than one payment to the same person exists, all payments will be send in one mail!</span>
 					<button type="button" class="btn btn-primary" id="isk_refresh_button" onclick="isk_table_refresh()">Refresh!</button><br />
 					<span id="payments-cached-date"></span>
 				</div>';

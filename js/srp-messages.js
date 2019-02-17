@@ -35,7 +35,7 @@ function messagessrp_ajax_mailform(key){
 				$.ajax({
 					method: 'POST',
 					url: 'ajax/sendmail.php',
-					data: {'recv':$(this).find('#reciever').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#mail-body').val()},
+					data: {'recv':$(this).find('#receiver').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#mail-body').val()},
 					success: function(data){
 						if(data["success"]){
 							var alt=$('#art').append('<div class="alert alert-success alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Mail Sent! Mail-ID:'+data["return"]+'</div>')
