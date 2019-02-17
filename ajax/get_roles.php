@@ -6,12 +6,10 @@ $json=array();
 
 $charapi = new Swagger\Client\Api\CharacterApi(null,$config);
 
-
 try {
-    $result = $charapi->getCharactersCharacterIdRoles(charid(), $datasource);
-    print_r(strval($result));
+	$result = $charapi->getCharactersCharacterIdRoles(charid(), $datasource);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CharacterApi->getCharactersCharacterIdRoles: ', $e->getMessage(), PHP_EOL;
 }
-
 ?>

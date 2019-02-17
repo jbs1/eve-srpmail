@@ -4,6 +4,7 @@ function isk_table_refresh(){
 		url: 'ajax/get_payments.php',
 		beforeSend: function(){
 			loader_start("Payments",3);
+			$('#isk_refresh_button').attr('disabled','disabled');
 		},
 		success: function(data){
 			console.log('Payments',data);
@@ -30,6 +31,7 @@ function isk_table_refresh(){
 		complete: function(data){
 			mark_finished_payments();
 			loader_stop(3);
+			$('#isk_refresh_button').delay(2100).queue(function() {$('#isk_refresh_button').removeAttr('disabled','disabled');$(this).dequeue();});
 		}
 	})
 }

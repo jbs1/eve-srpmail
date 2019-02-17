@@ -5,6 +5,7 @@ function hull_table_refresh(){
 		url: 'ajax/get_contracts.php',
 		beforeSend: function(){
 			loader_start("Contracts",2);
+			$('#hull_refresh_button').attr('disabled','disabled');
 		},
 		success: function(data){
 			console.log('Contracts',data);
@@ -32,6 +33,7 @@ function hull_table_refresh(){
 		complete: function(data){
 			mark_finished_contracts();
 			loader_stop(2);
+			$('#hull_refresh_button').delay(2100).queue(function() {$('#hull_refresh_button').removeAttr('disabled','disabled');$(this).dequeue();});
 		}
 	})
 }
