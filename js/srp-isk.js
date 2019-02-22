@@ -43,9 +43,7 @@ function isksrp_ajax_mailform(item){
 		url: 'ajax/mailform.php',
 		data: {"assignee":item.second_party_id,"payment_string":payments[0],"textid":1},
 		success: function(data){
-			$("table#isksrp-table").hide(350);
-			$("span#payments-cached-date").hide(350);
-			$("button#isk_refresh_button").hide(350);
+			hide_isk_table();
 			var form=$('div#isksrp').append(data).find('form#isk_mail_form');
 			form.submit(function(e) {
 				e.preventDefault();
@@ -78,11 +76,19 @@ function isksrp_ajax_mailform(item){
 	})
 }
 
+function hide_isk_table(){
+	$("table#isksrp-table").hide(350);
+	$("span#payments-cached-date").hide(350);
+	$("button#isk_refresh_button").hide(350);
+	$("span#isk_helpblock").hide(350);
+}
+
 function remove_isk_mailform(item){
 	$("form#isk_mail_form").remove();
 	$("table#isksrp-table").show(350);
 	$("span#payments-cached-date").show(350);
 	$("button#isk_refresh_button").show(350);
+	$("span#isk_helpblock").show(350);
 	$('#'+item.id).on('click',function(){
 		$('#'+item.id).off('click');
 		isksrp_ajax_mailform(item);

@@ -127,7 +127,7 @@ echo'			<div role="tabpanel" class="tab-pane" id="hullsrp">
 						<tr id="no_contracts" class="warning"><td colspan=5> No contracts available! </td></tr>
 						</tbody>
 					</table>
-					<span class="help-block">When more than one contract to the same person exists, all contracts will be send in one mail!</span>
+					<span class="help-block" id="hull_helpblock">When more than one contract to the same person exists, all contracts will be send in one mail!</span>
 					<button type="button" class="btn btn-primary" id="hull_refresh_button" onclick="hull_table_refresh()">Refresh!</button><br />
 					<span id="contracts-cached-date"></span>
 				</div>';
@@ -143,7 +143,7 @@ echo '			<div role="tabpanel" class="tab-pane" id="isksrp">
 						<tr id="no_payments" class="warning"><td colspan=5> No payments available! </td></tr>
 						</tbody>
 					</table>
-					<span class="help-block">When more than one payment to the same person exists, all payments will be send in one mail!</span>
+					<span class="help-block"id="isk_helpblock">When more than one payment to the same person exists, all payments will be send in one mail!</span>
 					<button type="button" class="btn btn-primary" id="isk_refresh_button" onclick="isk_table_refresh()">Refresh!</button><br />
 					<span id="payments-cached-date"></span>
 				</div>';
