@@ -17,7 +17,7 @@ try {
     $result = $api_instance->postCharactersCharacterIdMail(charid(), $mail, $datasource);
 	print_r(json_encode(array("success"=>true,"return"=>$result)));
 } catch (Exception $e) {
-	print_r(json_encode(array("success"=>false,"return"=>'Exception when calling MailApi->postCharactersCharacterIdMail: '+$e->getMessage())));
+	print_r(json_encode(array("success"=>false,"return"=>'Exception when calling MailApi->postCharactersCharacterIdMail: '.$e->getMessage())));
 }
 
 

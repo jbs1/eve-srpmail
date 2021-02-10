@@ -1,4 +1,5 @@
 config.php
 vendor
-*.sublime-workspace
+*.sublime-*
 composer.lock
+sftp-config.json

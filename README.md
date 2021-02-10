@@ -6,7 +6,6 @@ Hosted here: http://eve-stuff.com/index.php
 This is a small and simple tool to make the tedious task of writing SRP mails easier for officers.  
 This works for all corporations not just EVE uni as it pulls the infos about the corps and chars dynamically from the API.  
 Nothing will be save on the server itself for longer than the session.
-As of now it only works if contracts are in stations not in citadels.
 If all endpoints are implemeted, it would remove the need to be ingame at all which would mean SRP could be done on the go e.g. through our phone.
 
 
@@ -17,11 +16,11 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 * [x] corp name lookup for mails instead of static (possibly save name in session on login/auth)
 * [x] Replace header corp name with logo, also make it dynamic lookup
 * [x] add some loading indicator (especially for loading members) since that can take up to 15 seconds
-* [ ] autoclose mails notifications after some time
+* [x] autoclose mails notifications after some time
 * [ ] fix bug with contract status not refeshing
   * [ ] deleted/timed out contracts don't disappear from list as the javascript only add's and doesn't remove
 * [x] switch over to esi-api for contracts when the endpoint is implemeted
-* [ ] make it work with citadels
+* [x] make it work with citadels
 * [x] don't autoload contracts (?)
 * [ ] show logged in char
 * [x] save sent mails in cookies instead of session, otherwise on session timeout sent mails not marked anymore
@@ -39,7 +38,7 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
   * [ ] possibly make payments through api (NO endpoint yet)
   * [ ] selection with ISK reimbursement amounts, autofetched from somewhere (srp google docs?)
 * [ ] Contract SRP
-  * [ ] possibilty to create contracts from the api (NO endpoint yet)
+  * [ ] possibility to create contracts from the api (NO endpoint yet)
   * [ ] possible problems with ships beeing inside locked containers
 * [ ] General Text
   * [ ] with different templates depending on rejection/resubmission
@@ -66,7 +65,6 @@ If all endpoints are implemeted, it would remove the need to be ingame at all wh
 sudo apt-get install php-curl
 sudo apt-get install php-mbstring
 sudo apt-get install php-xml
-sudo service apache2 restart
 sudo apt-get install composer
 ```
 

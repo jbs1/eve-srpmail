@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__.'/header.php');
 
-if(empty($_SESSION['token'])){//if not logged in redirect to
+if(empty($_SESSION['rftoken'])){//if not logged in redirect to
 	header('Location: oauth.php');
 } else {
 
@@ -107,7 +107,6 @@ echo '		<div role="tabpanel" class="tab-pane active" id="intro">
 					<ul>
 						<li>The session expiry time on the current server is: <b>'.ini_get("session.gc_maxlifetime").'</b> seconds</li>
 					</ul>
-					<li>If the target station is an Upwell structure, Hull SRP will not work. So far only NPC stations work.</li>
 					</ul>
 				</p>
 				<p>

@@ -42,10 +42,10 @@ if (!isset($_GET['code'])) {
         echo "Login successful for the character ".$resourceOwner->toArray()["CharacterName"]."(".$resourceOwner->toArray()["CharacterID"].")<br>You will be automatically redirected.....";
 
         //save accessToken and char info in session.
-        $_SESSION['token']=serialize($accessToken);
+        $_SESSION['rftoken']=$accessToken->getRefreshToken();
         $_SESSION['charinfo']=$resourceOwner->toArray();
 
-        $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken(token());
+        $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken($accessToken->getToken());
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
 

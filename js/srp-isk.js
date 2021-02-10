@@ -54,16 +54,20 @@ function isksrp_ajax_mailform(item){
 					data: {'recv':$(this).find('#receiver').val(),'subj':$(this).find('#subject').val(),'body':$(this).find('#mail-body').val()},
 					success: function(data){
 						if(data["success"]){
+							remove_isk_mailform(item);
+							set_finished_payments(payments[1]);
 							var alt=$('#art').append('<div class="alert alert-success alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Mail Sent! Mail-ID:'+data["return"]+'</div>')
 							alt.alert();
 						}else{
 							var alt=$('#art').append('<div class="alert alert-danger alert-dismissable" role="alert" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+data["return"]+'</div>')
 							alt.alert();
+							form.find("button[type='submit']").removeAttr('disabled');
 						}
-						remove_isk_mailform(item);
 					},
 					complete: function(){
-						set_finished_payments(payments[1]);
+						window.setTimeout(function(){
+							$('#art > .alert:first-child').alert('close');
+						},10000);
 					}
 				})
 			})

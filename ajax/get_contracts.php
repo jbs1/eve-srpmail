@@ -15,6 +15,6 @@ try {
 	}
 	print_r(json_encode(array($json,$result[2]['Expires'])));
 } catch (Exception $e) {
-	print_r('Exception when calling ContractsApi->getCharactersCharacterIdContracts: '+$e->getMessage());
+	print_r('Exception when calling ContractsApi->getCharactersCharacterIdContracts: '.$e->getMessage());
 }
 ?>
