@@ -18,7 +18,7 @@ function isk_table_refresh(){
 						}
 					});
 					if(flag==0){
-						var row = $("table#isksrp-table > tbody").append("<tr id="+item.id+"><td>"+item.id+"</td><td>"+mem[item.second_party_id]+"</td><td>"+item.date+"</td><td>"+item.amount+"</td><td>"+item.reason+"</td></tr>");
+						var row = $("table#isksrp-table > tbody").append("<tr id="+item.id+"><td>"+item.id+"</td><td class="+item.second_party_id+">"+mem[item.second_party_id]+"</td><td>"+item.date+"</td><td>"+item.amount+"</td><td>"+item.reason+"</td></tr>");
 						row.css('cursor', 'pointer');
 						row.children('#'+item.id).on('click',function(){
 							row.children('#'+item.id).off('click');
@@ -29,6 +29,9 @@ function isk_table_refresh(){
 			}
 		},
 		complete: function(data){
+			$("td:contains(undefined)").each(function() {
+				get_charname($(this).attr('class'));
+			});
 			mark_finished_payments();
 			loader_stop(3);
 			$('#isk_refresh_button').delay(2100).queue(function() {$('#isk_refresh_button').removeAttr('disabled','disabled');$(this).dequeue();});

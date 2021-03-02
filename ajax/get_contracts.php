@@ -9,7 +9,7 @@ $contracts = new Swagger\Client\Api\ContractsApi(null,$config);
 try {
 	$result = $contracts->getCharactersCharacterIdContractsWithHttpInfo(charid(), $datasource);
 	foreach ($result[0] as $row) {
-		if((strtotime($row['date_issued'])>strtotime('-6 hour'))&&($row['status']=="outstanding"||$row['status']=="finished")&&$row['issuer_id']==charid()&&$row['availability']=="personal"&&$row['type']=="item_exchange"&&getcorpid($row['assignee_id'])==corpid()){
+		if((strtotime($row['date_issued'])>strtotime('-6 hour'))&&($row['status']=="outstanding"||$row['status']=="finished")&&$row['issuer_id']==charid()&&$row['availability']=="personal"&&$row['type']=="item_exchange"){
 			array_unshift($json,$row);
 		}
 	}

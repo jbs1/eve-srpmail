@@ -18,7 +18,7 @@ function hull_table_refresh(){
 						}
 					});
 					if(flag==0){
-						var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td>"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.start_location_id+"</td><td>"+item.status+"</td></tr>");
+						var row = $("table#hullsrp-table > tbody").append("<tr id="+item.contract_id+"><td>"+item.contract_id+"</td><td class="+item.assignee_id+">"+mem[item.assignee_id]+"</td><td>"+item.date_issued+"</td><td>"+item.start_location_id+"</td><td>"+item.status+"</td></tr>");
 						row.css('cursor', 'pointer');
 						row.children('#'+item.contract_id).on('click',function(){
 							row.children('#'+item.contract_id).off('click');
@@ -29,6 +29,9 @@ function hull_table_refresh(){
 			}
 		},
 		complete: function(data){
+			$("td:contains(undefined)").each(function() {
+				get_charname($(this).attr('class'));
+			});
 			mark_finished_contracts();
 			loader_stop(2);
 			$('#hull_refresh_button').delay(2100).queue(function() {$('#hull_refresh_button').removeAttr('disabled','disabled');$(this).dequeue();});

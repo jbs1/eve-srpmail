@@ -6,7 +6,7 @@ require_once(__DIR__.'/vendor/autoload.php');
 require_once(__DIR__.'/config.php');
 require_once(__DIR__.'/func.php');
 
-$mailer_version = "v1.4.0";
+$mailer_version = "v1.4.1";
 $datasource = "tranquility"; // string | The server name you would like data from
 
 setup_token();

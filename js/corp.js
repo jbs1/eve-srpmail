@@ -1,4 +1,5 @@
 var mem;
+
 $(function (){
 	$.ajax({
 		type: 'GET',
@@ -16,3 +17,16 @@ $(function (){
 	});
 
 });
+
+
+function get_charname(non_corp_char) {
+	$.ajax({
+		type: 'POST',
+		url: 'ajax/get_charnames.php',
+		data: {"charid":[non_corp_char]},
+		success: function(data){
+			mem = {...mem,...data};//concat global object
+			$("td."+non_corp_char).html(mem[non_corp_char]);
+		}
+	});
+};

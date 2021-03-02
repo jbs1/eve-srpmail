@@ -15,7 +15,7 @@ try {
 	}
 
 } catch (Exception $e) {
-	echo 'Exception when calling UniversieApi->getUniverseStationsStationId: ', $e->getMessage(), PHP_EOL;
+	echo 'Exception when calling UniversieApi for stations or structures: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
